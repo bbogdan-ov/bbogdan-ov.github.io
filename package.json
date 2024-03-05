@@ -3,7 +3,8 @@
     "version": "1.0.0",
     "scripts": {
         "dev": "vite dev",
-        "build": "vite build"
+        "build": "vite build",
+        "preview": "vite preview --port 8080"
     },
     "keywords": [],
     "author": {

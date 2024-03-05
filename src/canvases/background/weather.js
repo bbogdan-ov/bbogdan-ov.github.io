@@ -4,6 +4,7 @@ import * as objects from "../../objects";
 import * as utils from "../../utils";
 import * as consts from "../../consts";
 import * as speedup from "../../speedup";
+import rainbow_img from "../../assets/images/rainbow.png";
 
 const WEATHER_DUR = 60;
 const WEATHER_CHANGE_DUR = 15;
@@ -16,7 +17,7 @@ const backgroundTween = gsap.to(document.body, {
     ease: "none",
     paused: true
 })
-const rainbow = PIXI.Sprite.from(utils.url("/src/assets/images/rainbow.png"));
+const rainbow = PIXI.Sprite.from(rainbow_img);
 rainbow.x = -64;
 rainbow.angle = -36;
 
