@@ -6,7 +6,7 @@ const RAIN_SOURCES_COUNT = 5;
 
 export class Rain extends PIXI.Sprite {
     constructor(x=0, y=0) {
-        const src = utils.url(`assets/images/rain/${ utils.randomInt(0, RAIN_SOURCES_COUNT)+1 }.png`);
+        const src = utils.url(`./assets/images/rain/${ utils.randomInt(0, RAIN_SOURCES_COUNT)+1 }.png`);
         super(PIXI.Texture.from(src));
 
         this.x = x;

@@ -23,7 +23,7 @@ const CLOUDS_SOURCES_COUNT = 16;
 
 export class Cloud extends PIXI.Sprite {
     constructor(x=0, y=0) {
-        const src = utils.url(`assets/images/clouds/${ utils.randomInt(0, CLOUDS_SOURCES_COUNT)+1 }.png`)
+        const src = utils.url(`./assets/images/clouds/${ utils.randomInt(0, CLOUDS_SOURCES_COUNT)+1 }.png`)
         super(PIXI.Texture.from(src));
 
         this.x = this.moveX = x;
