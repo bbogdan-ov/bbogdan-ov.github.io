@@ -1,11 +1,12 @@
 import * as PIXI from "pixi.js";
+import * as utils from "../utils";
 
 export const THINGS = ["tape", "clock", "lighter", "book", "uno-red", "uno-blue", "disk"];
 export const TRASH_THINGS = [...THINGS, "paper", "battery"];
 
 export class Thing extends PIXI.TilingSprite {
     constructor(name, x=0, y=0) {
-        super(PIXI.Texture.from(`src/assets/images/things/${ name }.png`), 128, 128);
+        super(PIXI.Texture.from(utils.url(`assets/images/things/${ name }.png`)), 128, 128);
 
         this.anchor.set(.5);
 

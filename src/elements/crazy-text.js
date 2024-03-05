@@ -2,7 +2,7 @@ import * as PIXI from "pixi.js";
 import * as utils from "../utils";
 import gsap from "gsap";
 
-const FONT_SHEET_SOURCE = "src/assets/images/crazy-font-sheet.png";
+const FONT_SHEET_SOURCE = utils.url("assets/images/crazy-font-sheet.png");
 const CHAR_SLICE_SIZE = 128;
 const CHAR_WIDTH = 40;
 const CHAR_HEIGHT = 64;
