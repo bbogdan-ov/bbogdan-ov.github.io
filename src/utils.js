@@ -52,7 +52,7 @@ export function wave(time, from=0, to=1, func=Math.cos) {
 }
 
 export function playSound(name, volume=1) {
-    const audio = new Audio(`assets/audios/${ name }.mp3`);
+    const audio = new Audio(`src/assets/audios/${ name }.mp3`);
     audio.volume = volume;
     audio.play();
     return audio

@@ -4,11 +4,11 @@
 
 @font-face {
     font-family: comic-sans;
-    src: url("/assets/fonts/comic-sans.ttf");
+    src: url("/src/assets/fonts/comic-sans.ttf");
 }
 @font-face {
     font-family: vhs;
-    src: url("/assets/fonts/vhs.ttf");
+    src: url("/src/assets/fonts/vhs.ttf");
 }
 
 :root {
@@ -40,13 +40,13 @@ body {
     font-size: var(--font-size);
     background: var(--background);
 
-    cursor: url("/assets/images/ui/cursor.png") 0 0, auto !important;
+    cursor: url("/src/assets/images/ui/cursor.png") 0 0, auto !important;
 }
 ::-webkit-scrollbar {
     display: none;
 }
 *[contenteditable]:hover, input:hover {
-    cursor: url("/assets/images/ui/cursor-text.png") 9 15, auto;
+    cursor: url("/src/assets/images/ui/cursor-text.png") 9 15, auto;
 }
 
 /* Section */
@@ -179,7 +179,7 @@ code {
     margin: 30px 0;
     align-items: stretch;
 
-    background-image: url("/assets/images/ui/cheque.png");
+    background-image: url("/src/assets/images/ui/cheque.png");
     font-size: 18px;
     font-family: var(--mono-font);
     image-rendering: pixelated;
@@ -194,7 +194,7 @@ code {
     left: 0;
     bottom: calc(100% - 1px);
 
-    background-image: url("/assets/images/ui/cheque-top.png");
+    background-image: url("/src/assets/images/ui/cheque-top.png");
 }
 .cheque::after {
     scale: -1;
@@ -222,7 +222,7 @@ code {
     justify-content: center;
     text-align: center;
 
-    background-image: url(/assets/images/ui/paper.png);
+    background-image: url("/src/assets/images/ui/paper.png");
     background-size: 100% 100%;
     font-family: var(--fancy-font);
     font-size: 18px;
@@ -237,7 +237,7 @@ code {
 
     margin: 30px 0;
 
-    background-image: url("/assets/images/ui/panel.png");
+    background-image: url("/src/assets/images/ui/panel.png");
     font-size: 16px;
     font-family: var(--vhs-font);
     color: var(--white);
@@ -253,7 +253,7 @@ code {
     left: 0;
     bottom: calc(100% - 1px);
 
-    background-image: url("/assets/images/ui/panel-top.png");
+    background-image: url("/src/assets/images/ui/panel-top.png");
 }
 .panel::after {
     scale: -1;
@@ -360,7 +360,7 @@ button {
     font-size: var(--font-size);
     border: none;
 
-    cursor: url("/assets/images/ui/cursor-pointer.png") 7 0, auto;
+    cursor: url("/src/assets/images/ui/cursor-pointer.png") 7 0, auto;
 }
 button img,
 button .icon {
@@ -384,7 +384,7 @@ button .icon {
     width: 20px;
     height: 20px;
     padding: 0;
-    background-image: url("/assets/images/ui/smiley-button.png");
+    background-image: url("/src/assets/images/ui/smiley-button.png");
     image-rendering: pixelated;
 }
 .physical-button {
@@ -400,7 +400,7 @@ button .icon {
     font-family: var(--vhs-font);
     font-size: 18px;
     background-color: transparent;
-    background-image: url("/assets/images/ui/physical-button.png");
+    background-image: url("/src/assets/images/ui/physical-button.png");
     background-size: 180px 60px;
     background-position: 0 0;
     image-rendering: pixelated;
@@ -410,7 +410,7 @@ button .icon {
 }
 .physical-button.small {
     width: 60px;
-    background-image: url("/assets/images/ui/small-physical-button.png");
+    background-image: url("/src/assets/images/ui/small-physical-button.png");
     background-size: 120px 60px;
 }
 .physical-button.small:active {
@@ -433,7 +433,7 @@ input {
 a {
     color: var(--blue);
     text-decoration: none;
-    cursor: url("/assets/images/ui/cursor-pointer.png") 7 0, auto;
+    cursor: url("/src/assets/images/ui/cursor-pointer.png") 7 0, auto;
 }
 a:hover {
     text-decoration: underline;
@@ -491,7 +491,7 @@ a:hover .pointer {
     width: 40px;
     height: 30px;
     
-    background-image: url("/assets/images/ui/speed.png");
+    background-image: url("/src/assets/images/ui/speed.png");
     background-size: 80px 30px;
     background-position: 0 0;
 }
@@ -511,7 +511,7 @@ a:hover .pointer {
 
 /* Fancy things */
 .substance {
-    background: url("/assets/images/ui/substance.png");
+    background: url("/src/assets/images/ui/substance.png");
     animation: substance 10s linear infinite;
 }
 .rainbow-text {
@@ -579,7 +579,7 @@ a:hover .pointer {
     width: 32px;
     height: 32px;
 
-    background-image: url("/assets/images/ui/play.png");
+    background-image: url("/src/assets/images/ui/play.png");
     background-size: 64px 32px;
     background-position: 0 0;
     pointer-events: none;
