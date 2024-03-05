@@ -1,0 +1,23 @@
+.pixelate {
+    image-rendering: pixelated;
+}
+.pre {
+    white-space: pre-wrap;
+}
+.no-events {
+    pointer-events: none;
+}
+
+.text-red {
+    color: var(--red);
+}
+.text-white {
+    color: var(--white);
+}
+
+.bg-black {
+    background: var(--black);
+}
+.bg-white {
+    background: var(--white);
+}
