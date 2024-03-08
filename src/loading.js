@@ -1,3 +1,5 @@
+import * as utils from "./utils";
+
 export function initLoading() {
     const screen = document.querySelector(".loading-screen");
 
@@ -7,12 +9,13 @@ export function initLoading() {
         return;
     }
     
-    scrollTo(0, 0);
     // Lock scrolling
     document.body.style.overflowY = "hidden";
+    scrollTo(0, 0);
     
     addEventListener("load", ()=> {
         screen.classList.add("loaded");
+        utils.playSound("spring", .8);
 
         // Free scrolling after 3 secs
         setTimeout(()=> {
