@@ -384,6 +384,21 @@ code {
     height: 256px;
     object-fit: fill;
 }
+.vault {
+    display: flex;
+}
+.vault .numbers {
+    width: 100%;
+    height: 48px;
+
+    text-align: center;
+    line-height: 50px;
+
+    background: var(--black);
+    font-family: var(--vhs-font);
+    font-size: 32px;
+    color: var(--green);
+}
 
 /* Buttons */
 button {
