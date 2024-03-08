@@ -446,10 +446,6 @@ button .icon {
     height: 60px;
     padding: 0;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
     color: var(--white);
     font-family: var(--vhs-font);
     font-size: 16px;
