@@ -1,10 +1,17 @@
 import * as utils from "../utils";
+import jesus_img from "../assets/gifs/jesus.gif";
 
 // Generate random password so you cant cheat :)
 export const vaultPassword = utils.randomString(4, "0123456789");
 let currentPassword = "";
 let isPasswordCorrent = false;
 let allowInput = true;
+
+const doorSecret = new Image();
+doorSecret.classList.add("door-secret");
+doorSecret.src = jesus_img;
+doorSecret.loading = "lazy";
+doorSecret.alt = "JESUS IS REAL";
 
 // Log password if in dev mode
 if (import.meta.env.DEV)
@@ -71,6 +78,8 @@ export function initVault() {
         passwordInput.textContent = "CORRECT";
         // Open door if password is correct
         door.classList.add("opened");
+        // Prepend jesus gif!
+        door.prepend(doorSecret);
 
         isPasswordCorrent = true;
         utils.playSound("correct", .6);
