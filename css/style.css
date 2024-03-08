@@ -637,6 +637,12 @@ a:hover .pointer {
 .cog.reverse {
     animation-direction: reverse;
 }
+.floating {
+    animation: floating infinite linear 1s;
+}
+.floating:hover {
+    animation-play-state: paused;
+}
 
 /* Media */
 @media screen and (max-width: 1000px) {
@@ -765,4 +771,8 @@ a:hover .pointer {
         pointer-events: none;
         opacity: 0;
     }
+}
+@keyframes floating {
+    from, to { translate: 0 -50%; }
+    50% { translate: 0 50%; }
 }
