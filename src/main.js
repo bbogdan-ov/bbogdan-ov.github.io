@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     sections.initInfo();
     sections.initPromo();
     sections.initVault();
+    sections.initChat();
     speedup.init();
 
     addEventListener("load", ()=> {
