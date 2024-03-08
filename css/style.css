@@ -509,7 +509,7 @@ a:hover .pointer {
     animation: fancy-link infinite linear .4s;
 }
 
-.rainbow-link::hover {
+.rainbow-link:hover {
     animation: rainbow-text infinite step-end .3s;
 }
 
