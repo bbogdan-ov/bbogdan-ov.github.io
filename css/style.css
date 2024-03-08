@@ -434,7 +434,7 @@ button .icon {
     
     color: var(--white);
     font-family: var(--vhs-font);
-    font-size: 18px;
+    font-size: 16px;
     background-color: transparent;
     background-image: url("/src/assets/images/ui/physical-button.png");
     background-size: 180px 60px;
