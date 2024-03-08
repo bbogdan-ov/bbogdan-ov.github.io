@@ -17,6 +17,7 @@ import throw2_audio from "./assets/audios/throw-2.mp3";
 import yell_audio from "./assets/audios/yell.mp3";
 import wrong_audio from "./assets/audios/wrong.mp3";
 import correct_audio from "./assets/audios/correct.mp3";
+import knock_audio from "./assets/audios/knock.mp3";
 
 export const AUDIO_NAMES = {
     "click": click_audio,
@@ -37,6 +38,7 @@ export const AUDIO_NAMES = {
     "yell": yell_audio,
     "wrong": wrong_audio,
     "correct": correct_audio,
+    "knock": knock_audio,
 }
 
 export function remap(alpha, from, to) {
