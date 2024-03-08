@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
 })
 
 // Fun stuff
-function goofySounds() {
+function playGoofySounds() {
     utils.playSound(utils.randomItem(["tada", "nerd", "cola", "spring", "slide", "yell", "scream", "sad"]), .5);
 }
 /** @param el {HTMLElement}  */
@@ -66,5 +66,5 @@ export function animateFlyout(el) {
     }
 }
 
-window.global_goofySounds = goofySounds;
+window.global_playGoofySounds = playGoofySounds;
 window.global_animateFlyout = animateFlyout;
