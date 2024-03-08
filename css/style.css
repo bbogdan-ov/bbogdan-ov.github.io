@@ -665,16 +665,27 @@ a:hover .pointer {
 .door {
     width: 256px;
     height: 516px;
+
+    perspective: 1200px;
+    z-index: 2;
 }
 .door .doorway-image {
     position: absolute;
     left: 0;
     top: 0;
+    pointer-events: none;
 }
 .door .door-image {
     position: absolute;
     left: 22px;
     top: 20px;
+    transform-origin: 100% 0;
+
+    transition: 1s;
+    pointer-events: none;
+}
+.door.opened .door-image {
+    transform: rotateY(110deg);
 }
 
 /* Media */

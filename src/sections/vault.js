@@ -1,19 +1,20 @@
 import * as utils from "../utils";
 
 // Generate random password so you cant cheat :)
-const password = utils.randomString(4, "0123456789");
+export const vaultPassword = utils.randomString(4, "0123456789");
 let currentPassword = "";
 let isPasswordCorrent = false;
 let allowInput = true;
 
 // Log password if in dev mode
 if (import.meta.env.DEV)
-    console.log(password);
+    console.log(vaultPassword);
 
 export function initVault() {
     const vault = document.querySelector(".vault");
     const numbersButtons = vault.querySelectorAll(".buttons button");
     const passwordInput = vault.querySelector(".password-input");
+    const door = document.querySelector("#vault-door");
 
     updateInput();
 
@@ -27,13 +28,13 @@ export function initVault() {
     })
 
     function putNumber(number) {
-        if (!allowInput || currentPassword.length >= password.length) return;
+        if (!allowInput || currentPassword.length >= vaultPassword.length) return;
 
         currentPassword += number.toString();
         updateInput();
 
         // Send password with delay if password input is filled
-        if (currentPassword.length >= password.length) {
+        if (currentPassword.length >= vaultPassword.length) {
             allowInput = false;
             
             setTimeout(()=> {
@@ -48,7 +49,7 @@ export function initVault() {
         updateInput();
     }
     function sendPassword() {
-        if (currentPassword == password)
+        if (currentPassword == vaultPassword)
             correctPassword();
         else
             wrongPassword();
@@ -68,6 +69,8 @@ export function initVault() {
     } 
     function correctPassword() {
         passwordInput.textContent = "CORRECT";
+        // Open door if password is correct
+        door.classList.add("opened");
 
         isPasswordCorrent = true;
         utils.playSound("correct", .6);
@@ -77,8 +80,8 @@ export function initVault() {
         let text = currentPassword;
 
         // Fill remaining space of input with asterix
-        if (text.length < password.length)
-            text += "*".repeat(password.length - text.length);
+        if (text.length < vaultPassword.length)
+            text += "*".repeat(vaultPassword.length - text.length);
         
         passwordInput.textContent = text;
     }

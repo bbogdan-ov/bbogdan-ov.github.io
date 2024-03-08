@@ -89,7 +89,7 @@
             <!-- Vault -->
             <div class="width-fill row justify-between flex-wrap items-center">
                 <!-- Clicking on door plays knock sound if door is closed -->
-                <div class="door" onclick="if (!this.classList.contains('opened')) global_playSound('knock')">
+                <div id="vault-door" class="door" onclick="if (!this.classList.contains('opened')) global_playSound('knock')">
                     <img class="doorway-image" src="src/assets/images/doorway.png" alt="doorway">
                     <img class="door-image" src="src/assets/images/door.png" alt="door">
                 </div>
