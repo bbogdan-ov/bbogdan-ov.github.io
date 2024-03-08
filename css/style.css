@@ -387,7 +387,7 @@ code {
 .vault {
     display: flex;
 }
-.vault .numbers {
+.vault .password-input {
     width: 100%;
     height: 48px;
 
