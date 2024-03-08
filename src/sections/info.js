@@ -111,8 +111,10 @@ A: shut up!
  (_)
 `,
 
-()=> `Crazy animated images became real with help of ezgif.com, tenor.com and giphy.com!
+()=> `Crazy animated images became real with help of <b>ezgif.com</b>, <b>tenor.com</b> and <b>giphy.com</b>!
 Gifs are sooo cool!
+
+Sounds were taken from <b>myinstants.com</b>!
 
    _______ ____
   / ____(_) __/
