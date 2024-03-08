@@ -87,13 +87,7 @@
                 </div>
             </article>
             <!-- Vault -->
-            <div class="width-fill row justify-between flex-wrap items-center">
-                <!-- Clicking on door plays knock sound if door is closed -->
-                <div id="vault-door" class="door" onclick="if (!this.classList.contains('opened')) global_playSound('knock')">
-                    <img class="doorway-image" src="src/assets/images/doorway.png" alt="doorway">
-                    <img class="door-image" src="src/assets/images/door.png" alt="door">
-                </div>
-
+            <div class="width-fill row justify-center flex-wrap items-center gap-4">
                 <article class="panel vault">
                     <div class="password-input">000*</div>
                     <div class="buttons col items-center">
@@ -115,6 +109,15 @@
                         <button data-num="0" class="physical-button small">0</button>
                     </div>
                 </article>
+
+                <!-- Clicking on door plays knock sound if door is closed -->
+                <div id="vault-door" class="door" onclick="if (!this.classList.contains('opened')) global_playSound('knock')">
+                    <!-- YOU CANNOT SEE ANITHING BEHIND THE DOOR! -->
+                    <!-- open it first!!! -->
+                    
+                    <img class="doorway-image" src="src/assets/images/doorway.png" alt="doorway">
+                    <img class="door-image" src="src/assets/images/door.png" alt="door">
+                </div>
             </div>
             <!-- Links -->
             <article class="box95 window95">
