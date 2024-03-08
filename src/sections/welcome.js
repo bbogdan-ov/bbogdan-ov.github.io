@@ -104,7 +104,8 @@ const SPLASHES = [
     "telepathic\nonset",
     "dismay!",
     "atm da be",
-    "fuck frameworks!"
+    "fuck frameworks!",
+    "password pls"
 ]
 
 export function initWelcome() {
