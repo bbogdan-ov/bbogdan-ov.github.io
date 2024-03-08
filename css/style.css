@@ -662,6 +662,20 @@ a:hover .pointer {
 .floating:hover {
     animation-play-state: paused;
 }
+.door {
+    width: 256px;
+    height: 516px;
+}
+.door .doorway-image {
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.door .door-image {
+    position: absolute;
+    left: 22px;
+    top: 20px;
+}
 
 /* Media */
 @media screen and (max-width: 1000px) {
