@@ -399,6 +399,9 @@ code {
     font-size: 32px;
     color: var(--green);
 }
+.vault .password-input.wrong {
+    color: var(--red);
+}
 
 /* Buttons */
 button {
