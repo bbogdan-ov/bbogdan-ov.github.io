@@ -35,7 +35,7 @@ FUCK FRAMEWORKS!
 Even people are randomness... bad example
 
 Good example:
-${ utils.randomCharSet(30) }
+${ utils.randomString(30) }
 
   __  __
  /  \\/  \\
