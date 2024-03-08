@@ -385,7 +385,12 @@ code {
     object-fit: fill;
 }
 .vault {
+    width: fit-content;
+    padding: 10px 30px;
+
     display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .vault .password-input {
     width: 100%;
