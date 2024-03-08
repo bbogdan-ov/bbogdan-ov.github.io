@@ -260,6 +260,17 @@ code {
     bottom: unset;
     top: calc(100% - 1px);
 }
+.black-box {
+    width: 100%;
+    padding: 20px;
+
+    text-align: center;
+
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--fancy-font);
+    font-size: 22px;
+}
 
 /* Windows */
 .gallery {
