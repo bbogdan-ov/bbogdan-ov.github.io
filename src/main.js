@@ -66,5 +66,6 @@ export function animateFlyout(el) {
     }
 }
 
+window.global_playSound = utils.playSound;
 window.global_playGoofySounds = playGoofySounds;
 window.global_animateFlyout = animateFlyout;
