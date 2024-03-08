@@ -1,6 +1,12 @@
 export function initLoading() {
     const screen = document.querySelector(".loading-screen");
 
+    // Remove loading screen in dev mode
+    if (import.meta.env.DEV) {
+        screen.remove();
+        return;
+    }
+    
     scrollTo(0, 0);
     // Lock scrolling
     document.body.style.overflowY = "hidden";
