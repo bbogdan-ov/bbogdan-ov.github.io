@@ -57,10 +57,10 @@ export function randomBool(chance=.5) {
 export function randomSign() {
     return randomBool() ? 1 : -1;
 }
-export function randomCharSet(length) {
+export function randomCharSet(length, charset=consts.ASCII) {
     let result = "";
     for (let i = 0; i < length; i ++) 
-        result += randomItem(consts.ASCII);
+        result += randomItem(charset);
     return result;
 }
 
