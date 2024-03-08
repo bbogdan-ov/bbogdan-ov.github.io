@@ -109,6 +109,16 @@ A: shut up!
  |_|
   _
  (_)
+`,
+
+()=> `Crazy animated images became real with help of ezgif.com, tenor.com and giphy.com!
+Gifs are sooo cool!
+
+   _______ ____
+  / ____(_) __/
+ / / __/ / /_  
+/ /_/ / / __/  
+\\____/_/_/
 `
 
 ]
