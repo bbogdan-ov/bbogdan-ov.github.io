@@ -56,8 +56,9 @@ $$$
 `,
 
 ()=> `Check out my github! Maybe there is already something interesting...
+<i>i lost my previous github account...</i>
 
-<b>https://github.com/bogdan-ov</b>
+<b>https://github.com/bbogdan-ov</b>
 
  /\\_/\\
 ( o.o )
