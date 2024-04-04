@@ -105,7 +105,9 @@ const SPLASHES = [
     "dismay!",
     "atm da be",
     "fuck frameworks!",
-    "password pls"
+    "password pls",
+	"half of nothing",
+	"as above\nso below"
 ]
 
 export function initWelcome() {
