@@ -38,7 +38,8 @@ export class CrazyText {
                 const mapCharIndex = FONT_MAP.indexOf(char);
                 const charSprite = new PIXI.TilingSprite(PIXI.Texture.from(fontSheet_img), CHAR_SLICE_SIZE, CHAR_SLICE_SIZE);
                 charSprite.scale.set(.5);
-                charSprite.tilePosition.x = -mapCharIndex * 128; // 
+                charSprite.tilePosition.x = -(mapCharIndex % 8) * 128; // 
+                charSprite.tilePosition.y = -Math.floor(mapCharIndex / 8) * 128; // 
 
                 // Define pos of chars
                 const charX = textX + charIndex * CHAR_WIDTH + utils.random(-8, 8);
