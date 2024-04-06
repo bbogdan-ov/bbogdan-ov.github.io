@@ -3,6 +3,6 @@
 this is my place, i live here\
 **star** this right now!
 
-[bogdan-ov.github.io](https://bogdan-ov.github.io)
+[bbogdan-ov.github.io](https://bbogdan-ov.github.io)
 
 @ bogdanov 2024
