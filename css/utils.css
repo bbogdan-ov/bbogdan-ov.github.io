@@ -7,6 +7,9 @@
 .no-events {
     pointer-events: none;
 }
+.reverse-anim {
+    animation-direction: reverse !important;
+}
 
 .text-red {
     color: var(--red);

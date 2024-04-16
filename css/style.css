@@ -49,6 +49,15 @@ body {
     cursor: url("/src/assets/images/ui/cursor-text.png") 9 15, auto;
 }
 
+/* Container */
+.container {
+    width: 100%;
+    max-width: var(--container-width);
+    padding: 0 var(--container-padding);
+
+    margin: 0 auto;
+}
+
 /* Section */
 .section {
     width: 100%;
@@ -56,13 +65,16 @@ body {
     display: flex;
     flex-direction: column;
 }
+
 .welcome-section {
     height: 100vh;
 }
 .welcome-section .crazy-text {
     width: 50%;
     max-width: 600px;
+	pointer-events: none;
 }
+
 .info-section {
     flex-direction: row;
     gap: 20px;
@@ -72,6 +84,7 @@ body {
     gap: 20px;
     align-items: center;
 }
+
 .promo-section {
     margin-top: 100px;
 }
@@ -90,6 +103,95 @@ body {
 }
 .promo-section .thumb-up.left {
     transform: scaleX(-1) translate(0, -50%);
+}
+
+.whitey-section {
+	margin-bottom: 40px;
+}
+.whitey-section .slogan {
+	width: 100%;
+	height: 40px;
+	object-fit: contain;
+
+	background-image: url("/src/assets/gifs/listen.gif");
+	background-repeat: repeat-x no-repeat;
+	background-size: auto 100%;
+	background-position: center top;
+
+	animation: slogan-background 10s infinite linear;
+}
+.whitey-banner {
+	width: auto;
+	height: 400px;
+	padding: 40px 40px;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 40px;
+	margin: 0 40px;
+}
+.whitey-banner .bg {
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	background-image: url("/src/assets/images/jeans.png");
+	background-repeat: repeat-x no-repeat;
+	background-size: auto 100%;
+}
+.whitey-banner .bg .grab-hand {
+	height: 360px;
+
+	position: absolute;
+	translate: 0 -50%;
+	top: 50%;
+
+	pointer-events: none;
+}
+.whitey-banner .bg .grab-hand.left {
+	left: 34px;
+	translate: -50% -50%;
+}
+.whitey-banner .bg .grab-hand.right {
+	right: 38px;
+	translate: 50% -50%;
+}
+.whitey-banner .eye {
+	position: absolute;
+	left: 19%;
+	top: 28%;
+	translate: -50% -50%;
+	mix-blend-mode: multiply;
+	pointer-events: none;
+}
+.whitey-banner .cover-box {
+	width: 100%;
+	max-width: 320px;
+	aspect-ratio: 1 / 1;
+	margin-right: 80px;
+}
+.whitey-banner .cover {
+	width: 100%;
+	box-shadow: 0 5px 30px #000;
+}
+.whitey-banner .vinil {
+	width: calc(100% - 20px);
+
+	position: absolute;
+	left: 40%;
+	top: 50%;
+	translate: 0 -50%;
+
+	animation: rotate 20s infinite linear;
+	transition: 1s linear left;
+	pointer-events: none;
+}
+.whitey-banner .cover-box:hover .vinil {
+	left: 60%;
 }
 
 /* Loading */
@@ -537,20 +639,6 @@ a:hover .pointer {
     animation: rainbow-text infinite step-end .3s;
 }
 
-/* Container */
-.container {
-    width: 100%;
-    max-width: var(--container-width);
-    padding: 0 var(--container-padding);
-
-    margin: 0 auto;
-}
-
-.control-panel {
-    position: fixed;
-    left: 30px;
-    bottom: 30px;
-}
 #speed-button .speed-icon {
     width: 40px;
     height: 30px;
@@ -658,9 +746,6 @@ a:hover .pointer {
     pointer-events: none;
     animation: rotate infinite linear 20s;
 }
-.cog.reverse {
-    animation-direction: reverse;
-}
 .floating {
     animation: floating infinite linear 1s;
 }
@@ -718,6 +803,36 @@ a:hover .pointer {
         display: none;
     }
 }
+@media screen and (max-width: 700px) {
+	.whitey-banner {
+		height: unset;
+		padding: 120px 0;
+		margin: 80px 0;
+	}
+	.whitey-banner .eye {
+		left: unset;
+		right: 4%;
+		top: 15%;
+	}
+	.whitey-banner .bg .grab-hand {
+		height: 340px;
+
+		left: 50%;
+		top: unset;
+		translate: -50% 0;
+		rotate: 90deg;
+	}
+	.whitey-banner .bg .grab-hand.left {
+		left: unset;
+		top: 34px;
+		translate: 50% -50%;
+	}
+	.whitey-banner .bg .grab-hand.right {
+		right: unset;
+		bottom: 38px;
+		translate: -50% 50%;
+	}
+}
 @media screen and (max-width: 500px) {
     :root {
         --font-size: 14px;
@@ -746,6 +861,20 @@ a:hover .pointer {
         scale: 1;
         translate: 50% 0;
     }
+
+	.whitey-banner {
+		padding: 40px 10px;
+		margin: 0;
+	}
+	.whitey-banner .cover-box {
+		margin-right: 40px;
+	}
+	.whitey-banner .eye {
+		display: none;
+	}
+	.whitey-banner .bg .grab-hand {
+		display: none;
+	}
 }
 @media screen and (max-width: 400px) {
     .paper {
@@ -831,4 +960,12 @@ a:hover .pointer {
 @keyframes floating {
     from, to { translate: 0 -50%; }
     50% { translate: 0 50%; }
+}
+@keyframes slogan-background {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
 }
