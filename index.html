@@ -25,6 +25,8 @@
     
     <!-- Sections -->
     <section class="welcome-section section center-all"></section>
+
+	<!-- WHITEY section! -->
 	<section class="whitey-section section container">
 		<div class="slogan"></div>
 		<article class="whitey-banner">
@@ -42,6 +44,8 @@
 		</article>
 		<div class="slogan reverse-anim"></div>
 	</section>
+
+	<!-- Main section -->
     <section class="section info-section container">
 
         <!-- Left col -->
@@ -144,7 +148,11 @@
                 </article>
 
                 <!-- Clicking on door plays knock sound if door is closed -->
-                <div id="vault-door" class="door pixelate" onclick="if (!this.classList.contains('opened')) global_playSound('knock')">
+                <div
+					id="vault-door"
+					class="door pixelate"
+					onclick="if (!this.classList.contains('opened')) global_playSound('knock')"
+				>
                     <!-- YOU CANNOT SEE ANITHING BEHIND THE DOOR! -->
                     <!-- open it first!!! -->
                     
@@ -166,7 +174,7 @@
                             <img src="src/assets/images/ui/pointer.png" alt="pointer" class="pointer">
                         </a>
                         <a class="fancy-link" href="https://vk.com/bbogdan_ov" target="_blank">
-                            <span>vk</span>
+                            <span>vkontakte</span>
                             <img src="src/assets/images/ui/pointer.png" alt="pointer" class="pointer">
                         </a>
                     </div>
@@ -248,7 +256,7 @@
                 <div class="black-box floating">
                     <a class="rainbow-link" href="https://github.com/bbogdan-ov/bbogdan-ov.github.io" target="_blank">open source!</a>
                 </div>
-                <img src="src/assets/gifs/dancing-cat.gif" alt="dancing cat" onpointerdown="global_playSound('meow')">
+                <img src="src/assets/gifs/dancing-cat.gif" alt="dancing cat" onpointerdown="global_playSound('meow', .4)">
             </article>
             <!-- Game window -->
             <article class="window95 box95" id="trash-exterminator">
@@ -282,6 +290,7 @@
         </div>
 
     </section>
+
     <!-- Promo section -->
     <section class="section promo-section">
         <img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up" style="right: 0; top: 0">
