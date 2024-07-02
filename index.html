@@ -3,28 +3,22 @@
 <!DOCTYPE html>
 <html>
 <head lang="en">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="icon" type="image/x-icon" href="src/assets/images/favicon.png">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="icon" type="image/x-icon" href="src/assets/images/favicon.png">
 
-    <link rel="stylesheet" href="css/layout.css">
-    <link rel="stylesheet" href="css/utils.css">
-    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/layout.css">
+	<link rel="stylesheet" href="css/utils.css">
+	<link rel="stylesheet" href="css/style.css">
 
-    <title>bogdanov's little homepage [file] [edit] [raaaarhh] v1.2.2</title>
+	<title>bogdanov's little homepage [file] [edit] [raaaarhh] v1.2.2</title>
 </head>
-<body>    
-    <!-- Top layer -->
-    <div class="loading-screen">
-        <span>please wait utill this THING is ready...</span>
-        <img src="src/assets/gifs/skull.gif" alt="skull">
-    </div>
+<body>
+	<!-- Bg canvas -->
+	<canvas id="background-canvas"></canvas>
 
-    <!-- Bg canvas -->
-    <canvas id="background-canvas"></canvas>
-    
-    <!-- Sections -->
-    <section class="welcome-section section center-all"></section>
+	<!-- Sections -->
+	<section class="welcome-section section center-all"></section>
 
 	<!-- WHITEY section! -->
 	<section class="whitey-section section container">
@@ -37,294 +31,305 @@
 
 			<img class="eye" src="src/assets/gifs/eye-1.gif" alt="eye" loading="lazy">
 
-			<a class="cover-box" href="https://njwhitey.bandcamp.com/album/nothing-in-my-pocket-but-a-hole-lp" target="_blank">
-				<img class="vinil" src="src/assets/images/nimpbah-vinil.png" alt="nothing in my pocket but a hole vinil">
-				<img class="cover" src="src/assets/images/nimpbah-cover.png" alt="nothing in my pocket but a hole cover">
+			<a class="cover-box" href="https://njwhitey.bandcamp.com/album/nothing-in-my-pocket-but-a-hole-lp"
+				target="_blank">
+				<img class="vinil" src="src/assets/images/nimpbah-vinil.png"
+					alt="nothing in my pocket but a hole vinil">
+				<img class="cover" src="src/assets/images/nimpbah-cover.png"
+					alt="nothing in my pocket but a hole cover">
 			</a>
 		</article>
 		<div class="slogan reverse-anim"></div>
 	</section>
 
 	<!-- Main section -->
-    <section class="section info-section container">
+	<section class="section info-section container">
 
-        <!-- Left col -->
-        <div class="col">
-            <!-- Note window -->
-            <article class="window95 box95">
-                <header>
-                    <span>notes</span>
-                </header>
-                <div class="content">
-                    <code id="note-text" contenteditable></code>
-                </div>
-            </article>
-            <!-- Time machine -->
-            <div class="width-fill" style="margin-top: 80px;">
-                <img
-                    class="cog"
-                    src="src/assets/images/cog.png"
-                    alt="cog"
-                    style="left: 10%; top: 10%"
-                    data-speedup
-                    data-speedup-dur="20"
-                >
-                <img
-                    class="cog reverse-anim"
-                    src="src/assets/images/cog.png"
-                    alt="cog"
-                    style="left: calc(10% + 128px + 72px); top: 10%; scale: .6; animation-duration: 12s;"
-                    data-speedup
-                    data-speedup-dur="12"
-                >
-                <article class="panel row justify-between items-center flex-wrap gap-2">
-                    <div class="col">
-                        <span>* time machine *</span>
-                        <span style="opacity: .5;">travel in time!</span>
-                    </div>
-                    <div class="row gap-2">
-                        <button class="physical-button small"></button>
-                        <button class="physical-button" id="speed-button">
-                            <div class="icon speed-icon"></div>
-                        </button>
-                    </div>
-                </article>
-            </div>
-            <!-- Gallery -->
-            <article class="window95 box95">
-                <header>
-                    <span>gallery! some gifs ive made :)</span>
-                    <button onclick="global_playGoofySounds()" class="button95 smiley"></button>
-                </header>
-                <div class="gallery pixelate">
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="src/assets/gifs/table.gif" alt="Table with some trash">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="src/assets/gifs/clock.gif" alt="SOMEBODY REPLACE THE BATTERY IMMEDIATELY">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="src/assets/gifs/obey.gif" alt="obey" title="OBEY YOURSELF">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="src/assets/gifs/me.gif" alt="wakey wakey">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="src/assets/gifs/new-year.gif" alt="HAPPY NEW YEAR!">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="src/assets/gifs/bridge.gif" alt="check out WHITEY" title="Check out WHITEY, he's really cool">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="src/assets/gifs/flower.gif" alt="alive and dead">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="src/assets/gifs/summer.gif" alt="lost summer">
-                    </div>
-                </div>
-            </article>
-            <!-- Vault -->
-            <div class="width-fill row justify-center flex-wrap items-center gap-4">
-                <article class="panel vault">
-                    <div class="password-input">000*</div>
-                    <div class="buttons col items-center">
-                        <div class="row">
-                            <button data-num="1" class="physical-button small">1</button>
-                            <button data-num="2" class="physical-button small">2</button>
-                            <button data-num="3" class="physical-button small">3</button>
-                        </div>
-                        <div class="row">
-                            <button data-num="4" class="physical-button small">4</button>
-                            <button data-num="5" class="physical-button small">5</button>
-                            <button data-num="6" class="physical-button small">6</button>
-                        </div>
-                        <div class="row">
-                            <button data-num="7" class="physical-button small">7</button>
-                            <button data-num="8" class="physical-button small">8</button>
-                            <button data-num="9" class="physical-button small">9</button>
-                        </div>
-                        <button data-num="0" class="physical-button small">0</button>
-                    </div>
-                </article>
+		<!-- Left col -->
+		<div class="col">
+			<!-- Note window -->
+			<article class="window95 box95">
+				<header>
+					<span>notes</span>
+				</header>
+				<div class="content">
+					<code id="note-text" contenteditable></code>
+				</div>
+			</article>
+			<!-- Time machine -->
+			<div class="width-fill" style="margin-top: 80px;">
+				<img class="cog" src="src/assets/images/cog.png" alt="cog" style="left: 10%; top: 10%" data-speedup
+					data-speedup-dur="20">
+				<img class="cog reverse-anim" src="src/assets/images/cog.png" alt="cog"
+					style="left: calc(10% + 128px + 72px); top: 10%; scale: .6; animation-duration: 12s;" data-speedup
+					data-speedup-dur="12">
+				<article class="panel row justify-between items-center flex-wrap gap-2">
+					<div class="col">
+						<span>* time machine *</span>
+						<span style="opacity: .5;">travel in time!</span>
+					</div>
+					<div class="row gap-2">
+						<button class="physical-button small"></button>
+						<button class="physical-button" id="speed-button">
+							<div class="icon speed-icon"></div>
+						</button>
+					</div>
+				</article>
+			</div>
+			<!-- Gallery -->
+			<article class="window95 box95">
+				<header>
+					<span>gallery! some gifs ive made :)</span>
+					<button onclick="global_playGoofySounds()" class="button95 smiley"></button>
+				</header>
+				<div class="gallery pixelate">
+					<div class="image-wrapper">
+						<img loading="lazy" src="src/assets/gifs/table.gif" alt="Table with some trash">
+					</div>
+					<div class="image-wrapper">
+						<img loading="lazy" src="src/assets/gifs/clock.gif"
+							alt="SOMEBODY REPLACE THE BATTERY IMMEDIATELY">
+					</div>
+					<div class="image-wrapper">
+						<img loading="lazy" src="src/assets/gifs/obey.gif" alt="obey" title="OBEY YOURSELF">
+					</div>
+					<div class="image-wrapper">
+						<img loading="lazy" src="src/assets/gifs/me.gif" alt="wakey wakey">
+					</div>
+					<div class="image-wrapper">
+						<img loading="lazy" src="src/assets/gifs/new-year.gif" alt="HAPPY NEW YEAR!">
+					</div>
+					<div class="image-wrapper">
+						<img loading="lazy" src="src/assets/gifs/bridge.gif" alt="check out WHITEY"
+							title="Check out WHITEY, he's really cool">
+					</div>
+					<div class="image-wrapper">
+						<img loading="lazy" src="src/assets/gifs/flower.gif" alt="alive and dead">
+					</div>
+					<div class="image-wrapper">
+						<img loading="lazy" src="src/assets/gifs/summer.gif" alt="lost summer">
+					</div>
+				</div>
+			</article>
+			<!-- Vault -->
+			<div class="width-fill row justify-center flex-wrap items-center gap-4">
+				<article class="panel vault">
+					<div class="password-input">000*</div>
+					<div class="buttons col items-center">
+						<div class="row">
+							<button data-num="1" class="physical-button small">1</button>
+							<button data-num="2" class="physical-button small">2</button>
+							<button data-num="3" class="physical-button small">3</button>
+						</div>
+						<div class="row">
+							<button data-num="4" class="physical-button small">4</button>
+							<button data-num="5" class="physical-button small">5</button>
+							<button data-num="6" class="physical-button small">6</button>
+						</div>
+						<div class="row">
+							<button data-num="7" class="physical-button small">7</button>
+							<button data-num="8" class="physical-button small">8</button>
+							<button data-num="9" class="physical-button small">9</button>
+						</div>
+						<button data-num="0" class="physical-button small">0</button>
+					</div>
+				</article>
 
-                <!-- Clicking on door plays knock sound if door is closed -->
-                <div
-					id="vault-door"
-					class="door pixelate"
-					onclick="if (!this.classList.contains('opened')) global_playSound('knock')"
-				>
-                    <!-- YOU CANNOT SEE ANITHING BEHIND THE DOOR! -->
-                    <!-- open it first!!! -->
-                    
-                    <img class="doorway-image" src="src/assets/images/doorway.png" alt="doorway">
-                    <img class="door-image" src="src/assets/images/door.png" alt="door">
-                </div>
-            </div>
-            <!-- Links -->
-            <article class="box95 window95">
-                <header><span>links</span></header>
-                <div class="row justify-between items-end width-fill gap-4">
-                    <div class="col p-2">
-                        <a class="fancy-link" href="https://github.com/bbogdan-ov" target="_blank">
-                            <span>github</span>
-                            <img src="src/assets/images/ui/pointer.png" alt="pointer" class="pointer">
-                        </a>
-                        <a class="fancy-link" href="https://t.me/bbogdan_ov" target="_blank">
-                            <span>telegram</span>
-                            <img src="src/assets/images/ui/pointer.png" alt="pointer" class="pointer">
-                        </a>
-                        <a class="fancy-link" href="https://vk.com/bbogdan_ov" target="_blank">
-                            <span>vkontakte</span>
-                            <img src="src/assets/images/ui/pointer.png" alt="pointer" class="pointer">
-                        </a>
-                    </div>
-                    <button class="button95 text-red" onclick="global_animateFlyout('#flying-links-paper')">more</button>
-                </div>
-            </article>
-            <!-- Flying paper -->
-            <div class="flying-paper-wrapper col width-fill items-center">
-                <article class="paper" id="flying-links-paper">
-                    <a href="mailto:bbogdan_ov@mail.ru">bbogdan_ov@mail.ru</a>
-                    <span>discord@bogdan_ov</span>
-                </article>
-            </div>
-        </div>
+				<!-- Clicking on door plays knock sound if door is closed -->
+				<div id="vault-door" class="door pixelate"
+					onclick="if (!this.classList.contains('opened')) global_playSound('knock')">
+					<!-- YOU CANNOT SEE ANITHING BEHIND THE DOOR! -->
+					<!-- open it first!!! -->
 
-        <!-- Right col -->
-        <div class="col">
-            <!-- Pricing cheque -->
-            <article class="cheque">
-                <h3 class="text-center">*** bogdanov ***</h3>
-                <div class="line"><span>--------------------------------------------------------------------------------</span></div>
-                <div class="row">
-                    <span>*</span>&#160;
-                    <p>I creating funny things such as games, maybe arts and not funny like websites and apps</p>
-                </div>
-                <span>&#160;</span>
-                <div class="row">
-                    <span>*</span>&#160;
-                    <p>I also programming almost every day. Often it's not something cool or serious, but I can just try or study something</p>
-                </div>
-                <span>&#160;</span>
-                <div class="row">
-                    <span>*</span>&#160;
-                    <p>98% of my projects are not finished, so I don't know what I can put into my portfolio</p>
-                </div>
-                <span>&#160;</span>
-                <div class="row">
-                    <span>*</span>&#160;
-                    <p>This site was created just for fun!</p>
-                </div>
-                <span>&#160;</span>
-                <div class="row">
-                    <span>*</span>&#160;
-                    <p>Vanilla rewrite of <a href="https://bogdanov.vercel.app" target="_blank">my previous site</a></p>
-                </div>
-                <div class="line"><span>--------------------------------------------------------------------------------</span></div>
-                <div class="row justify-between"><span>* heart</span><span>$80.00</span></div>
-                <div class="row justify-between"><span>* brain</span><span>$120.00</span></div>
-                <div class="row justify-between"><span>* right eye</span><span>$9.99</span></div>
-                <div class="row justify-between"><span>* left eye</span><span>$4.99</span></div>
-                <div class="line"><span>--------------------------------------------------------------------------------</span></div>
-                <div class="row justify-between"><b>TOTAL</b><b>$0.00</b></div>
-            </article>
-            <!-- Chat -->
-            <div class="width-fill">
-                <article class="box95 window95">
-                    <header><span>i found you</span></header>
-                    <div class="content">
-                        <div class="chat-box">
-                            <p class="message">
-                                <span class="author">bogd_N94:</span>
-                                <span>hey!!</span>
-                            </p>
-                            <p class="message">
-                                <span class="author">bogd_N94:</span>
-                                <span>i want to tell you something... :)</span>
-                            </p>
-                        </div>
-                        <div class="row gap-1">
-                            <input id="chat-input" placeholder="enter a message...">
-                            <button id="chat-button" class="button95">send</button>
-                        </div>
-                    </div>
-                </article>
-                <img src="src/assets/gifs/love-me.gif" alt="love me" id="lovelove">
-            </div>
-            <!-- Git cat -->
-            <article class="git-cat pixelate">
-                <div class="black-box floating">
-                    <a class="rainbow-link" href="https://github.com/bbogdan-ov/bbogdan-ov.github.io" target="_blank">open source!</a>
-                </div>
-                <img src="src/assets/gifs/dancing-cat.gif" alt="dancing cat" onpointerdown="global_playSound('meow', .4)">
-            </article>
-            <!-- Game window -->
-            <article class="window95 box95" id="trash-exterminator">
-                <header><span>TRASH EXTERMINATOR</span></header>
-                <div class="content">
-                    <div class="box95 inner text-center substance"><b class="text-white bg-black">THROW TRASH UP</b></div>
-                    <canvas width="400" height="400" style="background: #000;"></canvas>
-                    <div class="loading-text">LOADING...</div>
-                </div>
-            </article>
+					<img class="doorway-image" src="src/assets/images/doorway.png" alt="doorway">
+					<img class="door-image" src="src/assets/images/door.png" alt="door">
+				</div>
+			</div>
+			<!-- Links -->
+			<article class="box95 window95">
+				<header><span>links</span></header>
+				<div class="row justify-between items-end width-fill gap-4">
+					<div class="col p-2">
+						<a class="fancy-link" href="https://github.com/bbogdan-ov" target="_blank">
+							<span>github</span>
+							<img src="src/assets/images/ui/pointer.png" alt="pointer" class="pointer">
+						</a>
+						<a class="fancy-link" href="https://t.me/bbogdan_ov" target="_blank">
+							<span>telegram</span>
+							<img src="src/assets/images/ui/pointer.png" alt="pointer" class="pointer">
+						</a>
+						<a class="fancy-link" href="https://vk.com/bbogdan_ov" target="_blank">
+							<span>vkontakte</span>
+							<img src="src/assets/images/ui/pointer.png" alt="pointer" class="pointer">
+						</a>
+					</div>
+					<button class="button95 text-red"
+						onclick="global_animateFlyout('#flying-links-paper')">more</button>
+				</div>
+			</article>
+			<!-- Flying paper -->
+			<div class="flying-paper-wrapper col width-fill items-center">
+				<article class="paper" id="flying-links-paper">
+					<a href="mailto:bbogdan_ov@mail.ru">bbogdan_ov@mail.ru</a>
+					<span>discord@bogdan_ov</span>
+				</article>
+			</div>
+		</div>
+
+		<!-- Right col -->
+		<div class="col">
+			<!-- Pricing cheque -->
+			<article class="cheque">
+				<h3 class="text-center">*** bogdanov ***</h3>
+				<div class="line">
+					<span>--------------------------------------------------------------------------------</span></div>
+				<div class="row">
+					<span>*</span>&#160;
+					<p>I creating funny things such as games, maybe arts and not funny like websites and apps</p>
+				</div>
+				<span>&#160;</span>
+				<div class="row">
+					<span>*</span>&#160;
+					<p>I also programming almost every day. Often it's not something cool or serious, but I can just try
+						or study something</p>
+				</div>
+				<span>&#160;</span>
+				<div class="row">
+					<span>*</span>&#160;
+					<p>98% of my projects are not finished, so I don't know what I can put into my portfolio</p>
+				</div>
+				<span>&#160;</span>
+				<div class="row">
+					<span>*</span>&#160;
+					<p>This site was created just for fun!</p>
+				</div>
+				<span>&#160;</span>
+				<div class="row">
+					<span>*</span>&#160;
+					<p>Vanilla rewrite of <a href="https://bogdanov.vercel.app" target="_blank">my previous site</a></p>
+				</div>
+				<div class="line">
+					<span>--------------------------------------------------------------------------------</span></div>
+				<div class="row justify-between"><span>* heart</span><span>$80.00</span></div>
+				<div class="row justify-between"><span>* brain</span><span>$120.00</span></div>
+				<div class="row justify-between"><span>* right eye</span><span>$9.99</span></div>
+				<div class="row justify-between"><span>* left eye</span><span>$4.99</span></div>
+				<div class="line">
+					<span>--------------------------------------------------------------------------------</span></div>
+				<div class="row justify-between"><b>TOTAL</b><b>$0.00</b></div>
+			</article>
+			<!-- Chat -->
+			<div class="width-fill">
+				<article class="box95 window95">
+					<header><span>i found you</span></header>
+					<div class="content">
+						<div class="chat-box">
+							<p class="message">
+								<span class="author">bogd_N94:</span>
+								<span>hey!!</span>
+							</p>
+							<p class="message">
+								<span class="author">bogd_N94:</span>
+								<span>i want to tell you something... :)</span>
+							</p>
+						</div>
+						<div class="row gap-1">
+							<input id="chat-input" placeholder="enter a message...">
+							<button id="chat-button" class="button95">send</button>
+						</div>
+					</div>
+				</article>
+				<img src="src/assets/gifs/love-me.gif" alt="love me" id="lovelove">
+			</div>
+			<!-- Git cat -->
+			<article class="git-cat pixelate">
+				<div class="black-box floating">
+					<a class="rainbow-link" href="https://github.com/bbogdan-ov/bbogdan-ov.github.io"
+						target="_blank">open source!</a>
+				</div>
+				<img src="src/assets/gifs/dancing-cat.gif" alt="dancing cat"
+					onpointerdown="global_playSound('meow', .4)">
+			</article>
+			<!-- Game window -->
+			<article class="window95 box95" id="trash-exterminator">
+				<header><span>TRASH EXTERMINATOR</span></header>
+				<div class="content">
+					<div class="box95 inner text-center substance"><b class="text-white bg-black">THROW TRASH UP</b>
+					</div>
+					<canvas width="400" height="400" style="background: #000;"></canvas>
+					<div class="loading-text">LOADING...</div>
+				</div>
+			</article>
 			<img class="pixelate" src="src/assets/gifs/piano.gif" alt="piano" loading="lazy">
-            <!-- Send me your record -->
-            <article class="paper">
-                <u class="text-red">SEND YOUR BEST SCORE TO</u>
-                <a target="blank" href="https://t.me/bbogdan_ov">tg@bbogdan_ov</a>
-            </article>
-            <!-- by bogdanov -->
-            <article class="by-bogdanov">
-                <!-- Arm -->
-                <div class="arm-wrapper">
-                    <div class="arm" data-speedup data-speedup-dur="1.2">
-                        <img class="arm-image" src="src/assets/images/tape-hand/arm.png">
-                        <img class="hand" src="src/assets/images/tape-hand/hand.png" data-speedup data-speedup-dur="1.2">
-                    </div>
-                </div>
+			<!-- Send me your record -->
+			<article class="paper">
+				<u class="text-red">SEND YOUR BEST SCORE TO</u>
+				<a target="blank" href="https://t.me/bbogdan_ov">tg@bbogdan_ov</a>
+			</article>
+			<!-- by bogdanov -->
+			<article class="by-bogdanov">
+				<!-- Arm -->
+				<div class="arm-wrapper">
+					<div class="arm" data-speedup data-speedup-dur="1.2">
+						<img class="arm-image" src="src/assets/images/tape-hand/arm.png">
+						<img class="hand" src="src/assets/images/tape-hand/hand.png" data-speedup
+							data-speedup-dur="1.2">
+					</div>
+				</div>
 
-                <div class="content">
-                    <span class="rainbow-text">by bogdanov</span>
-                </div>
-            </article>
-        </div>
+				<div class="content">
+					<span class="rainbow-text">by bogdanov</span>
+				</div>
+			</article>
+		</div>
 
-    </section>
+	</section>
 
-    <!-- Promo section -->
-    <section class="section promo-section">
-        <img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up" style="right: 0; top: 0">
-        <img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up" style="right: 0; top: 50%">
-        <img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up" style="right: 0; top: 100%">
-        <img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up left" style="left: 0; top: 0">
-        <img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up left" style="left: 0; top: 50%">
-        <img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up left" style="left: 0; top: 100%">
-        
-        <div class="container">
-            <!-- Promo tv -->
-            <div class="tv pixelate" id="promo-tv">
-                <video src="src/assets/videos/promotion.mp4" class="tv-video"></video>
-                <img class="vcr-image" src="src/assets/images/vcr.png" alt="vcr">
-                <img class="lags-image" src="src/assets/gifs/lags.gif" alt="lags">
-                <img class="tv-image" src="src/assets/images/tv.png" alt="tv">
+	<!-- Promo section -->
+	<section class="section promo-section">
+		<img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up" style="right: 0; top: 0">
+		<img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up"
+			style="right: 0; top: 50%">
+		<img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up"
+			style="right: 0; top: 100%">
+		<img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up left"
+			style="left: 0; top: 0">
+		<img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up left"
+			style="left: 0; top: 50%">
+		<img src="src/assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up left"
+			style="left: 0; top: 100%">
 
-                <span class="tv-progress-text">--:--</span>
+		<div class="container">
+			<!-- Promo tv -->
+			<div class="tv pixelate" id="promo-tv">
+				<video src="src/assets/videos/promotion.mp4" class="tv-video"></video>
+				<img class="vcr-image" src="src/assets/images/vcr.png" alt="vcr">
+				<img class="lags-image" src="src/assets/gifs/lags.gif" alt="lags">
+				<img class="tv-image" src="src/assets/images/tv.png" alt="tv">
 
-                <div class="buttons row gap-2">
-                    <button class="physical-button small tv-stop-button">
-                        <img src="src/assets/images/ui/stop.png" alt="stop">
-                    </button>
-                    <button class="physical-button small tv-play-button">
-                        <div class="icon play-icon"></div>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </section>
+				<span class="tv-progress-text">--:--</span>
 
-    <!-- Footer -->
-    <img loading="lazy" class="no-events" src="src/assets/images/valley.png" alt="footer">
+				<div class="buttons row gap-2">
+					<button class="physical-button small tv-stop-button">
+						<img src="src/assets/images/ui/stop.png" alt="stop">
+					</button>
+					<button class="physical-button small tv-play-button">
+						<div class="icon play-icon"></div>
+					</button>
+				</div>
+			</div>
+		</div>
+	</section>
 
-    <script src="src/main.js" type="module"></script>
+	<!-- Footer -->
+	<img loading="lazy" class="no-events" src="src/assets/images/valley.png" alt="footer">
+
+	<!-- Top layer -->
+	<div class="loading-screen">
+		<span>please wait utill this THING is ready...</span>
+		<img src="src/assets/gifs/skull.gif" alt="skull">
+	</div>
+
+	<script src="src/main.js" type="module"></script>
 </body>
 </html>
