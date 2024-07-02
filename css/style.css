@@ -1,108 +1,108 @@
 * {
-    user-select: none;
+	user-select: none;
 }
 
 @font-face {
-    font-family: comic-sans;
-    src: url("/src/assets/fonts/comic-sans.ttf");
+	font-family: comic-sans;
+	src: url("/src/assets/fonts/comic-sans.ttf");
 }
 @font-face {
-    font-family: vhs;
-    src: url("/src/assets/fonts/vhs.ttf");
+	font-family: vhs;
+	src: url("/src/assets/fonts/vhs.ttf");
 }
 
 :root {
-    --black: #000;
-    --white: #fff;
-    --red: #f00;
-    --green: #0f0;
-    --blue: #00f;
-    --gray: #bbb;
-    --darkgray: #777;
- 
-    --container-width: 1100px;
-    --container-padding: 10px;
-    
-    --font-size: 16px;
-    --normal-font: Arial, Helvetica, sans-serif;
-    --mono-font: monospace;
-    --fancy-font: comic-sans, sans-serif;
-    --vhs-font: vhs, monospace;
-    --background: #4474ce;
+	--black: #000;
+	--white: #fff;
+	--red: #f00;
+	--green: #0f0;
+	--blue: #00f;
+	--gray: #bbb;
+	--darkgray: #777;
+
+	--container-width: 1100px;
+	--container-padding: 10px;
+
+	--font-size: 16px;
+	--normal-font: Arial, Helvetica, sans-serif;
+	--mono-font: monospace;
+	--fancy-font: comic-sans, sans-serif;
+	--vhs-font: vhs, monospace;
+	--background: #4474ce;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
 
-    font-family: var(--normal-font);
-    font-size: var(--font-size);
-    background: var(--background);
+	font-family: var(--normal-font);
+	font-size: var(--font-size);
+	background: var(--background);
 
-    cursor: url("/src/assets/images/ui/cursor.png") 0 0, auto !important;
+	cursor: url("/src/assets/images/ui/cursor.png") 0 0, auto !important;
 }
 ::-webkit-scrollbar {
-    display: none;
+	display: none;
 }
 *[contenteditable]:hover, input:hover {
-    cursor: url("/src/assets/images/ui/cursor-text.png") 9 15, auto;
+	cursor: url("/src/assets/images/ui/cursor-text.png") 9 15, auto;
 }
 
 /* Container */
 .container {
-    width: 100%;
-    max-width: var(--container-width);
-    padding: 0 var(--container-padding);
+	width: 100%;
+	max-width: var(--container-width);
+	padding: 0 var(--container-padding);
 
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 /* Section */
 .section {
-    width: 100%;
+	width: 100%;
 
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 
 .welcome-section {
-    height: 100vh;
+	height: 100vh;
 }
 .welcome-section .crazy-text {
-    width: 50%;
-    max-width: 600px;
+	width: 50%;
+	max-width: 600px;
 	pointer-events: none;
 }
 
 .info-section {
-    flex-direction: row;
-    gap: 20px;
+	flex-direction: row;
+	gap: 20px;
 }
 .info-section > .col {
-    width: 100%;
-    gap: 20px;
-    align-items: center;
+	width: 100%;
+	gap: 20px;
+	align-items: center;
 }
 
 .promo-section {
-    margin-top: 100px;
+	margin-top: 100px;
 }
 .promo-section .container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 .promo-section .thumb-up {
-    width: 256px;
+	width: 256px;
 
-    position: absolute;
-    transform: translate(0, -50%);
-    image-rendering: pixelated;
-    pointer-events: none;
+	position: absolute;
+	transform: translate(0, -50%);
+	image-rendering: pixelated;
+	pointer-events: none;
 }
 .promo-section .thumb-up.left {
-    transform: scaleX(-1) translate(0, -50%);
+	transform: scaleX(-1) translate(0, -50%);
 }
 
 .whitey-section {
@@ -124,7 +124,7 @@ body {
 	width: auto;
 	height: 400px;
 	padding: 40px 40px;
-	
+
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -196,612 +196,612 @@ body {
 
 /* Loading */
 .loading-screen {
-    width: 100%;
-    height: 100%;
-    
-    position: fixed;
-    left: 0;
-    top: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
-    z-index: 999;
+	width: 100%;
+	height: 100%;
 
-    background: #000;
-    color: #fff;
-    font-family: var(--fancy-font);
-    font-size: 22px;
+	position: fixed;
+	left: 0;
+	top: 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 20px;
+	z-index: 999;
+
+	background: #000;
+	color: #fff;
+	font-family: var(--fancy-font);
+	font-size: 22px;
 }
 .loading-screen img {
-    width: 128px;
+	width: 128px;
 }
 .loading-screen.loaded {
-    animation: loading-done ease-in 3s forwards;
+	animation: loading-done ease-in 3s forwards;
 }
 
 /* Windows and other fancy "cards" */
 .box95 {
-    padding: 4px;
+	padding: 4px;
 
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
 
-    background: var(--gray);
-    color: var(--black);
-    border: 2px solid var(--white);
-    border-right-color: var(--darkgray);
-    border-bottom-color: var(--darkgray);
+	background: var(--gray);
+	color: var(--black);
+	border: 2px solid var(--white);
+	border-right-color: var(--darkgray);
+	border-bottom-color: var(--darkgray);
 }
 .box95.inner {
-    border: 2px solid var(--darkgray);
-    border-right-color: var(--white);
-    border-bottom-color: var(--white);
+	border: 2px solid var(--darkgray);
+	border-right-color: var(--white);
+	border-bottom-color: var(--white);
 }
 .window95 {
-    width: 100%;
+	width: 100%;
 }
 .window95 header {
-    padding: 4px;
-    padding-left: 6px;
+	padding: 4px;
+	padding-left: 6px;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 
-    background: var(--blue);
-    color: var(--white);
-    font-weight: 600;
+	background: var(--blue);
+	color: var(--white);
+	font-weight: 600;
 }
 .window95 .content {
-    width: 100%;
+	width: 100%;
 
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
 }
 code {
-    width: 100%;
-    padding: 4px 6px;
+	width: 100%;
+	padding: 4px 6px;
 
-    display: block;
-    white-space: pre-wrap;
+	display: block;
+	white-space: pre-wrap;
 
-    font-family: var(--mono-font);
-    background: var(--white);
+	font-family: var(--mono-font);
+	background: var(--white);
 }
 .cheque {
-    width: 100%;
-    padding: 10px 20px;
+	width: 100%;
+	padding: 10px 20px;
 
-    display: flex;
-    flex-direction: column;
-    margin: 30px 0;
-    align-items: stretch;
+	display: flex;
+	flex-direction: column;
+	margin: 30px 0;
+	align-items: stretch;
 
-    background-image: url("/src/assets/images/ui/cheque.png");
-    font-size: 18px;
-    font-family: var(--mono-font);
-    image-rendering: pixelated;
+	background-image: url("/src/assets/images/ui/cheque.png");
+	font-size: 18px;
+	font-family: var(--mono-font);
+	image-rendering: pixelated;
 }
 .cheque::after, .cheque::before {
-    content: "";
+	content: "";
 
-    width: 100%;
-    height: 30px;
+	width: 100%;
+	height: 30px;
 
-    position: absolute;
-    left: 0;
-    bottom: calc(100% - 1px);
+	position: absolute;
+	left: 0;
+	bottom: calc(100% - 1px);
 
-    background-image: url("/src/assets/images/ui/cheque-top.png");
+	background-image: url("/src/assets/images/ui/cheque-top.png");
 }
 .cheque::after {
-    scale: -1;
-    bottom: unset;
-    top: calc(100% - 1px);
+	scale: -1;
+	bottom: unset;
+	top: calc(100% - 1px);
 }
 .cheque .line {
-    width: 100%;
-    overflow: hidden;
-    opacity: .5;
+	width: 100%;
+	overflow: hidden;
+	opacity: .5;
 }
 .cheque .line span {
-    white-space: nowrap;
-    display: block;
-    width: 1px;
+	white-space: nowrap;
+	display: block;
+	width: 1px;
 }
 .paper {
-    width: 70%;
-    padding: 30px 0;
-    aspect-ratio: 270 / 110;
+	width: 70%;
+	padding: 30px 0;
+	aspect-ratio: 270 / 110;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
 
-    background-image: url("/src/assets/images/ui/paper.png");
-    background-size: 100% 100%;
-    font-family: var(--fancy-font);
-    font-size: 18px;
-    image-rendering: pixelated;
+	background-image: url("/src/assets/images/ui/paper.png");
+	background-size: 100% 100%;
+	font-family: var(--fancy-font);
+	font-size: 18px;
+	image-rendering: pixelated;
 }
 .paper > * {
-    opacity: .9;
+	opacity: .9;
 }
 .panel {
-    width: 100%;
-    padding: 10px 20px;
+	width: 100%;
+	padding: 10px 20px;
 
-    margin: 30px 0;
+	margin: 30px 0;
 
-    background-image: url("/src/assets/images/ui/panel.png");
-    font-size: 16px;
-    font-family: var(--vhs-font);
-    color: var(--white);
-    image-rendering: pixelated;
+	background-image: url("/src/assets/images/ui/panel.png");
+	font-size: 16px;
+	font-family: var(--vhs-font);
+	color: var(--white);
+	image-rendering: pixelated;
 }
 .panel::after, .panel::before {
-    content: "";
+	content: "";
 
-    width: 100%;
-    height: 22px;
+	width: 100%;
+	height: 22px;
 
-    position: absolute;
-    left: 0;
-    bottom: calc(100% - 1px);
+	position: absolute;
+	left: 0;
+	bottom: calc(100% - 1px);
 
-    background-image: url("/src/assets/images/ui/panel-top.png");
+	background-image: url("/src/assets/images/ui/panel-top.png");
 }
 .panel::after {
-    scale: -1;
-    bottom: unset;
-    top: calc(100% - 1px);
+	scale: -1;
+	bottom: unset;
+	top: calc(100% - 1px);
 }
 .black-box {
-    width: 100%;
-    padding: 20px;
+	width: 100%;
+	padding: 20px;
 
-    text-align: center;
+	text-align: center;
 
-    background: var(--black);
-    color: var(--white);
-    font-family: var(--fancy-font);
-    font-size: 22px;
+	background: var(--black);
+	color: var(--white);
+	font-family: var(--fancy-font);
+	font-size: 22px;
 }
 .image-wrapper {
-    width: 100%;
-    height: 100%;
-    background: var(--black);
+	width: 100%;
+	height: 100%;
+	background: var(--black);
 }
 
 /* Windows */
 .gallery {
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 6px;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 6px;
 }
 .gallery img {
-    width: 100%;
-    height: 100%;
-    object-fit: fill;
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
 }
 #trash-exterminator canvas {
-    width: 100%;
-    image-rendering: pixelated;
+	width: 100%;
+	image-rendering: pixelated;
 }
 #trash-exterminator .loading-text {
-    position: absolute;
-    translate: -50% -50%;
-    left: 50%;
-    top: 50%;
-    white-space: nowrap;
+	position: absolute;
+	translate: -50% -50%;
+	left: 50%;
+	top: 50%;
+	white-space: nowrap;
 
-    font-family: var(--fancy-font);
-    font-size: 32px;
-    color: #fff;
+	font-family: var(--fancy-font);
+	font-size: 32px;
+	color: #fff;
 }
 .by-bogdanov {
-    width: 100%;
-    padding: 0 40px;
+	width: 100%;
+	padding: 0 40px;
 }
 .by-bogdanov .content {
-    width: 100%;
-    padding: 20px;
+	width: 100%;
+	padding: 20px;
 
-    text-align: center;
+	text-align: center;
 
-    background: var(--black);
-    color: var(--white);
-    font-family: var(--fancy-font);
-    font-size: 22px;
+	background: var(--black);
+	color: var(--white);
+	font-family: var(--fancy-font);
+	font-size: 22px;
 }
 .by-bogdanov .arm-wrapper {
-    width: 100%;
-    height: 400px;
-    image-rendering: pixelated;
-    pointer-events: none;
+	width: 100%;
+	height: 400px;
+	image-rendering: pixelated;
+	pointer-events: none;
 }
 .by-bogdanov .arm-wrapper .arm {
-    width: 128px;
-    height: 256px;
+	width: 128px;
+	height: 256px;
 
-    position: absolute;
-    left: calc(50% - 64px);
-    top: 100%;
+	position: absolute;
+	left: calc(50% - 64px);
+	top: 100%;
 
-    animation: arm infinite ease-in-out 1.2s;
+	animation: arm infinite ease-in-out 1.2s;
 }
 .by-bogdanov .arm-wrapper .arm .arm-image {
-    position: absolute;
-    left: 0;
-    top: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 .by-bogdanov .arm-wrapper .hand {
-    position: absolute;
-    left: -42%;
-    top: 2%;
+	position: absolute;
+	left: -42%;
+	top: 2%;
 
-    animation: hand infinite ease-in-out 1.2s;
-    animation-delay: .3s;
+	animation: hand infinite ease-in-out 1.2s;
+	animation-delay: .3s;
 }
 .chat-box {
-    padding: 8px;
+	padding: 8px;
 
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
 
-    background: var(--white);
+	background: var(--white);
 }
 .chat-box .message {
-    width: fit-content;
+	width: fit-content;
 }
 .chat-box .message .author {
-    color: var(--red);
-    font-weight: 600;
+	color: var(--red);
+	font-weight: 600;
 }
 .git-cat {
-    width: 100%;
+	width: 100%;
 
-    display: flex;
-    align-items: center;
+	display: flex;
+	align-items: center;
 }
 .git-cat .black-box::after {
-    content: "";
+	content: "";
 
-    width: 10px;
-    height: 10px;
+	width: 10px;
+	height: 10px;
 
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    translate: -50% -50%;
-    rotate: 45deg;
+	position: absolute;
+	left: 100%;
+	top: 50%;
+	translate: -50% -50%;
+	rotate: 45deg;
 
-    background: var(--black);
+	background: var(--black);
 }
 .git-cat img {
-    width: 100%;
-    height: 256px;
-    object-fit: fill;
+	width: 100%;
+	height: 256px;
+	object-fit: fill;
 }
 .vault {
-    width: fit-content;
-    padding: 10px 30px;
+	width: fit-content;
+	padding: 10px 30px;
 
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
 }
 .vault .password-input {
-    width: 100%;
-    height: 48px;
+	width: 100%;
+	height: 48px;
 
-    text-align: center;
-    line-height: 50px;
+	text-align: center;
+	line-height: 50px;
 
-    background: var(--black);
-    font-family: var(--vhs-font);
-    font-size: 32px;
-    color: var(--green);
+	background: var(--black);
+	font-family: var(--vhs-font);
+	font-size: 32px;
+	color: var(--green);
 }
 .vault .password-input.wrong {
-    color: var(--red);
+	color: var(--red);
 }
 
 /* Buttons */
 button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    color: var(--black);
-    font-family: var(--normal-font);
-    font-size: var(--font-size);
-    border: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-    cursor: url("/src/assets/images/ui/cursor-pointer.png") 7 0, auto;
+	color: var(--black);
+	font-family: var(--normal-font);
+	font-size: var(--font-size);
+	border: none;
+
+	cursor: url("/src/assets/images/ui/cursor-pointer.png") 7 0, auto;
 }
 button img,
 button .icon {
-    pointer-events: none;
+	pointer-events: none;
 }
 .button95 {    
-    padding: 8px 16px;
-    
-    font-weight: bold;
-    background: var(--gray);
-    border: 2px solid var(--white);
-    border-right-color: var(--darkgray);
-    border-bottom-color: var(--darkgray);
+	padding: 8px 16px;
+
+	font-weight: bold;
+	background: var(--gray);
+	border: 2px solid var(--white);
+	border-right-color: var(--darkgray);
+	border-bottom-color: var(--darkgray);
 }
 .button95:active {
-    border: 2px solid var(--darkgray);
-    border-right-color: var(--white);
-    border-bottom-color: var(--white);
+	border: 2px solid var(--darkgray);
+	border-right-color: var(--white);
+	border-bottom-color: var(--white);
 }
 .button95.smiley {
-    width: 20px;
-    height: 20px;
-    padding: 0;
-    background-image: url("/src/assets/images/ui/smiley-button.png");
-    image-rendering: pixelated;
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	background-image: url("/src/assets/images/ui/smiley-button.png");
+	image-rendering: pixelated;
 }
 .physical-button {
-    width: 90px;
-    height: 60px;
-    padding: 0;
+	width: 90px;
+	height: 60px;
+	padding: 0;
 
-    color: var(--white);
-    font-family: var(--vhs-font);
-    font-size: 16px;
-    background-color: transparent;
-    background-image: url("/src/assets/images/ui/physical-button.png");
-    background-size: 180px 60px;
-    background-position: 0 0;
-    image-rendering: pixelated;
+	color: var(--white);
+	font-family: var(--vhs-font);
+	font-size: 16px;
+	background-color: transparent;
+	background-image: url("/src/assets/images/ui/physical-button.png");
+	background-size: 180px 60px;
+	background-position: 0 0;
+	image-rendering: pixelated;
 }
 .physical-button:active {
-    background-position: 90px 0;
+	background-position: 90px 0;
 }
 .physical-button.small {
-    width: 60px;
-    background-image: url("/src/assets/images/ui/small-physical-button.png");
-    background-size: 120px 60px;
+	width: 60px;
+	background-image: url("/src/assets/images/ui/small-physical-button.png");
+	background-size: 120px 60px;
 }
 .physical-button.small:active {
-    background-position: 60px 0;
+	background-position: 60px 0;
 }
 input {
-    width: 100%;
-    padding: 0 6px;
+	width: 100%;
+	padding: 0 6px;
 
-    font-family: var(--normal-font);
-    font-size: var(--font-size);
-    font-weight: 600;
-    color: var(--black);
-    background: var(--white);
-    border: 2px solid var(--darkgray);
-    border-right-color: var(--white);
-    border-bottom-color: var(--white);
+	font-family: var(--normal-font);
+	font-size: var(--font-size);
+	font-weight: 600;
+	color: var(--black);
+	background: var(--white);
+	border: 2px solid var(--darkgray);
+	border-right-color: var(--white);
+	border-bottom-color: var(--white);
 }
 
 a {
-    color: var(--blue);
-    text-decoration: none;
-    cursor: url("/src/assets/images/ui/cursor-pointer.png") 7 0, auto;
+	color: var(--blue);
+	text-decoration: none;
+	cursor: url("/src/assets/images/ui/cursor-pointer.png") 7 0, auto;
 }
 a:hover {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 a .pointer {
-    height: 100%;
-    
-    position: absolute;
-    left: 100%;
-    top: 50%;
-    pointer-events: none;
-    visibility: hidden;
+	height: 100%;
+
+	position: absolute;
+	left: 100%;
+	top: 50%;
+	pointer-events: none;
+	visibility: hidden;
 }
 a:hover .pointer {
-    visibility: visible;
-    animation: link-pointer infinite linear .4s;
+	visibility: visible;
+	animation: link-pointer infinite linear .4s;
 }
 
 .fancy-link {
-    width: fit-content;
-    padding: 4px 0;
+	width: fit-content;
+	padding: 4px 0;
 
-    font-family: var(--vhs-font);
-    font-size: 32px;
-    color: var(--blue);
-    text-transform: uppercase;
-    image-rendering: pixelated;
+	font-family: var(--vhs-font);
+	font-size: 32px;
+	color: var(--blue);
+	text-transform: uppercase;
+	image-rendering: pixelated;
 }
 .fancy-link span {
-    pointer-events: none;
-    display: block;
+	pointer-events: none;
+	display: block;
 }
 .fancy-link:hover {
-    text-decoration: none;
+	text-decoration: none;
 }
 .fancy-link:hover span {
-    animation: fancy-link infinite linear .4s;
+	animation: fancy-link infinite linear .4s;
 }
 
 .rainbow-link:hover {
-    animation: rainbow-text infinite step-end .3s;
+	animation: rainbow-text infinite step-end .3s;
 }
 
 #speed-button .speed-icon {
-    width: 40px;
-    height: 30px;
-    
-    background-image: url("/src/assets/images/ui/speed.png");
-    background-size: 80px 30px;
-    background-position: 0 0;
+	width: 40px;
+	height: 30px;
+
+	background-image: url("/src/assets/images/ui/speed.png");
+	background-size: 80px 30px;
+	background-position: 0 0;
 }
 #speed-button.active .speed-icon {
-    background-position: 40px;
+	background-position: 40px;
 }
 
 /* Canvases */
 #background-canvas {
-    width: 100vw;
-    height: 100vh;
+	width: 100vw;
+	height: 100vh;
 
-    position: fixed;
-    left: 0;
-    top: 0;
+	position: fixed;
+	left: 0;
+	top: 0;
 }
 
 /* Fancy things */
 .substance {
-    background: url("/src/assets/images/ui/substance.png");
-    animation: substance 10s linear infinite;
+	background: url("/src/assets/images/ui/substance.png");
+	animation: substance 10s linear infinite;
 }
 .rainbow-text {
-    animation: rainbow-text infinite step-end .3s;
+	animation: rainbow-text infinite step-end .3s;
 }
 #flying-links-paper,
 #lovelove {
-    opacity: 0;
-    pointer-events: none;
+	opacity: 0;
+	pointer-events: none;
 }
 #lovelove {
-    position: absolute;
-    left: 10%;
-    top: -40%;
-    rotate: 20deg;
-    z-index: 1;
-    width: 256px;
+	position: absolute;
+	left: 10%;
+	top: -40%;
+	rotate: 20deg;
+	z-index: 1;
+	width: 256px;
 }
 .tv {
-    width: 480px;
-    aspect-ratio: 480 / 600;
+	width: 480px;
+	aspect-ratio: 480 / 600;
 }
 .tv .buttons {
-    position: absolute;
-    right: 0;
-    bottom: 11%;
-    scale: .6;
+	position: absolute;
+	right: 0;
+	bottom: 11%;
+	scale: .6;
 }
 .tv .tv-progress-text {
-    position: absolute;
-    left: 50%;
-    bottom: 14.5%;
-    translate: -50% 0;
+	position: absolute;
+	left: 50%;
+	bottom: 14.5%;
+	translate: -50% 0;
 
-    color: var(--green);
-    font-family: var(--vhs-font);
-    font-size: 16px;
+	color: var(--green);
+	font-family: var(--vhs-font);
+	font-size: 16px;
 }
 .tv .tv-image {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    pointer-events: none;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	pointer-events: none;
 }
 .tv .vcr-image {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    pointer-events: none;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	pointer-events: none;
 }
 .tv .lags-image,
 .tv > video {
-    width: 72%;
-    height: 44%;
+	width: 72%;
+	height: 44%;
 
-    position: absolute;
-    left: 14%;
-    top: 11%;
-    object-fit: fill;
-    pointer-events: none;
+	position: absolute;
+	left: 14%;
+	top: 11%;
+	object-fit: fill;
+	pointer-events: none;
 }
 .tv-play-button .play-icon {    
-    width: 32px;
-    height: 32px;
+	width: 32px;
+	height: 32px;
 
-    background-image: url("/src/assets/images/ui/play.png");
-    background-size: 64px 32px;
-    background-position: 0 0;
-    pointer-events: none;
+	background-image: url("/src/assets/images/ui/play.png");
+	background-size: 64px 32px;
+	background-position: 0 0;
+	pointer-events: none;
 }
 .tv-play-button.playing .play-icon {
-    background-position: 32px 0;
+	background-position: 32px 0;
 }
 .cog {
-    position: absolute;
-    translate: -50% -50%;
-    image-rendering: pixelated;
-    pointer-events: none;
-    animation: rotate infinite linear 20s;
+	position: absolute;
+	translate: -50% -50%;
+	image-rendering: pixelated;
+	pointer-events: none;
+	animation: rotate infinite linear 20s;
 }
 .floating {
-    animation: floating infinite linear 1s;
+	animation: floating infinite linear 1s;
 }
 .floating:hover {
-    animation-play-state: paused;
+	animation-play-state: paused;
 }
 .door {
-    width: 256px;
-    height: 516px;
+	width: 256px;
+	height: 516px;
 
-    perspective: 1200px;
-    z-index: 2;
+	perspective: 1200px;
+	z-index: 2;
 }
 .door .doorway-image {
-    position: absolute;
-    left: 0;
-    top: 0;
-    pointer-events: none;
+	position: absolute;
+	left: 0;
+	top: 0;
+	pointer-events: none;
 }
 .door .door-image {
-    position: absolute;
-    left: 22px;
-    top: 20px;
-    transform-origin: 100% 0;
+	position: absolute;
+	left: 22px;
+	top: 20px;
+	transform-origin: 100% 0;
 
-    transition: 2s;
-    pointer-events: none;
+	transition: 2s;
+	pointer-events: none;
 }
 .door .door-secret {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
 }
 .door.opened .door-image {
-    transform: rotateY(110deg);
+	transform: rotateY(110deg);
 }
 
 /* Media */
 @media screen and (max-width: 1000px) {
-    :root {
-        --container-width: 600px;
-    }
-    .info-section {
-        flex-direction: column-reverse;
-    }
-    .welcome-section .crazy-text {
-        width: 90%;
-    }
-    .by-bogdanov {
-        margin-top: 60px;
-    }
-    .promo-section .thumb-up {
-        display: none;
-    }
+	:root {
+		--container-width: 600px;
+	}
+	.info-section {
+		flex-direction: column-reverse;
+	}
+	.welcome-section .crazy-text {
+		width: 90%;
+	}
+	.by-bogdanov {
+		margin-top: 60px;
+	}
+	.promo-section .thumb-up {
+		display: none;
+	}
 }
 @media screen and (max-width: 700px) {
 	.whitey-banner {
@@ -834,33 +834,33 @@ a:hover .pointer {
 	}
 }
 @media screen and (max-width: 500px) {
-    :root {
-        --font-size: 14px;
-    }
-    .paper {
-        width: 90%;
-    }
-    .panel {
-        font-size: 14px;
-    }
-    .fancy-link {
-        font-size: 26px;
-    }
-    .cheque {
-        font-size: 14px;
-    }
-    .tv {
-        margin-bottom: 80px;
-    }
-    .tv .tv-progress-text {
-        font-size: 14px;
-    }
-    .tv .buttons {
-        right: 50%;
-        bottom: -64px;
-        scale: 1;
-        translate: 50% 0;
-    }
+	:root {
+		--font-size: 14px;
+	}
+	.paper {
+		width: 90%;
+	}
+	.panel {
+		font-size: 14px;
+	}
+	.fancy-link {
+		font-size: 26px;
+	}
+	.cheque {
+		font-size: 14px;
+	}
+	.tv {
+		margin-bottom: 80px;
+	}
+	.tv .tv-progress-text {
+		font-size: 14px;
+	}
+	.tv .buttons {
+		right: 50%;
+		bottom: -64px;
+		scale: 1;
+		translate: 50% 0;
+	}
 
 	.whitey-banner {
 		padding: 40px 10px;
@@ -877,89 +877,89 @@ a:hover .pointer {
 	}
 }
 @media screen and (max-width: 400px) {
-    .paper {
-        font-size: 15px;
-    }
-    .tv .tv-progress-text {
-        font-size: 12px;
-        bottom: 14%;
-    }
+	.paper {
+		font-size: 15px;
+	}
+	.tv .tv-progress-text {
+		font-size: 12px;
+		bottom: 14%;
+	}
 }
 
 /* Animations */
 @keyframes substance {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 128px -128px;
-    }
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 128px -128px;
+	}
 }
 @keyframes arm {
-    from, to {
-        transform: scale(1.3) rotate(-8deg) translate(-0%, -80%);
-    }
-    50% {
-        transform: scale(1.3) rotate(8deg) translate(-0%, -80%);
-    }
+	from, to {
+		transform: scale(1.3) rotate(-8deg) translate(-0%, -80%);
+	}
+	50% {
+		transform: scale(1.3) rotate(8deg) translate(-0%, -80%);
+	}
 }
 @keyframes hand {
-    from, to {
-        transform: rotate(-8deg) translate(37px, -100px);
-    }
-    50% {
-        transform: rotate(8deg) translate(37px, -100px);
-    }
+	from, to {
+		transform: rotate(-8deg) translate(37px, -100px);
+	}
+	50% {
+		transform: rotate(8deg) translate(37px, -100px);
+	}
 }
 @keyframes rainbow-text {
-    0% { color: #00f; }
-    20% { color: #0f0; }
-    40% { color: #0ff; }
-    60% { color: #f00; }
-    80% { color: #f0f; }
-    100% { color: #fff; }
+	0% { color: #00f; }
+	20% { color: #0f0; }
+	40% { color: #0ff; }
+	60% { color: #f00; }
+	80% { color: #f0f; }
+	100% { color: #fff; }
 }
 @keyframes fancy-link {
-    from, to {
-        translate: -8px -8px;
-        text-shadow:
-            2px 2px 0px hsl(180, 100%, 50%),
-            4px 4px 0px hsl(90, 100%, 50%),
-            6px 6px 0px hsl(45, 100%, 50%),
-            8px 8px 0px hsl(0, 100%, 50%);
-    }
-    50% {
-        translate: 0 0;
-        text-shadow:
-            0px 0px 0px hsl(180, 100%, 50%),
-            0px 0px 0px hsl(90, 100%, 50%),
-            0px 0px 0px hsl(45, 100%, 50%),
-            0px 0px 0px hsl(0, 100%, 50%);
-    }
+	from, to {
+		translate: -8px -8px;
+		text-shadow:
+		2px 2px 0px hsl(180, 100%, 50%),
+		4px 4px 0px hsl(90, 100%, 50%),
+		6px 6px 0px hsl(45, 100%, 50%),
+		8px 8px 0px hsl(0, 100%, 50%);
+	}
+	50% {
+		translate: 0 0;
+		text-shadow:
+		0px 0px 0px hsl(180, 100%, 50%),
+		0px 0px 0px hsl(90, 100%, 50%),
+		0px 0px 0px hsl(45, 100%, 50%),
+		0px 0px 0px hsl(0, 100%, 50%);
+	}
 }
 @keyframes link-pointer {
-    from, to {
-        transform: translate(50%, -50%) scaleX(-1);
-    }
-    50% {
-        transform: translate(0%, -50%) scaleX(-1);
-    }
+	from, to {
+		transform: translate(50%, -50%) scaleX(-1);
+	}
+	50% {
+		transform: translate(0%, -50%) scaleX(-1);
+	}
 }
 @keyframes rotate {
-    from { rotate: 0deg; }
-    to { rotate: 360deg; }
+	from { rotate: 0deg; }
+	to { rotate: 360deg; }
 }
 @keyframes loading-done {
-    50% { opacity: 1; }
-    to {
-        transform: translateY(100%) scale(.5) rotateZ(10deg) rotateX(90deg) translateY(-150%);
-        pointer-events: none;
-        opacity: 0;
-    }
+	50% { opacity: 1; }
+	to {
+		transform: translateY(100%) scale(.5) rotateZ(10deg) rotateX(90deg) translateY(-150%);
+		pointer-events: none;
+		opacity: 0;
+	}
 }
 @keyframes floating {
-    from, to { translate: 0 -50%; }
-    50% { translate: 0 50%; }
+	from, to { translate: 0 -50%; }
+	50% { translate: 0 50%; }
 }
 @keyframes slogan-background {
 	from {
