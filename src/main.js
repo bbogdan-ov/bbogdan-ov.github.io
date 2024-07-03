@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", ()=> {
     sections.initPromo();
     sections.initVault();
     sections.initChat();
+	sections.initCookies();
     speedup.init();
 
     addEventListener("load", ()=> {

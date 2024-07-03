@@ -49,6 +49,10 @@ body {
 	cursor: url("/src/assets/images/ui/cursor-text.png") 9 15, auto;
 }
 
+ul {
+	margin-left: 1em;
+}
+
 /* Container */
 .container {
 	width: 100%;
@@ -219,6 +223,77 @@ body {
 }
 .loading-screen.loaded {
 	animation: loading-done ease-in 3s forwards;
+}
+
+/* FUCK COOKIES */
+.fuck-cookies {
+	width: 100%;
+	padding: 20px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+
+	background: #fabbeb;
+	border: 4px ridge #d9820e;
+	font-family: serif;
+	font-size: 18px;
+}
+.fuck-cookies h3 {
+	font-family: var(--vhs-font);
+	font-size: 32px;
+	font-weight: 400;
+}
+.fuck-cookies header {
+	display: flex;
+	gap: 10px;
+}
+.fuck-cookies header .button95 {
+	padding: 10px;
+}
+.fuck-cookies .close-button {
+	width: 24px;
+	height: 24px;
+}
+.fuck-cookies .close-button .wings {
+	position: absolute;
+	left: 8px;
+	top: -4px;
+	translate: -50% -50%;
+
+	opacity: 0;
+	image-rendering: pixelated;
+
+	pointer-events: none;
+	transition: 2s;
+}
+.fuck-cookies .close-button.fly-away {
+	pointer-events: none;
+}
+.fuck-cookies .close-button.fly-away .wings {
+	opacity: 1;
+}
+.fuck-cookies .allow-buttons {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 10px;
+}
+
+.cookies-marquee {
+	width: 100%;
+	height: 22px;
+
+	background-image: url(/src/assets/gifs/rotating-cookie.gif);
+	background-size: 32px 22px;
+	background-repeat: repeat-x;
+	image-rendering: pixelated;
+
+	animation: cookies-marquee 1s linear infinite;
+}
+
+@keyframes cookies-marquee {
+	from { background-position: 0 0; }
+	from { background-position: 32px 0; }
 }
 
 /* Windows and other fancy "cards" */
@@ -533,25 +608,30 @@ button .icon {
 	pointer-events: none;
 }
 .button95 {    
+	height: fit-content;
 	padding: 8px 16px;
+
+	display: flex;
+	align-items: center;
+	gap: 10px;
 
 	font-weight: bold;
 	background: var(--gray);
 	border: 2px solid var(--white);
 	border-right-color: var(--darkgray);
 	border-bottom-color: var(--darkgray);
+
+	image-rendering: pixelated;
 }
 .button95:active {
 	border: 2px solid var(--darkgray);
 	border-right-color: var(--white);
 	border-bottom-color: var(--white);
 }
-.button95.smiley {
+.button95.icon {
 	width: 20px;
 	height: 20px;
 	padding: 0;
-	background-image: url("/src/assets/images/ui/smiley-button.png");
-	image-rendering: pixelated;
 }
 .physical-button {
 	width: 90px;
@@ -578,6 +658,26 @@ button .icon {
 .physical-button.small:active {
 	background-position: 60px 0;
 }
+.black-button {
+	width: 100%;
+	height: 40px;
+
+	background: var(--black);
+	color: var(--white);
+
+	font-size: 16px;
+	font-family: var(--vhs-font);
+	font-weight: 400;
+}
+.black-button:hover {
+	background: var(--white);
+	color: var(--black);
+}
+.black-button:active {
+	background: var(--blue);
+	color: var(--black);
+}
+
 input {
 	width: 100%;
 	padding: 0 6px;
