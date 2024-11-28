@@ -1,13 +1,13 @@
 import * as PIXI from "pixi.js";
-import battery_img from "../assets/images/things/battery.png";
-import book_img from "../assets/images/things/book.png";
-import clock_img from "../assets/images/things/clock.png";
-import disk_img from "../assets/images/things/disk.png";
-import lighter_img from "../assets/images/things/lighter.png";
-import paper_img from "../assets/images/things/paper.png";
-import tape_img from "../assets/images/things/tape.png";
-import unoBlue_img from "../assets/images/things/uno-blue.png";
-import unoRed_img from "../assets/images/things/uno-red.png";
+import battery_img from "/images/things/battery.png";
+import book_img from "/images/things/book.png";
+import clock_img from "/images/things/clock.png";
+import disk_img from "/images/things/disk.png";
+import lighter_img from "/images/things/lighter.png";
+import paper_img from "/images/things/paper.png";
+import tape_img from "/images/things/tape.png";
+import unoBlue_img from "/images/things/uno-blue.png";
+import unoRed_img from "/images/things/uno-red.png";
 
 export const THING_NAMES = {
     "tape": tape_img,

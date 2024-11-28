@@ -1,24 +1,24 @@
 import * as consts from "./consts";
-import click_audio from "./assets/audios/click.mp3";
-import cola_audio from "./assets/audios/cola.mp3";
-import goofyThrow1_audio from "./assets/audios/goofy-throw-1.mp3";
-import goofyThrow2_audio from "./assets/audios/goofy-throw-2.mp3";
-import nerd_audio from "./assets/audios/nerd.mp3";
-import raaah_audio from "./assets/audios/raaah.mp3";
-import sad_audio from "./assets/audios/sad.mp3";
-import scream_audio from "./assets/audios/scream.mp3";
-import slide_audio from "./assets/audios/slide.mp3";
-import spring_audio from "./assets/audios/spring.mp3";
-import tada_audio from "./assets/audios/tada.mp3";
-import tear1_audio from "./assets/audios/tear-1.mp3";
-import tear2_audio from "./assets/audios/tear-2.mp3";
-import throw1_audio from "./assets/audios/throw-1.mp3";
-import throw2_audio from "./assets/audios/throw-2.mp3";
-import yell_audio from "./assets/audios/yell.mp3";
-import wrong_audio from "./assets/audios/wrong.mp3";
-import correct_audio from "./assets/audios/correct.mp3";
-import knock_audio from "./assets/audios/knock.mp3";
-import meow_audio from "./assets/audios/meow.mp3";
+import click_audio from "/audios/click.mp3";
+import cola_audio from "/audios/cola.mp3";
+import goofyThrow1_audio from "/audios/goofy-throw-1.mp3";
+import goofyThrow2_audio from "/audios/goofy-throw-2.mp3";
+import nerd_audio from "/audios/nerd.mp3";
+import raaah_audio from "/audios/raaah.mp3";
+import sad_audio from "/audios/sad.mp3";
+import scream_audio from "/audios/scream.mp3";
+import slide_audio from "/audios/slide.mp3";
+import spring_audio from "/audios/spring.mp3";
+import tada_audio from "/audios/tada.mp3";
+import tear1_audio from "/audios/tear-1.mp3";
+import tear2_audio from "/audios/tear-2.mp3";
+import throw1_audio from "/audios/throw-1.mp3";
+import throw2_audio from "/audios/throw-2.mp3";
+import yell_audio from "/audios/yell.mp3";
+import wrong_audio from "/audios/wrong.mp3";
+import correct_audio from "/audios/correct.mp3";
+import knock_audio from "/audios/knock.mp3";
+import meow_audio from "/audios/meow.mp3";
 
 export const AUDIO_NAMES = {
     "click": click_audio,

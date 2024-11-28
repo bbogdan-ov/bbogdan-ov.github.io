@@ -1,5 +1,5 @@
 import * as utils from "../utils";
-import jesus_img from "../assets/gifs/jesus.gif";
+import jesus_img from "/gifs/jesus.gif";
 
 // Generate random password so you cant cheat :)
 export const vaultPassword = utils.randomString(4, "0123456789");

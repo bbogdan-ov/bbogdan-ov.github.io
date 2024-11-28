@@ -4,7 +4,7 @@ import * as objects from "../../objects";
 import * as utils from "../../utils";
 import * as consts from "../../consts";
 import * as speedup from "../../speedup";
-import rainbow_img from "../../assets/images/rainbow.webp";
+import rainbow_img from "/images/rainbow.webp";
 
 const WEATHER_DUR = 60;
 const WEATHER_CHANGE_DUR = 15;
