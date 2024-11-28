@@ -17,6 +17,7 @@
 	--red: #f00;
 	--green: #0f0;
 	--blue: #00f;
+	--lightgray: #ddd;
 	--gray: #bbb;
 	--darkgray: #777;
 
@@ -298,22 +299,27 @@ ul {
 
 /* Windows and other fancy "cards" */
 .box95 {
-	padding: 4px;
+	padding: 3px;
 
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
-
-	background: var(--gray);
+	gap: 2px;
+}
+.box95, .button95 {
 	color: var(--black);
-	border: 2px solid var(--white);
-	border-right-color: var(--darkgray);
-	border-bottom-color: var(--darkgray);
+	background: var(--gray);
+    box-shadow:
+        inset 1px 1px var(--white),
+        inset -1px -1px var(--black),
+        inset 2px 2px var(--lightgray),
+        inset -2px -2px var(--darkgray);
 }
 .box95.inner {
-	border: 2px solid var(--darkgray);
-	border-right-color: var(--white);
-	border-bottom-color: var(--white);
+    box-shadow:
+        inset 1px 1px var(--black),
+        inset -1px -1px var(--white),
+        inset 2px 2px var(--darkgray),
+        inset -2px -2px var(--lightgray);
 }
 .window95 {
 	width: 100%;
@@ -326,7 +332,7 @@ ul {
 	align-items: center;
 	justify-content: space-between;
 
-	background: var(--blue);
+	background: linear-gradient(to right, navy, royalblue);
 	color: var(--white);
 	font-weight: 600;
 }
@@ -335,7 +341,7 @@ ul {
 
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: 2px;
 }
 code {
 	width: 100%;
@@ -456,6 +462,7 @@ code {
 
 /* Windows */
 .gallery {
+    padding: 4px;
 	width: 100%;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -465,6 +472,7 @@ code {
 	width: 100%;
 	height: 100%;
 	object-fit: fill;
+    border: 1px solid var(--black);
 }
 #trash-exterminator canvas {
 	width: 100%;
@@ -530,7 +538,7 @@ code {
 
 	display: flex;
 	flex-direction: column;
-	gap: 4px;
+	gap: 2px;
 
 	background: var(--white);
 }
@@ -616,17 +624,15 @@ button .icon {
 	gap: 10px;
 
 	font-weight: bold;
-	background: var(--gray);
-	border: 2px solid var(--white);
-	border-right-color: var(--darkgray);
-	border-bottom-color: var(--darkgray);
 
 	image-rendering: pixelated;
 }
 .button95:active {
-	border: 2px solid var(--darkgray);
-	border-right-color: var(--white);
-	border-bottom-color: var(--white);
+    box-shadow:
+        inset 1px 1px var(--black),
+        inset -1px -1px var(--white),
+        inset 2px 2px var(--darkgray),
+        inset -2px -2px var(--lightgray);
 }
 .button95.icon {
 	width: 20px;
@@ -687,9 +693,10 @@ input {
 	font-weight: 600;
 	color: var(--black);
 	background: var(--white);
-	border: 2px solid var(--darkgray);
+	border: 1px solid var(--darkgray);
 	border-right-color: var(--white);
 	border-bottom-color: var(--white);
+    box-shadow: inset 1px 1px var(--black), inset -1px -1px var(--lightgray);
 }
 
 a {
@@ -708,6 +715,7 @@ a .pointer {
 	top: 50%;
 	pointer-events: none;
 	visibility: hidden;
+    z-index: 55;
 }
 a:hover .pointer {
 	visibility: visible;
