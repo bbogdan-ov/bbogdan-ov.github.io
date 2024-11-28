@@ -1,7 +1,6 @@
 import * as PIXI from "pixi.js";
 import * as utils from "../utils";
 import gsap from "gsap";
-import fontSheet_img from "/images/crazy-font-sheet.png";
 
 const CHAR_SLICE_SIZE = 128;
 const CHAR_WIDTH = 40;
@@ -36,7 +35,11 @@ export class CrazyText {
             for (let charIndex = 0; charIndex < line.length; charIndex ++) {
                 const char = line[charIndex];
                 const mapCharIndex = FONT_MAP.indexOf(char);
-                const charSprite = new PIXI.TilingSprite(PIXI.Texture.from(fontSheet_img), CHAR_SLICE_SIZE, CHAR_SLICE_SIZE);
+                const charSprite = new PIXI.TilingSprite(
+                    PIXI.Texture.from("/images/crazy-font-sheet.png"),
+                    CHAR_SLICE_SIZE,
+                    CHAR_SLICE_SIZE
+                );
                 charSprite.scale.set(.5);
                 charSprite.tilePosition.x = -(mapCharIndex % 8) * 128; // 
                 charSprite.tilePosition.y = -Math.floor(mapCharIndex / 8) * 128; // 

@@ -1,5 +1,4 @@
 import * as utils from "../utils";
-import jesus_img from "/gifs/jesus.gif";
 
 // Generate random password so you cant cheat :)
 export const vaultPassword = utils.randomString(4, "0123456789");
@@ -9,7 +8,7 @@ let allowInput = true;
 
 const doorSecret = new Image();
 doorSecret.classList.add("door-secret");
-doorSecret.src = jesus_img;
+doorSecret.src = "/gifs/jesus.gif";
 doorSecret.loading = "lazy";
 doorSecret.alt = "JESUS IS REAL";
 

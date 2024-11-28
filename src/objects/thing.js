@@ -1,31 +1,12 @@
 import * as PIXI from "pixi.js";
-import battery_img from "/images/things/battery.png";
-import book_img from "/images/things/book.png";
-import clock_img from "/images/things/clock.png";
-import disk_img from "/images/things/disk.png";
-import lighter_img from "/images/things/lighter.png";
-import paper_img from "/images/things/paper.png";
-import tape_img from "/images/things/tape.png";
-import unoBlue_img from "/images/things/uno-blue.png";
-import unoRed_img from "/images/things/uno-red.png";
 
-export const THING_NAMES = {
-    "tape": tape_img,
-    "clock": clock_img,
-    "lighter": lighter_img,
-    "book": book_img,
-    "uno-red": unoRed_img,
-    "uno-blue": unoBlue_img,
-    "disk": disk_img,
-    "paper": paper_img,
-    "battery": battery_img,
-};
 export const THINGS = ["tape", "clock", "lighter", "book", "uno-red", "uno-blue", "disk"];
 export const TRASH_THINGS = [...THINGS, "paper", "battery"];
 
 export class Thing extends PIXI.TilingSprite {
     constructor(name, x=0, y=0) {
-        super(PIXI.Texture.from(THING_NAMES[name]), 128, 128);
+        const url = `/images/things/${ name }.png`;
+        super(PIXI.Texture.from(url), 128, 128);
 
         this.anchor.set(.5);
 
