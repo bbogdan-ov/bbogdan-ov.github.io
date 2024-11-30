@@ -9,6 +9,11 @@
     <link rel="icon" type="image/x-icon" href="/images/favicon.png">
     <meta name="description" content="this is my place, i live here">
 
+    <link rel="preload" as="image" href="/images/ui/panel.png">
+    <link rel="preload" as="image" href="/images/ui/panel-top.png">
+    <link rel="preload" as="image" href="/images/wires.png">
+    <link rel="preload" as="font" href="/fonts/vhs.ttf">
+
     <link rel="stylesheet" href="css/utils.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/layout.css">
@@ -441,9 +446,41 @@
     <img loading="lazy" class="no-events" src="/images/valley.png" alt="footer">
 
     <!-- Top layer -->
-    <div class="loading-screen">
-        <span>please wait utill this THING is ready...</span>
-        <img src="/gifs/skull.gif" alt="skull">
+    <div class="loader">
+        <div class="loader-panel panel">
+            <img src="/images/wires.png" alt="wires" class="loader-wire top">
+            <img src="/images/wires.png" alt="wires" class="loader-wire bottom">
+
+            <span style="font-size: 8px; opacity: .4;">Please wait...</span>
+            <div class="loader-display">
+                <div class="word">
+                    <div class="char">l</div>
+                    <div class="char">o</div>
+                    <div class="char">a</div>
+                    <div class="char">d</div>
+                    <div class="char">i</div>
+                    <div class="char">n</div>
+                    <div class="char">g</div>
+                </div>
+                <div class="word">
+                    <div class="char">w</div>
+                    <div class="char">e</div>
+                    <div class="char">b</div>
+                    <div class="char">p</div>
+                    <div class="char">a</div>
+                    <div class="char">g</div>
+                    <div class="char">e</div>
+                    <div class="char" style="letter-spacing: -.5em;">...</div>
+                </div>
+            </div>
+            <div class="row gap-2">
+                <button class="physical-button tiny"></button>
+                <button class="physical-button tiny"></button>
+                <button class="physical-button tiny"></button>
+            </div>
+        </div>
+
+        <div class="loader-flash-overlay"></div>
     </div>
 
     <script src="src/main.js" type="module"></script>

@@ -199,31 +199,71 @@ ul {
     left: 60%;
 }
 
-/* Loading */
-.loading-screen {
-    width: 100%;
-    height: 100%;
-
+/* Loader */
+.loader {
+    inset: 0;
     position: fixed;
-    left: 0;
-    top: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 20px;
     z-index: 999;
+    overflow: hidden;
 
     background: #000;
-    color: #fff;
-    font-family: var(--fancy-font);
-    font-size: 22px;
 }
-.loading-screen img {
-    width: 128px;
+.loader-flash-overlay {
+    inset: 0;
+    position: absolute;
+    opacity: 0;
+    background: #fff;
 }
-.loading-screen.loaded {
-    animation: loading-done ease-in 3s forwards;
+.loader-panel {
+    padding: 8px 40px !important;
+    width: fit-content !important;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    opacity: 0;
+}
+.loader-wire {
+    width: 434px;
+    height: 1024px;
+
+    position: absolute;
+    translate: -50% 0;
+    z-index: -1;
+}
+.loader-wire.top {
+    bottom: 100%;
+    left: calc(50% + 40px);
+}
+.loader-wire.bottom {
+    top: 100%;
+    left: calc(50% - 30px);
+}
+.loader-display {
+    min-width: 260px;
+
+    padding: 18px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    letter-spacing: .2em;
+    gap: 1.2em .5em;
+
+    background: #000;
+    box-shadow:
+        inset 1px 1px #666,
+        inset -1px -1px #999;
+    color: var(--green);
+}
+.loader-display .word {
+    display: flex;
+}
+.loader-display .char {
+    text-shadow: 0 0 20px rgba(0, 255, 0, .4);
 }
 
 /* FUCK COOKIES */
@@ -430,14 +470,14 @@ code {
 
     position: absolute;
     left: 0;
-    bottom: calc(100% - 1px);
+    bottom: calc(100% - 3px);
 
     background-image: url("/images/ui/panel-top.png");
 }
 .panel::after {
     scale: -1;
     bottom: unset;
-    top: calc(100% - 1px);
+    top: calc(100% - 3px);
 }
 .black-box {
     width: 100%;
@@ -654,10 +694,18 @@ button .icon {
 }
 .physical-button.small {
     width: 60px;
+    height: 60px;
     background-image: url("/images/ui/small-physical-button.png");
     background-size: 120px 60px;
 }
-.physical-button.small:active {
+.physical-button.tiny {
+    width: 60px;
+    height: 30px;
+    background-image: url("/images/ui/tiny-physical-button.png");
+    background-size: 120px 30px;
+}
+.physical-button.small:active,
+.physical-button.tiny:active {
     background-position: 60px 0;
 }
 .black-button {
@@ -1006,6 +1054,10 @@ a:hover .pointer {
     .fuck-cookies header h3 {
         font-size: 20px;
     }
+
+    .loader-display {
+        flex-direction: column;
+    }
 }
 
 /* Animations */
@@ -1070,14 +1122,6 @@ a:hover .pointer {
 @keyframes rotate {
     from { rotate: 0deg; }
     to { rotate: 360deg; }
-}
-@keyframes loading-done {
-    50% { opacity: 1; }
-    to {
-        transform: translateY(100%) scale(.5) rotateZ(10deg) rotateX(90deg) translateY(-150%);
-        pointer-events: none;
-        opacity: 0;
-    }
 }
 @keyframes floating {
     from, to { translate: 0 -50%; }
