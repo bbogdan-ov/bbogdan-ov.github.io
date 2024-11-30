@@ -1,16 +1,16 @@
-.pixelate {
-    image-rendering: pixelated;
-}
 .pre {
     white-space: pre-wrap;
 }
 .no-events {
     pointer-events: none;
 }
-.reverse-anim {
-    animation-direction: reverse !important;
+.anim-reverse {
+    animation-direction: reverse;
 }
 
+.text-muted {
+    opacity: .5;
+}
 .text-red {
     color: var(--red);
 }

@@ -5,7 +5,7 @@ let isInjecting = false;
 let isEjecting = false;
 
 export function initPromo() {
-    const tv = document.querySelector("#promo-tv");
+    const tv = document.querySelector(".promo-section .tv");
     /** @type {HTMLVideoElement} */
     const video = tv.querySelector(".tv-video");
     const lagsImage = tv.querySelector(".lags-image");

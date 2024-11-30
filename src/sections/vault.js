@@ -1,11 +1,11 @@
 import * as utils from "../utils";
 
 // Generate random password so you cant cheat :)
-export const vaultPassword = utils.randomString(4, "0123456789");
+export const password = utils.randomString(4, "0123456789");
 let currentPassword = "";
-let isPasswordCorrent = false;
 let allowInput = true;
 
+// Load door secret
 const doorSecret = new Image();
 doorSecret.classList.add("door-secret");
 doorSecret.src = "/gifs/jesus.gif";
@@ -14,84 +14,77 @@ doorSecret.alt = "JESUS IS REAL";
 
 // Log password if in dev mode
 if (import.meta.env.DEV)
-    console.log(vaultPassword);
+    console.log(password);
 
 export function initVault() {
     const vault = document.querySelector(".vault");
-    const numbersButtons = vault.querySelectorAll(".buttons button");
-    const passwordInput = vault.querySelector(".password-input");
-    const door = document.querySelector("#vault-door");
+    const door = vault.querySelector(".vault-door");
+    const numpad = vault.querySelector(".vault-numpad");
+    const display = numpad.querySelector(".numpad-display");
+    const buttons = numpad.querySelectorAll(".buttons button");
 
-    updateInput();
+    updateDisplay();
 
     // Listen number buttons clicks
-    numbersButtons.forEach(button=> {
+    buttons.forEach(button=> {
         const num = button.getAttribute("data-num");
 
-        button.onpointerdown = ()=> {
+        button.onclick = ()=> {
             putNumber(num);
         }
     })
 
     function putNumber(number) {
-        if (!allowInput || currentPassword.length >= vaultPassword.length) return;
+        if (!allowInput || currentPassword.length >= password.length) return;
 
         currentPassword += number.toString();
-        updateInput();
+        updateDisplay();
 
-        // Send password with delay if password input is filled
-        if (currentPassword.length >= vaultPassword.length) {
+        // Check password with delay if password input is filled
+        if (currentPassword.length >= password.length) {
             allowInput = false;
             
             setTimeout(()=> {
-                sendPassword();
+                checkPassword();
             }, 200);
         }
     }
     function resetPassword() {
         currentPassword = "";
-        passwordInput.classList.remove("wrong");
         allowInput = true;
-        updateInput();
+        vault.classList.remove("wrong");
+        updateDisplay();
     }
-    function sendPassword() {
-        if (currentPassword == vaultPassword)
+    function checkPassword() {
+        if (currentPassword == password) {
             correctPassword();
-        else
-            wrongPassword();
+            return;
+        }
         
-        // Don't reset password if it is correct
-        if (isPasswordCorrent) return;
+        wrongPassword();
 
-        setTimeout(()=> {
-            resetPassword();
-        }, 1000);
+        setTimeout(resetPassword, 1000);
+    }
+    function correctPassword() {
+        vault.classList.add("opened");
+        display.textContent = "CORRECT";
+        // Add jesus gif behind the door!
+        door.prepend(doorSecret);
+
+        utils.playSound("correct", .6);
     }
     function wrongPassword() {
-        passwordInput.classList.add("wrong");
-        passwordInput.textContent = "WRONG";
+        vault.classList.add("wrong");
+        display.textContent = "WRONG";
 
         utils.playSound("wrong", .6);
     } 
-    function correctPassword() {
-        passwordInput.textContent = "CORRECT";
-        // Open door if password is correct
-        door.classList.add("opened");
-        // Prepend jesus gif!
-        door.prepend(doorSecret);
 
-        isPasswordCorrent = true;
-        utils.playSound("correct", .6);
-    }
-
-    function updateInput() {
+    function updateDisplay() {
         let text = currentPassword;
 
-        // Fill remaining space of input with asterix
-        if (text.length < vaultPassword.length)
-            text += "*".repeat(vaultPassword.length - text.length);
-        
-        passwordInput.textContent = text;
+        // Fill remaining space of display with asterix
+        display.textContent = text + "*".repeat(password.length - text.length);
     }
 }
 

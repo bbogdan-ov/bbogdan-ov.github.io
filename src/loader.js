@@ -1,22 +1,18 @@
-import gsap from "gsap";
-
 document.addEventListener("DOMContentLoaded", () => {
     const loader = document.querySelector(".loader");
     const loaderOverlay = loader.querySelector(".loader-flash-overlay");
     const loaderPanel = loader.querySelector(".loader-panel");
     const loaderDisplay = loaderPanel.querySelector(".loader-display");
 
+    // Immediately close loader in dev mode
+    if (import.meta.env.DEV) {
+        loader.remove();
+        return;
+    }
+
     // Lock scrolling
     document.body.style.overflowY = "hidden";
     scrollTo(0, 0);
-
-    // Show loader panel
-    gsap.to(loaderPanel, {
-        opacity: 1,
-        duration: 1,
-        delay: .2,
-        ease: "power1.out",
-    });
 
     startAnimation(1, 1.7);
 

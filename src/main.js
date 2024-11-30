@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
 import * as sections from "./sections";
-import * as canvases from "./canvases";
+import * as background from "./background";
 import * as speedup from "./speedup";
 import * as utils from "./utils";
 import * as games from "./games";
@@ -10,7 +10,7 @@ import * as funny from "./funny";
 PIXI.BaseTexture.defaultOptions.scaleMode = PIXI.SCALE_MODES.NEAREST;
 
 document.addEventListener("DOMContentLoaded", ()=> {
-    canvases.initBackground();
+    background.initBackground();
     
     sections.initWelcome();
     sections.initInfo();

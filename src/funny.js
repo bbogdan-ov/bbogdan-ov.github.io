@@ -1,7 +1,7 @@
 import * as utils from "./utils";
 
 export function playGoofySounds() {
-    utils.playSound(utils.randomItem(["tada", "nerd", "cola", "spring", "slide", "yell", "scream", "sad"]), .5);
+    utils.playSound(utils.randomItem(["tada", "nerd", "cola", "spring", "slide", "yell", "scream", "sad", "raaah"]), .5);
 }
 
 /** @param el {HTMLElement}  */
@@ -16,21 +16,17 @@ export function animateFlyout(el) {
     utils.playSound("slide", .3); 
 
     const frames = [
-        {
-            opacity: 0,
-            transform: "rotateZ(-270deg) rotateY(360deg) translate(-100%, 300%)"
-        },
-        {
-            opacity: 1
-        },
-        {
-            opacity: 1,
-            transform: "rotateZ(0deg) rotateY(0deg) translate(0%, 0)"
-        },
+        { opacity: 0, transform: "rotateZ(-270deg) rotateY(360deg) translate(-100%, 300%)" },
+        { opacity: 1 },
+        { opacity: 1, transform: "rotateZ(0deg) rotateY(0deg) translate(0%, 0)" },
     ]
-    const opts = { duration: 5000, easing: "ease-out", fill: "forwards" };
+    const opts = {
+        duration: 5000,
+        easing: "ease-out",
+        fill: "forwards",
+    };
     
-    el.style.pointerEvents = "unset";
+    el.style.pointerEvents = "";
     el.animate(frames, opts).onfinish = ()=> {
         el.classList.remove("animating");
         utils.playSound("tada", .5);

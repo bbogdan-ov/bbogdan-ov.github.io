@@ -1,5 +1,6 @@
 * {
     user-select: none;
+    image-rendering: pixelated;
 }
 
 @font-face {
@@ -53,6 +54,16 @@ body {
 ul {
     margin-left: 1em;
 }
+code {
+    width: 100%;
+    padding: 4px 6px;
+
+    display: block;
+    white-space: pre-wrap;
+
+    font-family: var(--mono-font);
+    background: var(--white);
+}
 
 /* Container */
 .container {
@@ -63,7 +74,7 @@ ul {
     margin: 0 auto;
 }
 
-/* Section */
+/* Sections */
 .section {
     width: 100%;
 
@@ -71,6 +82,7 @@ ul {
     flex-direction: column;
 }
 
+/* Welcome section */
 .welcome-section {
     height: 100vh;
 }
@@ -80,6 +92,7 @@ ul {
     pointer-events: none;
 }
 
+/* Info section */
 .info-section {
     flex-direction: row;
     gap: 20px;
@@ -90,6 +103,7 @@ ul {
     align-items: center;
 }
 
+/* Promo section */
 .promo-section {
     margin-top: 100px;
 }
@@ -103,13 +117,70 @@ ul {
 
     position: absolute;
     transform: translate(0, -50%);
-    image-rendering: pixelated;
     pointer-events: none;
 }
 .promo-section .thumb-up.left {
     transform: scaleX(-1) translate(0, -50%);
 }
+.tv {
+    width: 480px;
+    aspect-ratio: 480 / 600;
+}
+.tv .buttons {
+    position: absolute;
+    right: 0;
+    bottom: 11%;
+    scale: .6;
+}
+.tv .tv-progress-text {
+    position: absolute;
+    left: 50%;
+    bottom: 14.5%;
+    translate: -50% 0;
 
+    color: var(--green);
+    font-family: var(--vhs-font);
+    font-size: 16px;
+}
+.tv .tv-image {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+}
+.tv .vcr-image {
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    pointer-events: none;
+}
+.tv .lags-image,
+.tv > video {
+    width: 72%;
+    height: 44%;
+
+    position: absolute;
+    left: 14%;
+    top: 11%;
+    object-fit: fill;
+    pointer-events: none;
+}
+.tv-play-button .play-icon {    
+    width: 32px;
+    height: 32px;
+
+    background-image: url("/images/ui/play.png");
+    background-size: 64px 32px;
+    background-position: 0 0;
+    pointer-events: none;
+}
+.tv-play-button.playing .play-icon {
+    background-position: 32px 0;
+}
+
+/* Whitey banner */
 .whitey-section {
     margin-bottom: 40px;
 }
@@ -182,6 +253,7 @@ ul {
 .whitey-banner .cover {
     width: 100%;
     box-shadow: 0 5px 30px #000;
+    image-rendering: initial;
 }
 .whitey-banner .vinil {
     width: calc(100% - 20px);
@@ -194,76 +266,10 @@ ul {
     animation: rotate 20s infinite linear;
     transition: 1s linear left;
     pointer-events: none;
+    image-rendering: initial;
 }
 .whitey-banner .cover-box:hover .vinil {
     left: 60%;
-}
-
-/* Loader */
-.loader {
-    inset: 0;
-    position: fixed;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 999;
-    overflow: hidden;
-
-    background: #000;
-}
-.loader-flash-overlay {
-    inset: 0;
-    position: absolute;
-    opacity: 0;
-    background: #fff;
-}
-.loader-panel {
-    padding: 8px 40px !important;
-    width: fit-content !important;
-
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-
-    opacity: 0;
-}
-.loader-wire {
-    width: 434px;
-    height: 1024px;
-
-    position: absolute;
-    translate: -50% 0;
-    z-index: -1;
-}
-.loader-wire.top {
-    bottom: 100%;
-    left: calc(50% + 40px);
-}
-.loader-wire.bottom {
-    top: 100%;
-    left: calc(50% - 30px);
-}
-.loader-display {
-    min-width: 260px;
-
-    padding: 18px 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    letter-spacing: .2em;
-    gap: 1.2em .5em;
-
-    background: #000;
-    box-shadow:
-        inset 1px 1px #666,
-        inset -1px -1px #999;
-    color: var(--green);
-}
-.loader-display .word {
-    display: flex;
-}
-.loader-display .char {
-    text-shadow: 0 0 20px rgba(0, 255, 0, .4);
 }
 
 /* FUCK COOKIES */
@@ -299,7 +305,6 @@ ul {
     translate: -50% -50%;
 
     opacity: 0;
-    image-rendering: pixelated;
 
     pointer-events: none;
     transition: 2s;
@@ -315,7 +320,6 @@ ul {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
 }
-
 .cookies-marquee {
     width: 100%;
     height: 22px;
@@ -323,7 +327,6 @@ ul {
     background-image: url(/gifs/rotating-cookie.gif);
     background-size: 32px 22px;
     background-repeat: repeat-x;
-    image-rendering: pixelated;
 
     animation: cookies-marquee 1s linear infinite;
 }
@@ -333,62 +336,8 @@ ul {
     from { background-position: 32px 0; }
 }
 
-/* Windows and other fancy "cards" */
-.box95 {
-    padding: 3px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-.box95, .button95 {
-    color: var(--black);
-    background: var(--gray);
-    box-shadow:
-    inset 1px 1px var(--white),
-    inset -1px -1px var(--black),
-    inset 2px 2px var(--lightgray),
-    inset -2px -2px var(--darkgray);
-}
-.box95.inner {
-    box-shadow:
-    inset 1px 1px var(--black),
-    inset -1px -1px var(--white),
-    inset 2px 2px var(--darkgray),
-    inset -2px -2px var(--lightgray);
-}
-.window95 {
-    width: 100%;
-}
-.window95 header {
-    padding: 4px;
-    padding-left: 6px;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    background: linear-gradient(to right, navy, royalblue);
-    color: var(--white);
-    font-weight: 600;
-}
-.window95 .content {
-    width: 100%;
-
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-code {
-    width: 100%;
-    padding: 4px 6px;
-
-    display: block;
-    white-space: pre-wrap;
-
-    font-family: var(--mono-font);
-    background: var(--white);
-}
+/* Windows */
+/* Cheque */
 .cheque {
     width: 100%;
     padding: 10px 20px;
@@ -401,7 +350,6 @@ code {
     background-image: url("/images/ui/cheque.png");
     font-size: 18px;
     font-family: var(--mono-font);
-    image-rendering: pixelated;
 }
 .cheque::after, .cheque::before {
     content: "";
@@ -430,78 +378,13 @@ code {
     display: block;
     width: 1px;
 }
-.paper {
-    width: 70%;
-    padding: 30px 0;
-    aspect-ratio: 270 / 110;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    background-image: url("/images/ui/paper.png");
-    background-size: 100% 100%;
-    font-family: var(--fancy-font);
-    font-size: 18px;
-    image-rendering: pixelated;
-}
-.paper > * {
-    opacity: .9;
-}
-.panel {
-    width: 100%;
-    padding: 10px 20px;
-
-    margin: 30px 0;
-
-    background-image: url("/images/ui/panel.png");
-    font-size: 16px;
-    font-family: var(--vhs-font);
-    color: var(--white);
-    image-rendering: pixelated;
-}
-.panel::after, .panel::before {
-    content: "";
-
-    width: 100%;
-    height: 22px;
-
-    position: absolute;
-    left: 0;
-    bottom: calc(100% - 3px);
-
-    background-image: url("/images/ui/panel-top.png");
-}
-.panel::after {
-    scale: -1;
-    bottom: unset;
-    top: calc(100% - 3px);
-}
-.black-box {
-    width: 100%;
-    padding: 20px;
-
-    text-align: center;
-
-    background: var(--black);
-    color: var(--white);
-    font-family: var(--fancy-font);
-    font-size: 22px;
-}
-.image-wrapper {
-    width: 100%;
-    height: 100%;
-    background: var(--black);
-}
-
-/* Windows */
+/* Gallery */
 .gallery {
     padding: 4px;
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
     gap: 6px;
 }
 .gallery img {
@@ -509,10 +392,12 @@ code {
     height: 100%;
     object-fit: fill;
     border: 1px solid var(--black);
+    background: var(--black);
 }
+
+/* Trash exterminator */
 #trash-exterminator canvas {
     width: 100%;
-    image-rendering: pixelated;
 }
 #trash-exterminator .loading-text {
     position: absolute;
@@ -525,6 +410,8 @@ code {
     font-size: 32px;
     color: #fff;
 }
+
+/* By bogdanov */
 .by-bogdanov {
     width: 100%;
     padding: 0 40px;
@@ -543,7 +430,6 @@ code {
 .by-bogdanov .arm-wrapper {
     width: 100%;
     height: 400px;
-    image-rendering: pixelated;
     pointer-events: none;
 }
 .by-bogdanov .arm-wrapper .arm {
@@ -569,6 +455,8 @@ code {
     animation: hand infinite ease-in-out 1.2s;
     animation-delay: .3s;
 }
+
+/* Chat */
 .chat-box {
     padding: 8px;
 
@@ -585,13 +473,28 @@ code {
     color: var(--red);
     font-weight: 600;
 }
+
+/* Git cat */
 .git-cat {
     width: 100%;
 
     display: flex;
     align-items: center;
 }
-.git-cat .black-box::after {
+.git-cat-dialog-bubble {
+    width: 100%;
+    padding: 20px;
+
+    text-align: center;
+
+    background: var(--black);
+    color: var(--white);
+    font-family: var(--fancy-font);
+    font-size: 22px;
+
+    animation: black-box-floating infinite linear 1s;
+}
+.git-cat-dialog-bubble::after {
     content: "";
 
     width: 10px;
@@ -605,12 +508,17 @@ code {
 
     background: var(--black);
 }
+.git-cat-dialog-bubble:hover {
+    animation-play-state: paused;
+}
 .git-cat img {
     width: auto;
     height: 256px;
     object-fit: fill;
 }
-.vault {
+
+/* Vault */
+.vault-numpad {
     width: fit-content;
     padding: 10px 30px;
 
@@ -618,7 +526,7 @@ code {
     flex-direction: column;
     gap: 20px;
 }
-.vault .password-input {
+.vault-numpad .numpad-display {
     width: 100%;
     height: 48px;
 
@@ -630,168 +538,76 @@ code {
     font-size: 32px;
     color: var(--green);
 }
-.vault .password-input.wrong {
+.vault.wrong .numpad-display {
     color: var(--red);
 }
+.vault-door {
+    width: 256px;
+    height: 516px;
 
-/* Buttons */
-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    color: var(--black);
-    font-family: var(--normal-font);
-    font-size: var(--font-size);
-    border: none;
-
-    cursor: url("/images/ui/cursor-pointer.png") 7 0, auto;
+    perspective: 1200px;
+    z-index: 2;
 }
-button img,
-button .icon {
-    pointer-events: none;
-}
-.button95 {    
-    height: fit-content;
-    padding: 8px 16px;
-
-    display: flex;
-    align-items: center;
-    gap: 10px;
-
-    font-weight: bold;
-
-    image-rendering: pixelated;
-}
-.button95:active {
-    box-shadow:
-    inset 1px 1px var(--black),
-    inset -1px -1px var(--white),
-    inset 2px 2px var(--darkgray),
-    inset -2px -2px var(--lightgray);
-}
-.button95.icon {
-    width: 20px;
-    height: 20px;
-    padding: 0;
-}
-.physical-button {
-    width: 90px;
-    height: 60px;
-    padding: 0;
-
-    color: var(--white);
-    font-family: var(--vhs-font);
-    font-size: 16px;
-    background-color: transparent;
-    background-image: url("/images/ui/physical-button.png");
-    background-size: 180px 60px;
-    background-position: 0 0;
-    image-rendering: pixelated;
-}
-.physical-button:active {
-    background-position: 90px 0;
-}
-.physical-button.small {
-    width: 60px;
-    height: 60px;
-    background-image: url("/images/ui/small-physical-button.png");
-    background-size: 120px 60px;
-}
-.physical-button.tiny {
-    width: 60px;
-    height: 30px;
-    background-image: url("/images/ui/tiny-physical-button.png");
-    background-size: 120px 30px;
-}
-.physical-button.small:active,
-.physical-button.tiny:active {
-    background-position: 60px 0;
-}
-.black-button {
-    width: 100%;
-    height: 40px;
-
-    background: var(--black);
-    color: var(--white);
-
-    font-size: 16px;
-    font-family: var(--vhs-font);
-    font-weight: 400;
-}
-.black-button:hover {
-    background: var(--white);
-    color: var(--black);
-}
-.black-button:active {
-    background: var(--blue);
-    color: var(--black);
-}
-
-input {
-    width: 100%;
-    padding: 0 6px;
-
-    font-family: var(--normal-font);
-    font-size: var(--font-size);
-    font-weight: 600;
-    color: var(--black);
-    background: var(--white);
-    border: 1px solid var(--darkgray);
-    border-right-color: var(--white);
-    border-bottom-color: var(--white);
-    box-shadow: inset 1px 1px var(--black), inset -1px -1px var(--lightgray);
-}
-
-a {
-    color: var(--blue);
-    text-decoration: none;
-    cursor: url("/images/ui/cursor-pointer.png") 7 0, auto;
-}
-a:hover {
-    text-decoration: underline;
-}
-a .pointer {
-    height: 100%;
-
+.vault-door .doorway {
     position: absolute;
-    left: 100%;
-    top: 50%;
+    left: 0;
+    top: 0;
     pointer-events: none;
-    visibility: hidden;
-    z-index: 55;
 }
-a:hover .pointer {
-    visibility: visible;
-    animation: link-pointer infinite linear .4s;
-}
+.vault-door .door {
+    position: absolute;
+    left: 22px;
+    top: 20px;
+    transform-origin: 100% 0;
 
-.fancy-link {
-    width: fit-content;
-    padding: 4px 0;
-
-    font-family: var(--vhs-font);
-    font-size: 32px;
-    color: var(--blue);
-    text-transform: uppercase;
-    image-rendering: pixelated;
-}
-.fancy-link span {
+    transition: 2s;
     pointer-events: none;
-    display: block;
 }
-.fancy-link:hover {
-    text-decoration: none;
+.vault-door .door-secret {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
 }
-.fancy-link:hover span {
-    animation: fancy-link infinite linear .4s;
+.vault.opened .vault-door .door {
+    transform: rotateY(110deg);
 }
 
-.rainbow-link:hover {
-    animation: rainbow-text infinite step-end .3s;
+/* Time machine */
+.timemachine {
+    width: 100%;
+    margin-top: 80px;
 }
-
-#speed-button .speed-icon {
+.timemachine .panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.timemachine .buttons {
+    display: flex;
+    gap: 4px;
+}
+.timemachine .cog {
+    position: absolute;
+    translate: -50% -50%;
+    pointer-events: none;
+    animation: rotate infinite linear 20s;
+}
+.timemachine .large-cog {
+    left: 10%;
+    top: 10%;
+}
+.timemachine .small-cog {
+    left: calc(10% + 128px + 72px);
+    top: 10%;
+    scale: .6;
+    animation-duration: 12s;
+    animation-direction: reverse;
+}
+.timemachine .speed-button .icon {
     width: 40px;
     height: 30px;
 
@@ -799,12 +615,24 @@ a:hover .pointer {
     background-size: 80px 30px;
     background-position: 0 0;
 }
-#speed-button.active .speed-icon {
+body.speeded .timemachine .speed-button .icon {
     background-position: 40px;
+}
+body.speeded .timemachine .large-cog {
+    animation-duration: 1s;
+}
+body.speeded .timemachine .small-cog {
+    animation-duration: .6s;
+}
+
+/* Footer */
+.footer {
+    image-rendering: initial;
+    pointer-events: none;
 }
 
 /* Canvases */
-#background-canvas {
+.background-canvas {
     width: 100vw;
     height: 100vh;
 
@@ -821,120 +649,18 @@ a:hover .pointer {
 .rainbow-text {
     animation: rainbow-text infinite step-end .3s;
 }
-#flying-links-paper,
-#lovelove {
+.flying-links-paper,
+.lovelove {
     opacity: 0;
     pointer-events: none;
 }
-#lovelove {
+.lovelove {
     position: absolute;
     left: 10%;
     top: -40%;
     rotate: 20deg;
     z-index: 1;
     width: 256px;
-}
-.tv {
-    width: 480px;
-    aspect-ratio: 480 / 600;
-}
-.tv .buttons {
-    position: absolute;
-    right: 0;
-    bottom: 11%;
-    scale: .6;
-}
-.tv .tv-progress-text {
-    position: absolute;
-    left: 50%;
-    bottom: 14.5%;
-    translate: -50% 0;
-
-    color: var(--green);
-    font-family: var(--vhs-font);
-    font-size: 16px;
-}
-.tv .tv-image {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-    pointer-events: none;
-}
-.tv .vcr-image {
-    width: 100%;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    pointer-events: none;
-}
-.tv .lags-image,
-.tv > video {
-    width: 72%;
-    height: 44%;
-
-    position: absolute;
-    left: 14%;
-    top: 11%;
-    object-fit: fill;
-    pointer-events: none;
-}
-.tv-play-button .play-icon {    
-    width: 32px;
-    height: 32px;
-
-    background-image: url("/images/ui/play.png");
-    background-size: 64px 32px;
-    background-position: 0 0;
-    pointer-events: none;
-}
-.tv-play-button.playing .play-icon {
-    background-position: 32px 0;
-}
-.cog {
-    position: absolute;
-    translate: -50% -50%;
-    image-rendering: pixelated;
-    pointer-events: none;
-    animation: rotate infinite linear 20s;
-}
-.floating {
-    animation: floating infinite linear 1s;
-}
-.floating:hover {
-    animation-play-state: paused;
-}
-.door {
-    width: 256px;
-    height: 516px;
-
-    perspective: 1200px;
-    z-index: 2;
-}
-.door .doorway-image {
-    position: absolute;
-    left: 0;
-    top: 0;
-    pointer-events: none;
-}
-.door .door-image {
-    position: absolute;
-    left: 22px;
-    top: 20px;
-    transform-origin: 100% 0;
-
-    transition: 2s;
-    pointer-events: none;
-}
-.door .door-secret {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-.door.opened .door-image {
-    transform: rotateY(110deg);
 }
 
 /* Media */
@@ -1031,13 +757,17 @@ a:hover .pointer {
     .git-cat {
         flex-direction: column;
     }
-    .git-cat .black-box {
+    .git-cat-dialog-bubble {
         margin-top: 30px;
         margin-bottom: 40px;
     }
-    .git-cat .black-box::after {
+    .git-cat-dialog-bubble::after {
         left: 50%;
         top: 100%;
+    }
+
+    .timemachine .buttons button:first-child {
+        display: none;
     }
 }
 @media screen and (max-width: 400px) {
@@ -1055,8 +785,12 @@ a:hover .pointer {
         font-size: 20px;
     }
 
-    .loader-display {
+    .timemachine .panel {
         flex-direction: column;
+        align-items: flex-start;
+    }
+    .timemachine .buttons {
+        align-self: flex-end;
     }
 }
 
@@ -1123,7 +857,7 @@ a:hover .pointer {
     from { rotate: 0deg; }
     to { rotate: 360deg; }
 }
-@keyframes floating {
+@keyframes black-box-floating {
     from, to { translate: 0 -50%; }
     50% { translate: 0 50%; }
 }

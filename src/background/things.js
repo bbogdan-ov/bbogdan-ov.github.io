@@ -1,32 +1,32 @@
-import * as utils from "../../utils";
-import * as objects from "../../objects";
-import * as speedup from "../../speedup";
+import * as utils from "../utils";
+import * as objects from "../objects";
+import * as speedup from "../speedup";
 
 let thingSpawnTimer = 0;
 
-export function tick(delta, canvas, container) {
+export function tick(delta, app, container) {
     thingSpawnTimer -= delta;
 
     // Spawn things
     if (thingSpawnTimer <= 0) {
-        spawnThing(canvas, container);
+        spawnThing(app, container);
         thingSpawnTimer = utils.random(.2, 6);
     }
     
     // Remove things that have gone out of screen
     for (const thing of container.children) {
-        if (thing.x - thing.width > canvas.view.width) {
+        if (thing.x - thing.width > app.view.width) {
             container.removeChild(thing);
         }
     }
 }
 
-function spawnThing(canvas, container) {
+function spawnThing(app, container) {
     const thing = new FlyingThing(utils.randomItem(objects.THINGS));
     thing.speedMul = speedup.speedMul;
     thing.setPos(
         -thing.width,
-        utils.random(thing.height/2, canvas.view.height-thing.height/2)
+        utils.random(thing.height/2, app.view.height-thing.height/2)
     );
 
     container.addChild(thing);

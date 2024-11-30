@@ -15,15 +15,17 @@
     <link rel="preload" as="image" href="/images/wires.png">
     <link rel="preload" as="font" href="/fonts/vhs.ttf">
 
-    <link rel="stylesheet" href="css/utils.css">
+    <link rel="stylesheet" href="css/ui.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/loader.css">
     <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/utils.css">
 
     <title>bogdanov's little homepage [file] [edit] [raaaarhh] v1.3.1</title>
 </head>
 <body>
     <!-- Bg canvas -->
-    <canvas id="background-canvas"></canvas>
+    <canvas class="background-canvas"></canvas>
 
     <!-- Sections -->
     <section class="welcome-section section center-all"></section>
@@ -33,16 +35,8 @@
         <div class="slogan"></div>
         <article class="whitey-banner">
             <div class="bg">
-                <img
-                    class="grab-hand left"
-                    src="/images/grab-hand-left.webp"
-                    alt="GRABBED"
-                >
-                <img
-                    class="grab-hand right"
-                    src="/images/grab-hand-right.webp"
-                    alt="GRABBED"
-                >
+                <img class="grab-hand left" src="/images/grab-hand-left.webp" alt="GRABBED">
+                <img class="grab-hand right" src="/images/grab-hand-right.webp" alt="GRABBED">
             </div>
 
             <img class="eye" src="/gifs/eye-1.gif" alt="eye" loading="lazy">
@@ -52,19 +46,11 @@
                 href="https://njwhitey.bandcamp.com/album/remastered-edition-nothing-in-my-pocket-but-a-hole-lp"
                 target="_blank"
             >
-                <img
-                    class="vinil"
-                    src="/images/nimpbah-vinil.webp"
-                    alt="nothing in my pocket but a hole vinil"
-                >
-                <img
-                    class="cover"
-                    src="/images/nimpbah-cover.webp"
-                    alt="nothing in my pocket but a hole cover"
-                >
+                <img class="vinil" src="/images/nimpbah-vinil.webp" alt="nothing in my pocket but a hole vinil">
+                <img class="cover" src="/images/nimpbah-cover.webp" alt="nothing in my pocket but a hole cover">
             </a>
         </article>
-        <div class="slogan reverse-anim"></div>
+        <div class="slogan anim-reverse"></div>
     </section>
 
     <!-- Main section -->
@@ -82,32 +68,18 @@
                 </div>
             </article>
             <!-- Time machine -->
-            <div class="width-fill" style="margin-top: 80px;">
-                <img
-                    class="cog"
-                    src="/images/cog.png"
-                    alt="cog"
-                    style="left: 10%; top: 10%"
-                    data-speedup
-                    data-speedup-dur="20"
-                >
-                <img
-                    class="cog reverse-anim"
-                    src="/images/cog.png"
-                    alt="cog"
-                    style="left: calc(10% + 128px + 72px); top: 10%; scale: .6; animation-duration: 12s;"
-                    data-speedup
-                    data-speedup-dur="12"
-                >
-                <article class="panel row justify-between items-center flex-wrap gap-2">
+            <div class="timemachine">
+                <img class="cog large-cog" src="/images/cog.png" alt="cog">
+                <img class="cog small-cog" src="/images/cog.png" alt="cog">
+                <article class="panel">
                     <div class="col">
                         <span>* time machine *</span>
-                        <span style="opacity: .5;">travel in time!</span>
+                        <span class="text-muted">travel in time!</span>
                     </div>
-                    <div class="row gap-2">
+                    <div class="buttons">
                         <button class="physical-button small"></button>
-                        <button class="physical-button" id="speed-button">
-                            <div class="icon speed-icon"></div>
+                        <button class="speed-button physical-button">
+                            <div class="icon"></div>
                         </button>
                     </div>
                 </article>
@@ -120,39 +92,21 @@
                         <img src="/images/ui/smiley-button.png" alt="smiley">
                     </button>
                 </header>
-                <div class="gallery pixelate">
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="/gifs/table.gif" alt="Table with some trash">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="/gifs/clock.gif"
-                        alt="SOMEBODY REPLACE THE BATTERY IMMEDIATELY">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="/gifs/obey.gif" alt="obey" title="OBEY YOURSELF">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="/gifs/me.gif" alt="wakey wakey">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="/gifs/new-year.gif" alt="HAPPY NEW YEAR!">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="/gifs/bridge.gif" alt="check out WHITEY"
-                        title="Check out WHITEY, he's really cool">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="/gifs/flower.gif" alt="alive and dead">
-                    </div>
-                    <div class="image-wrapper">
-                        <img loading="lazy" src="/gifs/summer.gif" alt="lost summer">
-                    </div>
+                <div class="gallery">
+                    <img loading="lazy" src="/gifs/table.gif" alt="Table with some trash">
+                    <img loading="lazy" src="/gifs/clock.gif" alt="SOMEBODY REPLACE THE BATTERY IMMEDIATELY">
+                    <img loading="lazy" src="/gifs/obey.gif" alt="obey" title="OBEY YOURSELF">
+                    <img loading="lazy" src="/gifs/me.gif" alt="wakey wakey">
+                    <img loading="lazy" src="/gifs/new-year.gif" alt="HAPPY NEW YEAR!">
+                    <img loading="lazy" src="/gifs/bridge.gif" alt="check out WHITEY" title="Check out WHITEY, he's really cool">
+                    <img loading="lazy" src="/gifs/flower.gif" alt="alive and dead">
+                    <img loading="lazy" src="/gifs/summer.gif" alt="lost summer">
                 </div>
             </article>
             <!-- Vault -->
-            <div class="width-fill row justify-center flex-wrap items-center gap-4">
-                <article class="panel vault">
-                    <div class="password-input">000*</div>
+            <div class="vault width-fill row justify-center flex-wrap items-center gap-4">
+                <article class="vault-numpad panel">
+                    <div class="numpad-display">000*</div>
                     <div class="buttons col items-center">
                         <div class="row">
                             <button data-num="1" class="physical-button small">1</button>
@@ -174,13 +128,13 @@
                 </article>
 
                 <!-- Clicking on door plays knock sound if door is closed -->
-                <div id="vault-door" class="door pixelate"
+                <div class="vault-door"
                     onclick="if (!this.classList.contains('opened')) global_playSound('knock')">
                     <!-- YOU CANNOT SEE ANITHING BEHIND THE DOOR! -->
                     <!-- open it first!!! -->
 
-                    <img class="doorway-image" src="/images/doorway.png" alt="doorway">
-                    <img class="door-image" src="/images/door.png" alt="door">
+                    <img class="doorway" src="/images/doorway.png" alt="doorway">
+                    <img class="door" src="/images/door.png" alt="door">
                 </div>
             </div>
             <!-- Links -->
@@ -201,13 +155,13 @@
                     </a>
                     <button
                         class="button95 text-red"
-                        onclick="global_animateFlyout('#flying-links-paper')"
+                        onclick="global_animateFlyout('.flying-links-paper')"
                     >more...</button>
                 </div>
             </article>
             <!-- Flying paper -->
             <div class="flying-paper-wrapper col width-fill items-center">
-                <article class="paper" id="flying-links-paper">
+                <article class="flying-links-paper paper">
                     <a href="mailto:bbogdan_ov@mail.ru">bbogdan_ov@mail.ru</a>
                     <span>discord@bogdan_ov</span>
                 </article>
@@ -258,7 +212,7 @@
             </article>
             <!-- FUCK COOKIES -->
             <article class="fuck-cookies">
-                <div class="cookies-marquee reverse-anim"></div>
+                <div class="cookies-marquee anim-reverse"></div>
 
                 <header class="row gap-4">
                     <img
@@ -266,7 +220,6 @@
                         src="/gifs/cookie.gif"
                         alt="cookie"
                         loading="lazy"
-                        class="pixelate"
                         width="128"
                         height="128"
                     >
@@ -297,31 +250,31 @@
                 <div class="cookies-marquee"></div>
             </article>
             <!-- Chat -->
-            <div class="width-fill">
+            <div class="chat width-fill">
                 <article class="box95 window95">
                     <header><span>i found you</span></header>
                     <div class="content">
                         <div class="chat-box">
                             <p class="message">
-                            <span class="author">bogd_N94:</span>
-                            <span>hey!!</span>
+                                <span class="author">bogd_N94:</span>
+                                <span>hey!!</span>
                             </p>
                             <p class="message">
-                            <span class="author">bogd_N94:</span>
-                            <span>i want to tell you something... :)</span>
+                                <span class="author">bogd_N94:</span>
+                                <span>i want to tell you something... :)</span>
                             </p>
                         </div>
                         <div class="row gap-1">
-                            <input id="chat-input" placeholder="enter a message...">
-                            <button id="chat-button" class="button95">send</button>
+                            <input class="chat-input" placeholder="enter a message...">
+                            <button class="chat-button button95">send</button>
                         </div>
                     </div>
                 </article>
-                <img id="lovelove" src="/gifs/love-me.gif" alt="love me" loading="lazy">
+                <img class="lovelove" src="/gifs/love-me.gif" alt="love me" loading="lazy">
             </div>
             <!-- Git cat -->
-            <article class="git-cat pixelate">
-                <div class="black-box floating">
+            <article class="git-cat">
+                <div class="git-cat-dialog-bubble">
                     <a
                         class="rainbow-link"
                         href="https://github.com/bbogdan-ov/bbogdan-ov.github.io"
@@ -342,7 +295,7 @@
                     <div class="loading-text">LOADING...</div>
                 </div>
             </article>
-            <img class="pixelate" src="/gifs/piano.gif" alt="piano" loading="lazy">
+            <img src="/gifs/piano.gif" alt="piano" loading="lazy">
             <!-- Send me your record -->
             <article class="paper">
                 <u class="text-red">SEND YOUR BEST SCORE TO</u>
@@ -352,19 +305,9 @@
             <article class="by-bogdanov">
                 <!-- Arm -->
                 <div class="arm-wrapper">
-                    <div class="arm" data-speedup data-speedup-dur="1.2">
-                        <img
-                            class="arm-image"
-                            src="/images/tape-hand/arm.png"
-                            alt="arm"
-                        >
-                        <img
-                            class="hand"
-                            src="/images/tape-hand/hand.png"
-                            alt="hand"
-                            data-speedup
-                            data-speedup-dur="1.2"
-                        >
+                    <div class="arm">
+                        <img class="arm-image" src="/images/tape-hand/arm.png" alt="arm">
+                        <img class="hand" src="/images/tape-hand/hand.png" alt="hand">
                     </div>
                 </div>
 
@@ -423,7 +366,7 @@
 
         <div class="container">
             <!-- Promo tv -->
-            <div class="tv pixelate" id="promo-tv">
+            <div class="tv">
                 <video src="/videos/promotion.mp4" class="tv-video"></video>
                 <img class="vcr-image" src="/images/vcr.png" alt="vcr">
                 <img class="lags-image" src="/gifs/lags.gif" alt="lags">
@@ -444,7 +387,7 @@
     </section>
 
     <!-- Footer -->
-    <img loading="lazy" class="no-events" src="/images/valley.png" alt="footer">
+    <img loading="lazy" class="footer" src="/images/valley.png" alt="footer">
 
     <!-- Top layer -->
     <div class="loader">
@@ -452,7 +395,7 @@
             <img src="/images/wires.png" alt="wires" class="loader-wire top">
             <img src="/images/wires.png" alt="wires" class="loader-wire bottom">
 
-            <span style="font-size: 8px; opacity: .4;">Please wait...</span>
+            <span class="text-muted" style="font-size: 8px">Please wait...</span>
             <div class="loader-display">
                 <div class="word">
                     <div class="char">l</div>

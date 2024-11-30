@@ -1,9 +1,9 @@
 import * as PIXI from "pixi.js"; 
 import gsap from "gsap";
-import * as objects from "../../objects";
-import * as utils from "../../utils";
-import * as consts from "../../consts";
-import * as speedup from "../../speedup";
+import * as objects from "../objects";
+import * as utils from "../utils";
+import * as consts from "../consts";
+import * as speedup from "../speedup";
 
 const WEATHER_DUR = 60;
 const WEATHER_CHANGE_DUR = 15;
@@ -29,11 +29,11 @@ let cloudSpawnTimer = 0;
 let weatherChangeTimer = WEATHER_DUR;
 let rainDropTimer = 0;
 
-export function init(canvas, container) {
-    canvas.stage.addChild(rainbow)
-    spawnStarterClouds(canvas, container);
+export function init(app, container) {
+    app.stage.addChild(rainbow)
+    spawnStarterClouds(app, container);
 }
-export function tick(time, delta, canvas, container) {
+export function tick(time, delta, app, container) {
     // Timers
     cloudSpawnTimer -= delta;
     weatherChangeTimer -= delta;
@@ -48,7 +48,7 @@ export function tick(time, delta, canvas, container) {
 
     // Spawn cloud when timer is finished
     if (cloudSpawnTimer <= 0) {
-        spawnCloud(canvas, container);
+        spawnCloud(app, container);
         cloudSpawnTimer = utils.remap(1 - weather.cloudsDencity, 5, 20);
     }
 
@@ -62,7 +62,7 @@ export function tick(time, delta, canvas, container) {
     if (weather.rainFactor == 0 ? false : rainDropTimer > .05 * (1 - weather.rainFactor)) {
         rainDropTimer = 0;
         for (let i = 0; i < Math.round(speedup.speedMul); i ++) {
-            spawnRain(canvas, container);
+            spawnRain(app, container);
         }
     }
 
@@ -72,11 +72,11 @@ export function tick(time, delta, canvas, container) {
             obj.darkenFilter.uniforms.uFactor = weather.rainFactor;
             
             // Removing clouds
-            if (obj.moveX - obj.width > canvas.view.width || obj.moveY + obj.height < 0)
+            if (obj.moveX - obj.width > app.view.width || obj.moveY + obj.height < 0)
                 container.removeChild(obj);
         } else if (obj instanceof objects.Rain) {
             // Removing rain
-            if (obj.y > canvas.view.height)
+            if (obj.y > app.view.height)
                 container.removeChild(obj);
         }
     }
@@ -102,15 +102,15 @@ function changeWeather() {
 }
 
 // Clouds
-function spawnStarterClouds(canvas, container) {
+function spawnStarterClouds(app, container) {
     // Fill screen with random amount of clouds
     for (let i = 0; i < utils.randomInt(10, 20); i ++) {
         const offset = utils.random(0, 300);
-        const cloud = spawnCloud(canvas, container);
+        const cloud = spawnCloud(app, container);
         cloud.setPos(cloud.moveX + offset, cloud.moveY - offset)
     }
 }
-function spawnCloud(canvas, container) {
+function spawnCloud(app, container) {
     const cloud = new objects.Cloud();
     let x = 0;
     let y = 0;
@@ -119,11 +119,11 @@ function spawnCloud(canvas, container) {
     if (utils.randomBool()) {
         // Left side
         x = -cloud.width;
-        y = utils.random(cloud.height, canvas.view.height);
+        y = utils.random(cloud.height, app.view.height);
     } else {
         // Bottom side
-        x = utils.random(-cloud.width, canvas.view.width);
-        y = canvas.view.height + cloud.height;
+        x = utils.random(-cloud.width, app.view.width);
+        y = app.view.height + cloud.height;
     }
 
     cloud.setPos(x, y);
@@ -133,9 +133,9 @@ function spawnCloud(canvas, container) {
 }
 
 // Rain
-function spawnRain(canvas, container) {
+function spawnRain(app, container) {
     const rain = new objects.Rain();
-    rain.x = utils.random(-rain.width*2, canvas.view.width);
+    rain.x = utils.random(-rain.width*2, app.view.width);
     rain.y = utils.random(-rain.height*3, -rain.height);
 
     container.addChild(rain);
