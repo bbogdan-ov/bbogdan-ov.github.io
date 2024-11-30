@@ -1,6 +1,6 @@
 import gsap from "gsap";
 
-export function initLoader() {
+document.addEventListener("DOMContentLoaded", () => {
     const loader = document.querySelector(".loader");
     const loaderOverlay = loader.querySelector(".loader-flash-overlay");
     const loaderPanel = loader.querySelector(".loader-panel");
@@ -100,4 +100,4 @@ export function initLoader() {
             duration: .5,
         });
     }
-}
+})

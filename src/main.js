@@ -4,15 +4,12 @@ import * as canvases from "./canvases";
 import * as speedup from "./speedup";
 import * as utils from "./utils";
 import * as games from "./games";
-import * as loader from "./loader";
 import * as funny from "./funny";
 
 // Pixilate textures
 PIXI.BaseTexture.defaultOptions.scaleMode = PIXI.SCALE_MODES.NEAREST;
 
 document.addEventListener("DOMContentLoaded", ()=> {
-    loader.initLoader();
-
     canvases.initBackground();
     
     sections.initWelcome();

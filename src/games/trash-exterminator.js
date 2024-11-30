@@ -1,6 +1,6 @@
 import * as PIXI from "pixi.js";
-import * as utils from "../../utils";
-import * as objects from "../../objects";
+import * as utils from "../utils";
+import * as objects from "../objects";
 
 const DECAY_SHADER_FRAG = `
     varying vec2 vTextureCoord;
