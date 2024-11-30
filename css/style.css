@@ -456,6 +456,23 @@ code {
     animation-delay: .3s;
 }
 
+@keyframes arm {
+    from, to {
+        transform: scale(1.3) rotate(-8deg) translate(-0%, -80%);
+    }
+    50% {
+        transform: scale(1.3) rotate(8deg) translate(-0%, -80%);
+    }
+}
+@keyframes hand {
+    from, to {
+        transform: rotate(-8deg) translate(37px, -100px);
+    }
+    50% {
+        transform: rotate(8deg) translate(37px, -100px);
+    }
+}
+
 /* Chat */
 .chat-box {
     padding: 8px;
@@ -492,7 +509,7 @@ code {
     font-family: var(--fancy-font);
     font-size: 22px;
 
-    animation: black-box-floating infinite linear 1s;
+    animation: git-cat-bubble-floating infinite linear 1s;
 }
 .git-cat-dialog-bubble::after {
     content: "";
@@ -515,6 +532,11 @@ code {
     width: auto;
     height: 256px;
     object-fit: fill;
+}
+
+@keyframes git-cat-bubble-floating {
+    from, to { translate: 0 -50%; }
+    50% { translate: 0 50%; }
 }
 
 /* Vault */
@@ -796,28 +818,8 @@ body.speeded .timemachine .small-cog {
 
 /* Animations */
 @keyframes substance {
-    from {
-        background-position: 0 0;
-    }
-    to {
-        background-position: 128px -128px;
-    }
-}
-@keyframes arm {
-    from, to {
-        transform: scale(1.3) rotate(-8deg) translate(-0%, -80%);
-    }
-    50% {
-        transform: scale(1.3) rotate(8deg) translate(-0%, -80%);
-    }
-}
-@keyframes hand {
-    from, to {
-        transform: rotate(-8deg) translate(37px, -100px);
-    }
-    50% {
-        transform: rotate(8deg) translate(37px, -100px);
-    }
+    from { background-position: 0 0; }
+    to { background-position: 128px -128px; }
 }
 @keyframes rainbow-text {
     0% { color: #00f; }
@@ -827,39 +829,9 @@ body.speeded .timemachine .small-cog {
     80% { color: #f0f; }
     100% { color: #fff; }
 }
-@keyframes fancy-link {
-    from, to {
-        translate: -8px -8px;
-        text-shadow:
-        2px 2px 0px hsl(180, 100%, 50%),
-        4px 4px 0px hsl(90, 100%, 50%),
-        6px 6px 0px hsl(45, 100%, 50%),
-        8px 8px 0px hsl(0, 100%, 50%);
-    }
-    50% {
-        translate: 0 0;
-        text-shadow:
-        0px 0px 0px hsl(180, 100%, 50%),
-        0px 0px 0px hsl(90, 100%, 50%),
-        0px 0px 0px hsl(45, 100%, 50%),
-        0px 0px 0px hsl(0, 100%, 50%);
-    }
-}
-@keyframes link-pointer {
-    from, to {
-        transform: translate(50%, -50%) scaleX(-1);
-    }
-    50% {
-        transform: translate(0%, -50%) scaleX(-1);
-    }
-}
 @keyframes rotate {
     from { rotate: 0deg; }
     to { rotate: 360deg; }
-}
-@keyframes black-box-floating {
-    from, to { translate: 0 -50%; }
-    50% { translate: 0 50%; }
 }
 @keyframes slogan-background {
     from {

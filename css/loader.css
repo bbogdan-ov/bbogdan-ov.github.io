@@ -64,8 +64,15 @@
     text-shadow: 0 0 20px rgba(0, 255, 0, .4);
 }
 
+/* Media */
 @media screen and (max-width: 400px) {
     .loader-display {
         flex-direction: column;
     }
+}
+
+/* Animations */
+@keyframes loader-fade-in {
+    from { opacity: 0; }
+    to { opacity: 1 }
 }
