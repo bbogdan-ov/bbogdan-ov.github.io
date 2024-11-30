@@ -44,6 +44,9 @@ body {
 
     cursor: url("/images/ui/cursor.png") 0 0, auto !important;
 }
+body.lock-scroll {
+    overflow-y: hidden;
+}
 ::-webkit-scrollbar {
     display: none;
 }

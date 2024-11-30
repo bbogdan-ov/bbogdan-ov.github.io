@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
+    /** @type {HTMLDivElement} */
     const loader = document.querySelector(".loader");
-    const loaderOverlay = loader.querySelector(".loader-flash-overlay");
     const loaderPanel = loader.querySelector(".loader-panel");
     const loaderDisplay = loaderPanel.querySelector(".loader-display");
 
@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    // Lock scrolling
-    document.body.style.overflowY = "hidden";
+    // Lock scroll
+    document.body.classList.add("lock-scroll");
     scrollTo(0, 0);
 
-    startAnimation(1, 1.7);
+    startAnimation();
 
     addEventListener("load", () => {
         loaderDisplay.innerHTML = `
@@ -28,72 +28,65 @@ document.addEventListener("DOMContentLoaded", () => {
         `;
 
         // Restart animation after changing the text
-        startAnimation(.5, .4);
+        startAnimation();
 
-        const tl = gsap.timeline({
-            delay: 1,
-            onComplete: () => {
-                // Remove loader on animation end and unlock scroll
-                loader.remove()
-                document.body.style.overflowY = "";
+        setTimeout(() => {
+            loader.classList.add("loaded");
+            loader.ontransitionend = e => {
+                if (e.target == loader)
+                    loader.remove();
             }
-        });
+        }, 1000)
 
-        tl.fromTo(loader, { filter: "brightness(1)", }, {
-            filter: "brightness(6)",
-            duration: 4,
-            ease: "power2.in",
-        });
-        tl.to(loaderOverlay, {
-            opacity: 1,
-            duration: 4,
-            ease: "power2.in",
-        }, "<");
-        tl.to(loader, {
-            opacity: 0,
-            duration: 2,
-            ease: "none"
-        }, "-=1");
-    })
+        setTimeout(() => {
+            // Unlock scroll and make loader click-throughable
+            loader.style.pointerEvents = "none";
+            document.body.classList.remove("lock-scroll");
+        }, 3000);
+    });
 
-    function startAnimation(freq, delay) {
+    function startAnimation() {
         const loaderChars = loaderDisplay.querySelectorAll(".char");
 
-        const offsetX = 5 * freq;
-        const offsetY = 10 * freq;
-
         // Fade in
-        gsap.fromTo(loaderChars, { opacity: 0 }, {
-            opacity: 1,
-            stagger: .06,
-            duration: .1,
-            ease: "power3.out",
-            delay
-        });
+        loaderChars.forEach((char, index) => char.animate({
+            opacity: [0, 1]
+        }, {
+            duration: 40,
+            delay: 80 * index + 200,
+            fill: "both",
+        }))
+
+        const yKeyframes = {
+            transform: [
+                `translateY(10px)`,
+                `translateY(-10px)`,
+                `translateY(10px)`,
+            ],
+            easing: "ease-in-out",
+        }
+        const xKeyframes = {
+            transform: [
+                `translateX(-5px)`,
+                `translateX(5px)`,
+                `translateX(-5px)`,
+            ],
+            easing: "ease-in-out",
+        }
 
         // Wave up and down
-        gsap.fromTo(loaderChars, { y: offsetY }, {
-            keyframes: {
-                y: [ offsetY, -offsetY, offsetY ],
-                easeEach: "power1.inOut",
-            },
-            stagger: {
-                amount: .6,
-                repeat: -1,
-            },
-            duration: .5,
-        });
+        loaderChars.forEach((char, index) => char.animate(yKeyframes, {
+            duration: 500,
+            delay: 80 * index,
+            iterations: Infinity,
+            composite: "add",
+        }));
         // Wave left and right
-        gsap.fromTo(loaderChars, { x: -offsetX }, {
-            keyframes: {
-                x: [ -offsetX, offsetX, -offsetX ],
-                easeEach: "power1.inOut",
-            },
-            stagger: {
-                each: .02,
-                repeat: -1,
-            },
-            duration: .5,
-        });
+        loaderChars.forEach((char, index) => char.animate(xKeyframes, {
+            duration: 500,
+            delay: 20 * index,
+            iterations: Infinity,
+            composite: "add",
+        }));
     }
 })

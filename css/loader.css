@@ -8,12 +8,17 @@
     overflow: hidden;
 
     background: #000;
+
+    transition: 3s ease-out opacity;
+    transition-delay: 2.2s;
 }
-.loader-flash-overlay {
+.loader .flash-overlay {
     inset: 0;
     position: absolute;
-    opacity: 0;
     background: #fff;
+    pointer-events: none;
+
+    transition: 2s cubic-bezier(0.655, 0.185, 0.940, 0.550);
 }
 .loader-panel {
     padding: 8px 40px !important;
@@ -24,6 +29,10 @@
     gap: 8px;
 
     opacity: 0;
+
+    transition: 1s ease-in filter;
+    animation: loader-fade-in 1s linear both;
+    animation-delay: .2s;
 }
 .loader-wire {
     width: 434px;
@@ -42,7 +51,8 @@
     left: calc(50% - 30px);
 }
 .loader-display {
-    min-width: 260px;
+    width: 260px;
+    height: 60px;
 
     padding: 18px 0;
     display: flex;
@@ -62,6 +72,15 @@
 }
 .loader-display .char {
     text-shadow: 0 0 20px rgba(0, 255, 0, .4);
+}
+.loader.loaded {
+    opacity: 0;
+}
+.loader.loaded .loader-panel {
+    filter: brightness(6);
+}
+.loader.loaded .flash-overlay {
+    opacity: 1 !important;
 }
 
 /* Media */
