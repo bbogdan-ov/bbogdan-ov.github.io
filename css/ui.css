@@ -28,6 +28,17 @@
     bottom: unset;
     top: calc(100% - 3px);
 }
+.panel-display {
+    overflow: hidden;
+
+    font-family: var(--vhs-font);
+    background: var(--black);
+    color: var(--green);
+    box-shadow:
+        inset 1px 1px #666,
+        inset -1px -1px #999;
+    text-shadow: 0 0 20px rgba(0, 255, 0, .4);
+}
 
 /* Box 95 */
 .box95 {

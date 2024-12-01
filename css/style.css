@@ -558,13 +558,11 @@ code {
     text-align: center;
     line-height: 50px;
 
-    background: var(--black);
-    font-family: var(--vhs-font);
     font-size: 32px;
-    color: var(--green);
 }
 .vault.wrong .numpad-display {
     color: var(--red);
+    text-shadow: 0 0 20px rgba(255, 0, 0, .4);
 }
 .vault-door {
     width: 256px;

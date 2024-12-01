@@ -60,18 +60,9 @@
     align-items: center;
     letter-spacing: .2em;
     gap: 1.2em .5em;
-
-    background: #000;
-    box-shadow:
-        inset 1px 1px #666,
-        inset -1px -1px #999;
-    color: var(--green);
 }
 .loader-display .word {
     display: flex;
-}
-.loader-display .char {
-    text-shadow: 0 0 20px rgba(0, 255, 0, .4);
 }
 .loader.loaded {
     opacity: 0;
