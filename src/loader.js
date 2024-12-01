@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Unlock scroll and make loader click-throughable
             loader.style.pointerEvents = "none";
             document.body.classList.remove("lock-scroll");
-        }, 3000);
+        }, 2000);
     });
 
     function startAnimation() {

@@ -10,7 +10,7 @@
     background: #000;
 
     transition: 3s ease-out opacity;
-    transition-delay: 2.2s;
+    transition-delay: 1s;
 }
 .loader .flash-overlay {
     inset: 0;
@@ -18,7 +18,7 @@
     background: #fff;
     pointer-events: none;
 
-    transition: 2s cubic-bezier(0.655, 0.185, 0.940, 0.550);
+    transition: 1s cubic-bezier(0.655, 0.185, 0.940, 0.550);
 }
 .loader-panel {
     padding: 8px 40px !important;
