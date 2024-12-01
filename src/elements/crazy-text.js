@@ -8,7 +8,7 @@ const CHAR_HEIGHT = 64;
 const FONT_MAP = " abcdefghijklmnopqrstuvwxyz!?";
 
 export class CrazyText {
-    constructor(text) {
+    constructor(text, delay=2.5) {
         this.lines = text.toLowerCase().split("\n");
         this.lineLength = Math.max(...this.lines.map(l=> l.length));
 
@@ -19,6 +19,8 @@ export class CrazyText {
             antialias: false,
         });
         this.canvas.view.classList.add("crazy-text", "pixelate")
+
+        this.delay = delay;
 
         this.createChars();
         this.startTicker();
@@ -59,7 +61,7 @@ export class CrazyText {
                         { alpha: 1, duration: 0, delay: charIndex * .05 },
                         { x: charX, y: charY, duration: .1, ease: "back.out" },
                     ],
-                    delay: 2.5
+                    delay: this.delay
                 });
                 
                 this.canvas.stage.addChild(charSprite);

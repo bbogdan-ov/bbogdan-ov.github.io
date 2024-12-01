@@ -115,7 +115,7 @@ export function initWelcome() {
 
     // Add crazy text after page load
     addEventListener("load", ()=> {
-        const title = new elements.CrazyText(utils.randomItem(SPLASHES));
+        const title = new elements.CrazyText(utils.randomItem(SPLASHES), 3);
         title.appendTo(section);
     })
 }
