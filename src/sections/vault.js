@@ -14,77 +14,77 @@ doorSecret.alt = "JESUS IS REAL";
 
 // Log password if in dev mode
 if (import.meta.env.DEV)
-    console.log(password);
+	console.log(password);
 
 export function initVault() {
-    const vault = document.querySelector(".vault");
-    const door = vault.querySelector(".vault-door");
-    const numpad = vault.querySelector(".vault-numpad");
-    const display = numpad.querySelector(".numpad-display");
-    const buttons = numpad.querySelectorAll(".buttons button");
+	const vault = document.querySelector(".vault");
+	const door = vault.querySelector(".vault-door");
+	const numpad = vault.querySelector(".vault-numpad");
+	const display = numpad.querySelector(".numpad-display");
+	const buttons = numpad.querySelectorAll(".buttons button");
 
-    updateDisplay();
+	updateDisplay();
 
-    // Listen number buttons clicks
-    buttons.forEach(button=> {
-        const num = button.getAttribute("data-num");
+	// Listen number buttons clicks
+	buttons.forEach(button => {
+		const num = button.getAttribute("data-num");
 
-        button.onclick = ()=> {
-            putNumber(num);
-        }
-    })
+		button.onclick = () => {
+			putNumber(num);
+		}
+	})
 
-    function putNumber(number) {
-        if (!allowInput || currentPassword.length >= password.length) return;
+	function putNumber(number) {
+		if (!allowInput || currentPassword.length >= password.length) return;
 
-        currentPassword += number.toString();
-        updateDisplay();
+		currentPassword += number.toString();
+		updateDisplay();
 
-        // Check password with delay if password input is filled
-        if (currentPassword.length >= password.length) {
-            allowInput = false;
-            
-            setTimeout(()=> {
-                checkPassword();
-            }, 200);
-        }
-    }
-    function resetPassword() {
-        currentPassword = "";
-        allowInput = true;
-        vault.classList.remove("wrong");
-        updateDisplay();
-    }
-    function checkPassword() {
-        if (currentPassword == password) {
-            correctPassword();
-            return;
-        }
-        
-        wrongPassword();
+		// Check password with delay if password input is filled
+		if (currentPassword.length >= password.length) {
+			allowInput = false;
 
-        setTimeout(resetPassword, 1000);
-    }
-    function correctPassword() {
-        vault.classList.add("opened");
-        display.textContent = "CORRECT";
-        // Add jesus gif behind the door!
-        door.prepend(doorSecret);
+			setTimeout(() => {
+				checkPassword();
+			}, 200);
+		}
+	}
+	function resetPassword() {
+		currentPassword = "";
+		allowInput = true;
+		vault.classList.remove("wrong");
+		updateDisplay();
+	}
+	function checkPassword() {
+		if (currentPassword == password) {
+			correctPassword();
+			return;
+		}
 
-        utils.playSound("correct", .6);
-    }
-    function wrongPassword() {
-        vault.classList.add("wrong");
-        display.textContent = "WRONG";
+		wrongPassword();
 
-        utils.playSound("wrong", .6);
-    } 
+		setTimeout(resetPassword, 1000);
+	}
+	function correctPassword() {
+		vault.classList.add("opened");
+		display.textContent = "CORRECT";
+		// Add jesus gif behind the door!
+		door.prepend(doorSecret);
 
-    function updateDisplay() {
-        let text = currentPassword;
+		utils.playSound("correct", .6);
+	}
+	function wrongPassword() {
+		vault.classList.add("wrong");
+		display.textContent = "WRONG";
 
-        // Fill remaining space of display with asterix
-        display.textContent = text + "*".repeat(password.length - text.length);
-    }
+		utils.playSound("wrong", .6);
+	}
+
+	function updateDisplay() {
+		let text = currentPassword;
+
+		// Fill remaining space of display with asterix
+		display.textContent = text + "*".repeat(password.length - text.length);
+	}
 }
 

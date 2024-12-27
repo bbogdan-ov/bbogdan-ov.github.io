@@ -1,26 +1,26 @@
 .pre {
-    white-space: pre-wrap;
+	white-space: pre-wrap;
 }
 .no-events {
-    pointer-events: none;
+	pointer-events: none;
 }
 .anim-reverse {
-    animation-direction: reverse;
+	animation-direction: reverse;
 }
 
 .text-muted {
-    opacity: .5;
+	opacity: .5;
 }
 .text-red {
-    color: var(--red);
+	color: var(--red);
 }
 .text-white {
-    color: var(--white);
+	color: var(--white);
 }
 
 .bg-black {
-    background: var(--black);
+	background: var(--black);
 }
 .bg-white {
-    background: var(--white);
+	background: var(--white);
 }

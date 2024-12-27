@@ -1,13 +1,13 @@
 * {
-    box-sizing: border-box;
-    outline: none;
-    position: relative;
-    margin: 0;
-    padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	position: relative;
+	margin: 0;
+	padding: 0;
 }
 
 body, html {
-    width: 100%;
+	width: 100%;
 }
 
 .m-1 { margin: 2px; }
@@ -92,97 +92,97 @@ body, html {
 .gap-y-5 { gap: 20px 0; }
 
 .row, .row-centered {
-    display: flex;
+	display: flex;
 }
 .col, .col-centered {
-    display: flex;
-    flex-direction: column;
+	display: flex;
+	flex-direction: column;
 }
 .row-centered, .col-centered {
-    align-items: center;
+	align-items: center;
 }
 
 .flex-column {
-    flex-direction: column !important;
+	flex-direction: column !important;
 }
 .flex-row {
-    flex-direction: row !important;
+	flex-direction: row !important;
 }
 .flex-wrap {
-    flex-wrap: wrap;
+	flex-wrap: wrap;
 }
 .flex-nowrap {
-    flex-wrap: nowrap;
+	flex-wrap: nowrap;
 }
 
 .justify-start {
-    justify-content: flex-start;
+	justify-content: flex-start;
 }
 .justify-end {
-    justify-content: flex-end;
+	justify-content: flex-end;
 }
 .justify-center {
-    justify-content: center;
+	justify-content: center;
 }
 .justify-between {
-    justify-content: space-between;
+	justify-content: space-between;
 }
 .justify-around {
-    justify-content: space-around;
+	justify-content: space-around;
 }
 
 .items-start {
-    align-items: flex-start;
+	align-items: flex-start;
 }
 .items-end {
-    align-items: flex-end;
+	align-items: flex-end;
 }
 .items-center {
-    align-items: center;
+	align-items: center;
 }
 
 .center-all {
-    align-items: center;
-    justify-content: center;
+	align-items: center;
+	justify-content: center;
 }
 
 .self-start {
-    align-self: flex-start;
+	align-self: flex-start;
 }
 .self-end {
-    align-self: flex-end;
+	align-self: flex-end;
 }
 .self-center {
-    align-self: center;
+	align-self: center;
 }
 
 .justify-self-start {
-    justify-self: flex-start;
+	justify-self: flex-start;
 }
 .justify-self-end {
-    justify-self: flex-end;
+	justify-self: flex-end;
 }
 .justify-self-center {
-    justify-self: center;
+	justify-self: center;
 }
 
 .width-fill {
-    width: 100% !important;
+	width: 100% !important;
 }
 .height-fill {
-    height: 100% !important;
+	height: 100% !important;
 }
 .size-fill {
-    width: 100% !important;
-    height: 100% !important;
+	width: 100% !important;
+	height: 100% !important;
 }
 
 .text-center {
-    text-align: center;
+	text-align: center;
 }
 .text-right {
-    text-align: right;
+	text-align: right;
 }
 .text-left {
-    text-align: left;
+	text-align: left;
 }

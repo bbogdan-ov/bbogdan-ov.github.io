@@ -9,24 +9,24 @@ import * as funny from "./funny";
 // Pixilate textures
 PIXI.BaseTexture.defaultOptions.scaleMode = PIXI.SCALE_MODES.NEAREST;
 
-document.addEventListener("DOMContentLoaded", ()=> {
-    background.initBackground();
-    
-    sections.initWelcome();
-    sections.initInfo();
-    sections.initPromo();
-    sections.initVault();
-    sections.initChat();
-	sections.initCookies();
-    speedup.init();
+document.addEventListener("DOMContentLoaded", () => {
+	background.initBackground();
 
-    addEventListener("load", ()=> {
-        games.initTrashExterminator();
-    })
-    addEventListener("pointerdown", e=> {
-        if (e.target instanceof HTMLButtonElement || e.target instanceof HTMLAnchorElement)
-            utils.playSound("click", .5);
-    })
+	sections.initWelcome();
+	sections.initInfo();
+	sections.initPromo();
+	sections.initVault();
+	sections.initChat();
+	sections.initCookies();
+	speedup.init();
+
+	addEventListener("load", () => {
+		games.initTrashExterminator();
+	})
+	addEventListener("pointerdown", e => {
+		if (e.target instanceof HTMLButtonElement || e.target instanceof HTMLAnchorElement)
+			utils.playSound("click", .5);
+	})
 })
 
 window.global_playSound = utils.playSound;
