@@ -479,19 +479,21 @@ code {
 /* Chat */
 .chat-box {
 	padding: 8px;
+	min-height: 230px;
 
 	display: flex;
 	flex-direction: column;
-	gap: 2px;
+	gap: 4px;
 
 	background: var(--white);
 }
+.chat-box .messages {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
 .chat-box .message {
 	width: fit-content;
-}
-.chat-box .message .author {
-	color: var(--red);
-	font-weight: 600;
 }
 
 /* Git cat */
@@ -571,20 +573,21 @@ code {
 	perspective: 1200px;
 	z-index: 2;
 }
-.vault-door .doorway {
+.vault-door .door-layer {
 	position: absolute;
 	left: 0;
 	top: 0;
 	pointer-events: none;
 }
 .vault-door .door {
-	position: absolute;
 	left: 22px;
 	top: 20px;
 	transform-origin: 100% 0;
 
 	transition: 2s;
-	pointer-events: none;
+}
+.vault-door .door-tape {
+	transition: .2s;
 }
 .vault-door .door-secret {
 	width: 100%;
@@ -595,6 +598,9 @@ code {
 }
 .vault.opened .vault-door .door {
 	transform: rotateY(110deg);
+}
+.vault.opened .vault-door .door-tape {
+	opacity: 0;
 }
 
 /* Time machine */

@@ -303,3 +303,8 @@ a:hover .pointer {
 .rainbow-link:hover {
 	animation: rainbow-text infinite step-end .3s;
 }
+
+/* Form */
+form[inert] {
+	opacity: .5;
+}

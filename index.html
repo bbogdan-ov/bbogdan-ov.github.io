@@ -136,8 +136,9 @@
 					<!-- YOU CANNOT SEE ANITHING BEHIND THE DOOR! -->
 					<!-- open it first!!! -->
 
-					<img class="doorway" src="/images/doorway.png" alt="doorway">
-					<img class="door" src="/images/door.png" alt="door">
+					<img class="door-layer doorway" src="/images/doorway.png" alt="doorway">
+					<img class="door-layer door" src="/images/door.png" alt="door">
+					<img class="door-layer door-tape" src="/images/door-tape.png" alt="door tape">
 				</div>
 			</div>
 			<!-- Links -->
@@ -255,25 +256,34 @@
 			<!-- Chat -->
 			<div class="chat width-fill">
 				<article class="box95 window95">
-					<header><span>i found you</span></header>
+					<header>
+						<p>
+							<span>talk to</span>
+							<img
+								src="/gifs/god-badge.gif"
+								alt="GOD"
+								height="20"
+								style="display: inline; vertical-align: bottom;"
+							>
+							<span>himself</span>
+						</p>
+					</header>
 					<div class="content">
 						<div class="chat-box">
-							<p class="message">
-								<span class="author">bogd_N94:</span>
-								<span>hey!!</span>
-							</p>
-							<p class="message">
-								<span class="author">bogd_N94:</span>
-								<span>i want to tell you something... :)</span>
-							</p>
+							<b class="rainbow-text">/!\ Ask him anithing! /!\</b>
+							<div class="messages">
+								<!-- Messages go here... -->
+							</div>
+							<span class="printing-msg text-muted" style="display: none;">
+								god is thinking...
+							</span>
 						</div>
-						<div class="row gap-1">
+						<form class="chat-form row gap-1">
 							<input class="chat-input" placeholder="enter a message...">
-							<button class="chat-button button95">send</button>
-						</div>
+							<button class="chat-button button95" type="submit">send</button>
+						</form>
 					</div>
 				</article>
-				<img class="lovelove" src="/gifs/love-me.gif" alt="love me" loading="lazy">
 			</div>
 			<!-- Git cat -->
 			<article class="git-cat">
