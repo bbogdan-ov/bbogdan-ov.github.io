@@ -38,7 +38,7 @@ export class CrazyText {
 				const char = line[charIndex];
 				const mapCharIndex = FONT_MAP.indexOf(char);
 				const charSprite = new PIXI.TilingSprite(
-					PIXI.Texture.from("/images/crazy-font-sheet.png"),
+					PIXI.Texture.from("assets/images/crazy-font-sheet.png"),
 					CHAR_SLICE_SIZE,
 					CHAR_SLICE_SIZE
 				);

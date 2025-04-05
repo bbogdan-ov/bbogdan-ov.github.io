@@ -6,7 +6,7 @@ const RAIN_NUMBER = 5;
 
 export class Rain extends PIXI.Sprite {
 	constructor(x = 0, y = 0) {
-		const url = `/images/rain/${utils.randomInt(0, RAIN_NUMBER) + 1}.png`;
+		const url = `assets/images/rain/${utils.randomInt(0, RAIN_NUMBER) + 1}.png`;
 		super(PIXI.Texture.from(url));
 
 		this.x = x;

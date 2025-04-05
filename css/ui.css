@@ -6,7 +6,7 @@
 
 	margin: 30px 0;
 
-	background-image: url("/images/ui/panel.png");
+	background-image: url("../assets/images/ui/panel.png");
 	font-size: 16px;
 	font-family: var(--vhs-font);
 	color: var(--white);
@@ -21,7 +21,7 @@
 	left: 0;
 	bottom: calc(100% - 3px);
 
-	background-image: url("/images/ui/panel-top.png");
+	background-image: url("../assets/images/ui/panel-top.png");
 }
 .panel::after {
 	scale: -1;
@@ -101,7 +101,7 @@
 	justify-content: center;
 	text-align: center;
 
-	background-image: url("/images/ui/paper.png");
+	background-image: url("../assets/images/ui/paper.png");
 	background-size: 100% 100%;
 	font-family: var(--fancy-font);
 	font-size: 18px;
@@ -121,7 +121,7 @@ button {
 	font-size: var(--font-size);
 	border: none;
 
-	cursor: url("/images/ui/cursor-pointer.png") 7 0, auto;
+	cursor: url("../assets/images/ui/cursor-pointer.png") 7 0, auto;
 }
 button img,
 button .icon {
@@ -162,7 +162,7 @@ button .icon {
 	font-family: var(--vhs-font);
 	font-size: 16px;
 	background-color: transparent;
-	background-image: url("/images/ui/physical-button.png");
+	background-image: url("../assets/images/ui/physical-button.png");
 	background-size: 180px 60px;
 	background-position: 0 0;
 }
@@ -175,13 +175,13 @@ button .icon {
 .physical-button.small {
 	width: 60px;
 	height: 60px;
-	background-image: url("/images/ui/small-physical-button.png");
+	background-image: url("../assets/images/ui/small-physical-button.png");
 	background-size: 120px 60px;
 }
 .physical-button.tiny {
 	width: 60px;
 	height: 30px;
-	background-image: url("/images/ui/tiny-physical-button.png");
+	background-image: url("../assets/images/ui/tiny-physical-button.png");
 	background-size: 120px 30px;
 }
 .physical-button.small:active,
@@ -230,7 +230,7 @@ input {
 a {
 	color: var(--blue);
 	text-decoration: none;
-	cursor: url("/images/ui/cursor-pointer.png") 7 0, auto;
+	cursor: url("../assets/images/ui/cursor-pointer.png") 7 0, auto;
 }
 a:hover {
 	text-decoration: underline;

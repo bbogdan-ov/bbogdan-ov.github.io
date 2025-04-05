@@ -5,11 +5,11 @@
 
 @font-face {
 	font-family: comic-sans;
-	src: url("/fonts/comic-sans.ttf");
+	src: url("../assets/fonts/comic-sans.ttf");
 }
 @font-face {
 	font-family: vhs;
-	src: url("/fonts/vhs.ttf");
+	src: url("../assets/fonts/vhs.ttf");
 }
 
 :root {
@@ -42,7 +42,7 @@ body {
 	font-size: var(--font-size);
 	background: var(--background);
 
-	cursor: url("/images/ui/cursor.png") 0 0, auto !important;
+	cursor: url("../assets/images/ui/cursor.png") 0 0, auto !important;
 }
 body.lock-scroll {
 	overflow-y: hidden;
@@ -51,7 +51,7 @@ body.lock-scroll {
 	display: none;
 }
 *[contenteditable]:hover, input:hover {
-	cursor: url("/images/ui/cursor-text.png") 9 15, auto;
+	cursor: url("../assets/images/ui/cursor-text.png") 9 15, auto;
 }
 
 ul {
@@ -174,7 +174,7 @@ code {
 	width: 32px;
 	height: 32px;
 
-	background-image: url("/images/ui/play.png");
+	background-image: url("../assets/images/ui/play.png");
 	background-size: 64px 32px;
 	background-position: 0 0;
 	pointer-events: none;
@@ -192,7 +192,7 @@ code {
 	height: 40px;
 	object-fit: contain;
 
-	background-image: url("/gifs/listen.gif");
+	background-image: url("../assets/gifs/listen.gif");
 	background-repeat: repeat-x no-repeat;
 	background-size: auto 100%;
 	background-position: center top;
@@ -218,7 +218,7 @@ code {
 	left: 0;
 	top: 0;
 
-	background-image: url("/images/jeans.webp");
+	background-image: url("../assets/images/jeans.webp");
 	background-repeat: repeat-x no-repeat;
 	background-size: auto 100%;
 }
@@ -327,7 +327,7 @@ code {
 	width: 100%;
 	height: 22px;
 
-	background-image: url(/gifs/rotating-cookie.gif);
+	background-image: url(../assets/gifs/rotating-cookie.gif);
 	background-size: 32px 22px;
 	background-repeat: repeat-x;
 
@@ -350,7 +350,7 @@ code {
 	margin: 30px 0;
 	align-items: stretch;
 
-	background-image: url("/images/ui/cheque.png");
+	background-image: url("../assets/images/ui/cheque.png");
 	font-size: 18px;
 	font-family: var(--mono-font);
 }
@@ -364,7 +364,7 @@ code {
 	left: 0;
 	bottom: calc(100% - 1px);
 
-	background-image: url("/images/ui/cheque-top.png");
+	background-image: url("../assets/images/ui/cheque-top.png");
 }
 .cheque::after {
 	scale: -1;
@@ -640,7 +640,7 @@ code {
 	width: 40px;
 	height: 30px;
 
-	background-image: url("/images/ui/speed.png");
+	background-image: url("../assets/images/ui/speed.png");
 	background-size: 80px 30px;
 	background-position: 0 0;
 }
@@ -672,7 +672,7 @@ body.speeded .timemachine .small-cog {
 
 /* Fancy things */
 .substance {
-	background: url("/images/ui/substance.png");
+	background: url("../assets/images/ui/substance.png");
 	animation: substance 10s linear infinite;
 }
 .rainbow-text {

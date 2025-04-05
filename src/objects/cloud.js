@@ -24,7 +24,7 @@ const CLOUD_NUMBER = 16;
 
 export class Cloud extends PIXI.Sprite {
 	constructor(x = 0, y = 0) {
-		const url = `/images/clouds/${utils.randomInt(0, CLOUD_NUMBER) + 1}.png`;
+		const url = `assets/images/clouds/${utils.randomInt(0, CLOUD_NUMBER) + 1}.png`;
 		super(PIXI.Texture.from(url));
 
 		this.x = this.moveX = x;

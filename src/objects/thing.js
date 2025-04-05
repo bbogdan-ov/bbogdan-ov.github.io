@@ -5,7 +5,7 @@ export const TRASH_THINGS = [...THINGS, "paper", "battery"];
 
 export class Thing extends PIXI.TilingSprite {
 	constructor(name, x = 0, y = 0) {
-		const url = `/images/things/${name}.png`;
+		const url = `assets/images/things/${name}.png`;
 		super(PIXI.Texture.from(url), 128, 128);
 
 		this.anchor.set(.5);

@@ -16,7 +16,7 @@ const backgroundTween = gsap.to(document.body, {
 	ease: "none",
 	paused: true
 })
-const rainbow = PIXI.Sprite.from("/images/rainbow.webp");
+const rainbow = PIXI.Sprite.from("assets/images/rainbow.webp");
 rainbow.x = -64;
 rainbow.angle = -36;
 
