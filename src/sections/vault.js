@@ -1,4 +1,4 @@
-import * as utils from "../utils";
+import * as utils from "../utils.js";
 
 // Generate random password so you cant cheat :)
 export const password = utils.randomString(4, "0123456789");
@@ -11,10 +11,6 @@ doorSecret.classList.add("door-secret");
 doorSecret.src = "/gifs/jesus.gif";
 doorSecret.loading = "lazy";
 doorSecret.alt = "JESUS IS REAL";
-
-// Log password if in dev mode
-if (import.meta.env.DEV)
-	console.log(password);
 
 export function initVault() {
 	const vault = document.querySelector(".vault");

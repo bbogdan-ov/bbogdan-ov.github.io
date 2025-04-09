@@ -1,4 +1,4 @@
-import * as utils from "./utils";
+import * as utils from "./utils.js";
 
 export function playGoofySounds() {
 	utils.playSound(utils.randomItem(["tada", "nerd", "cola", "spring", "slide", "yell", "scream", "sad", "raaah"]), .5);

@@ -1,4 +1,4 @@
-import * as utils from "../utils";
+import * as utils from "../utils.js";
 
 let isInjected = false;
 let isInjecting = false;

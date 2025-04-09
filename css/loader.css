@@ -13,10 +13,7 @@
 	transition-delay: 1s;
 }
 .loader .flash-overlay {
-	inset: 0;
-	position: absolute;
 	background: #fff;
-	pointer-events: none;
 
 	transition: 1s cubic-bezier(0.655, 0.185, 0.940, 0.550);
 }

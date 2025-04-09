@@ -4,11 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 	const loaderPanel = loader.querySelector(".loader-panel");
 	const loaderDisplay = loaderPanel.querySelector(".loader-display");
 
-	// Immediately close loader in dev mode
-	if (import.meta.env.DEV) {
-		loader.remove();
-		return;
-	}
+	loader.remove();
+	return;
 
 	// Lock scroll
 	document.body.classList.add("lock-scroll");

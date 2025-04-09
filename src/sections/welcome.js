@@ -1,5 +1,5 @@
-import * as utils from "../utils";
-import * as elements from "../elements";
+import * as utils from "../utils.js";
+import * as elements from "../elements/index.js";
 
 const SPLASHES = [
 	"welcome",

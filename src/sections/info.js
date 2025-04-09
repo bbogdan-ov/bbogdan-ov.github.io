@@ -1,4 +1,4 @@
-import * as utils from "../utils";
+import * as utils from "../utils.js";
 
 const NOTES = [
 
@@ -17,9 +17,8 @@ So so so so so cool
   | |    |
 `,
 
-	() => `This THING is using vanilla js, html and css
-<i>(with help of pixi.js and gsap)</i>
-Thank you pixi and gsap!!
+	() => `This site is using vanilla js, pixi.js, html and css
+Thank you pixi.js!!
 
 FUCK FRAMEWORKS!
 

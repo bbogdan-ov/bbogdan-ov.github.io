@@ -1,18 +1,14 @@
-import * as PIXI from "pixi.js";
-import * as sections from "./sections";
-import * as background from "./background";
-import * as speedup from "./speedup";
-import * as utils from "./utils";
-import * as games from "./games";
-import * as funny from "./funny";
-
-// Pixilate textures
-PIXI.BaseTexture.defaultOptions.scaleMode = PIXI.SCALE_MODES.NEAREST;
+import * as sections from "./sections/index.js";
+import * as speedup from "./speedup.js";
+import * as utils from "./utils.js";
+// import * as games from "./games/index.js";
+import * as funny from "./funny.js";
+import { WeatherWallpaper } from "./wallpapers/weather.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-	background.initBackground();
+	new WeatherWallpaper();
 
-	sections.initWelcome();
+	// sections.initWelcome();
 	sections.initInfo();
 	sections.initPromo();
 	sections.initVault();
@@ -20,9 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
 	sections.initCookies();
 	speedup.init();
 
-	addEventListener("load", () => {
-		games.initTrashExterminator();
-	})
+	// addEventListener("load", () => {
+	// 	games.initTrashExterminator();
+	// })
 	addEventListener("pointerdown", e => {
 		if (e.target instanceof HTMLButtonElement || e.target instanceof HTMLAnchorElement)
 			utils.playSound("click", .5);

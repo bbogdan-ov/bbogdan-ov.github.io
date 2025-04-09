@@ -654,6 +654,16 @@ body.speeded .timemachine .small-cog {
 	animation-duration: .6s;
 }
 
+.overlay {
+	inset: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.desaturation-overlay {
+	background: rgba(0, 0, 0, .3);
+	mix-blend-mode: saturation;
+}
+
 /* Footer */
 .footer {
 	image-rendering: initial;

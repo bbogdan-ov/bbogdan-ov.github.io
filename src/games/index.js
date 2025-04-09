@@ -1,1 +1,1 @@
-export * from "./trash-exterminator" 
+export * from "./trash-exterminator.js" 

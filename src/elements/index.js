@@ -1,1 +1,1 @@
-export * from "./crazy-text";
+export * from "./crazy-text.js";

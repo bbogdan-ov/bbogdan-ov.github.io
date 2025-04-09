@@ -1,9 +1,9 @@
-import * as PIXI from "pixi.js";
-
-export const THINGS = ["tape", "clock", "lighter", "book", "uno-red", "uno-blue", "disk"];
-export const TRASH_THINGS = [...THINGS, "paper", "battery"];
+import * as PIXI from "../libs/pixi.js";
 
 export class Thing extends PIXI.TilingSprite {
+	static NAMES = ["tape", "clock", "lighter", "book", "uno-red", "uno-blue", "disk"];
+	static TRASH_NAMES = [...Thing.NAMES, "paper", "battery"];
+
 	constructor(name, x = 0, y = 0) {
 		const url = `assets/images/things/${name}.png`;
 		super(PIXI.Texture.from(url), 128, 128);
@@ -24,7 +24,7 @@ export class Thing extends PIXI.TilingSprite {
 			this.frames = [0, 1, 2, 3];
 	}
 
-	animate() {
+	updateAnimation() {
 		if (this.frameTimer > 15) {
 			this.stepAnimation();
 			this.frameTimer = 0;

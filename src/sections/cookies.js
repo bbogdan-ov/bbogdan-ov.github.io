@@ -1,5 +1,3 @@
-import gsap from "gsap";
-
 export function initCookies() {
 	const card = document.querySelector(".fuck-cookies");
 	const closeButton = card.querySelector(".close-button");
@@ -15,24 +13,22 @@ export function initCookies() {
 
 		closeButton.classList.add("fly-away");
 
-		gsap.to(closeButton, {
-			keyframes: {
-				y: [0, 20, 0],
-				easeEach: "power1.inOut",
-			},
+		closeButton.animate({
+			translate: ["0 0px", "0 20px", "0 0px"],
+		}, {
 			duration: 3,
 			delay: 2,
-			repeat: -1,
+			iterations: Infinity
 		})
-		gsap.to(closeButton, {
-			x: -innerWidth - 100,
-			duration: 10,
-			delay: 2,
-			ease: "none",
-			onComplete: () => {
-				closeButton.remove();
-			}
-		})
+		// gsap.to(closeButton, {
+		// 	x: -innerWidth - 100,
+		// 	duration: 10,
+		// 	delay: 2,
+		// 	ease: "none",
+		// 	onComplete: () => {
+		// 		closeButton.remove();
+		// 	}
+		// })
 
 	}
 

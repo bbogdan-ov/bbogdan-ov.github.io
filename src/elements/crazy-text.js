@@ -1,6 +1,5 @@
-import * as PIXI from "pixi.js";
-import * as utils from "../utils";
-import gsap from "gsap";
+// import * as PIXI from "../libs/pixi.js";
+import * as utils from "../utils.js";
 
 const CHAR_SLICE_SIZE = 128;
 const CHAR_WIDTH = 40;
@@ -56,13 +55,13 @@ export class CrazyText {
 				charSprite.alpha = 0;
 
 				// Animate chars to move to defined pos
-				gsap.to(charSprite, {
-					keyframes: [
-						{ alpha: 1, duration: 0, delay: charIndex * .05 },
-						{ x: charX, y: charY, duration: .1, ease: "back.out" },
-					],
-					delay: this.delay
-				});
+				// gsap.to(charSprite, {
+				// 	keyframes: [
+				// 		{ alpha: 1, duration: 0, delay: charIndex * .05 },
+				// 		{ x: charX, y: charY, duration: .1, ease: "back.out" },
+				// 	],
+				// 	delay: this.delay
+				// });
 
 				this.canvas.stage.addChild(charSprite);
 			}
