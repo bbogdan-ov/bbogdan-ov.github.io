@@ -96,7 +96,7 @@ export class Cloud extends PIXI.TilingSprite {
 		this.realY -= this.speed / 2 * speedup.speedMul;
 
 		// Set render position
-		const z = utils.lerp(.2, .6, this.speed / Cloud.MAX_SPEED);
+		const z = utils.lerp(.02, .3, this.speed / Cloud.MAX_SPEED);
 		const scrollOffset = -window.scrollY * z;
 		this.x = this.realX;
 		this.y = this.realY + scrollOffset;
