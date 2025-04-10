@@ -1,4 +1,4 @@
-import * as consts from "./consts.js";
+const CHARSET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxy123456789"
 
 export function sineInOut(t) {
 	return -(Math.cos(Math.PI * t) - 1) / 2;
@@ -24,7 +24,7 @@ export function randomItem(array) {
 export function randomBool(chance = .5) {
 	return Math.random() > chance;
 }
-export function randomString(length, charset = consts.CHARSET) {
+export function randomString(length, charset = CHARSET) {
 	let result = "";
 	for (let i = 0; i < length; i++)
 		result += randomItem(charset);
