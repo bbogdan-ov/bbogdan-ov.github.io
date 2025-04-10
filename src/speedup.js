@@ -8,7 +8,7 @@ export function init() {
 
 	speedButton.onclick = () => {
 		isSpeedUp = !isSpeedUp;
-		document.body.classList.toggle("speeded", isSpeedUp);
+		document.body.classList.toggle("fast-forward", isSpeedUp);
 
 		speedMul = isSpeedUp ? SPEEDUP_MUL : 1;
 	}

@@ -38,13 +38,13 @@
 	background-size: 80px 30px;
 	background-position: 0 0;
 }
-body.speeded .time-machine .speed-button .icon {
+body.fast-forward .time-machine .speed-button .icon {
 	background-position: 40px;
 }
-body.speeded .time-machine .large-cog {
+body.fast-forward .time-machine .large-cog {
 	animation-duration: 1s;
 }
-body.speeded .time-machine .small-cog {
+body.fast-forward .time-machine .small-cog {
 	animation-duration: .6s;
 }
 
