@@ -235,6 +235,8 @@ class RainWeather extends Weather {
 	}
 
 	update(delta, factor) {
+		if (factor <= 0) return;
+
 		this.spawnTimer.update(delta);
 
 		this.overlayElement.style.opacity = factor;
@@ -267,6 +269,8 @@ class ThingsWeather extends Weather {
 	}
 
 	update(delta, factor) {
+		if (factor <= 0) return;
+
 		this.spawnTimer.update(delta);
 
 		if (this.spawnTimer.finished) {
@@ -311,12 +315,28 @@ export class WeatherWallpaper {
 			new RainWeather(this),
 			new ThingsWeather(this),
 		];
-		this.curWeatherIdx = 0;
+		this.curWeatherIdx = utils.randomInt(0, this.weathers.length - 1);
 		this.prevWeatherIdx = null;
 		this.weatherTransition = new Timer(
 			WeatherWallpaper.TRANSITION_DURATION,
 			WeatherWallpaper.TRANSITION_DURATION,
 		);
+		
+		// Update all weathers on startup
+		for (let i = 0; i < this.weathers.length; i ++) {
+			const weather = this.weathers[i];
+			if (i == this.curWeatherIdx) {
+				weather.enter();
+				weather.update(0, 1);
+			} else {
+				weather.exit();
+				weather.update(0, 0);
+			}
+		}
+
+		// Update params
+		document.body.style.backgroundColor = this.curWeather().bgColor.toString();
+		this.cloudsTint = this.curWeather().cloudsTint;
 
 		this.spawnInitialClouds();
 	}
