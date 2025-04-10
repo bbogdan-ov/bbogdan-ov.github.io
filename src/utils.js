@@ -16,7 +16,7 @@ export function random(from, to) {
 	return lerp(from, to, Math.random());
 }
 export function randomInt(from, to) {
-	return Math.ceil(random(from, to));
+	return Math.floor(random(from, to + 1));
 }
 export function randomItem(array) {
 	return array[randomInt(0, array.length - 1)];
