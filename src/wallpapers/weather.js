@@ -22,7 +22,7 @@ export class Cloud extends PIXI.TilingSprite {
 	static MAX_SPEED = .1;
 	static APPEAR_DURATION = 3_000;
 
-	// All the clouds sprites are packed into the single sprite atlas,
+	// All the cloud sprites are packed into the single sprite atlas,
 	// that's why we need all of these
 	static FRAMES = [
 		{x: 2, y: 2, width: 266, height: 188},
