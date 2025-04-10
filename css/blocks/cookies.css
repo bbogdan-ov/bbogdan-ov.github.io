@@ -1,4 +1,4 @@
-.fuck-cookies {
+#fuck-cookies {
 	width: 100%;
 	padding: 20px;
 
@@ -11,19 +11,19 @@
 	font-family: serif;
 	font-size: 18px;
 }
-.fuck-cookies h3 {
+#fuck-cookies h3 {
 	font-family: var(--vhs-font);
 	font-size: 32px;
 	font-weight: 400;
 }
-.fuck-cookies header .button95 {
+#fuck-cookies header .button95 {
 	padding: 10px;
 }
-.fuck-cookies .close-button {
+#fuck-cookies .close-button {
 	width: 24px;
 	height: 24px;
 }
-.fuck-cookies .close-button .wings {
+#fuck-cookies .close-button .wings {
 	position: absolute;
 	left: 8px;
 	top: -4px;
@@ -34,13 +34,13 @@
 	pointer-events: none;
 	transition: 2s;
 }
-.fuck-cookies .close-button.fly-away {
+#fuck-cookies .close-button.fly-away {
 	pointer-events: none;
 }
-.fuck-cookies .close-button.fly-away .wings {
+#fuck-cookies .close-button.fly-away .wings {
 	opacity: 1;
 }
-.fuck-cookies .allow-buttons {
+#fuck-cookies .allow-buttons {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 	gap: 10px;
@@ -62,17 +62,17 @@
 }
 
 @media screen and (max-width: 540px) {
-	.fuck-cookies header {
+	#fuck-cookies header {
 		flex-direction: column;
 	}
-	.fuck-cookies header > img {
+	#fuck-cookies header > img {
 		align-self: center;
 		margin-bottom: 16px;
 	}
 }
 
 @media screen and (max-width: 400px) {
-	.fuck-cookies header h3 {
+	#fuck-cookies header h3 {
 		font-size: 20px;
 	}
 }

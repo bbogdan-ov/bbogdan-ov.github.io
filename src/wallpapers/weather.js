@@ -1,6 +1,5 @@
 import * as PIXI from "../libs/pixi.js";
 import * as utils from "../utils.js";
-import * as speedup from "../speedup.js";
 import { Thing } from "../objects/thing.js";
 import { Timer } from "../utils/timer.js";
 import { Color } from "../utils/color.js";
@@ -92,8 +91,8 @@ export class Cloud extends PIXI.TilingSprite {
 	}
 	updateMovement() {
 		// Slowly move cloud to the right and slightly up
-		this.realX += this.speed * speedup.speedMul;
-		this.realY -= this.speed / 2 * speedup.speedMul;
+		this.realX += this.speed * this.wallpaper.website.speed;
+		this.realY -= this.speed / 2 * this.wallpaper.website.speed;
 
 		// Set render position
 		const z = utils.lerp(.02, .3, this.speed / Cloud.MAX_SPEED);
@@ -129,8 +128,8 @@ class Raindrop extends PIXI.Sprite {
 	}
 
 	update() {
-		this.x += this.speed * .2 * speedup.speedMul;
-		this.y += this.speed * speedup.speedMul;
+		this.x += this.speed * .2 * this.wallpaper.website.speed;
+		this.y += this.speed * this.wallpaper.website.speed;
 
 		this.updateDestroying();
 	}
@@ -161,10 +160,10 @@ class FallingThing extends Thing {
 	}
 
 	update() {
-		this.frameTimer += Math.round(speedup.speedMul);
+		this.frameTimer += Math.round(this.wallpaper.website.speed);
 
-		this.x += this.speed / 4 * speedup.speedMul;
-		this.y += this.speed * speedup.speedMul;
+		this.x += this.speed / 4 * this.wallpaper.website.speed;
+		this.y += this.speed * this.wallpaper.website.speed;
 
 		this.updateAnimation();
 		this.updateDestroying();
@@ -287,7 +286,9 @@ export class WeatherWallpaper {
 	static WEATHER_DURATION_MIN = 15_000;
 	static WEATHER_DURATION_MAX = 35_000;
 
-	constructor() {
+	constructor(website) {
+		this.website = website;
+
 		const canvas = document.querySelector(".background-canvas");
 		this.app = new PIXI.Application({
 			resizeTo: window,
@@ -377,7 +378,7 @@ export class WeatherWallpaper {
 	}
 
 	update() {
-		const delta = this.app.ticker.deltaMS * speedup.speedMul;
+		const delta = this.app.ticker.deltaMS * this.website.speed;
 
 		this.cloudsTimer.update(delta);
 		this.weatherTimer.update(delta);
