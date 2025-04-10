@@ -16,7 +16,6 @@ const SPLASHES = [
 	"lalala",
 	"wow",
 	"strange",
-	"i like vhs",
 	"hmmmm",
 	"im not",
 	"aaaaa!!!",
@@ -59,7 +58,6 @@ const SPLASHES = [
 	"we",
 	"he",
 	"she",
-	"her socks",
 	"get outn\nhere",
 	"cmon",
 	"lsd",
@@ -107,7 +105,11 @@ const SPLASHES = [
 	"fuck frameworks!",
 	"password pls",
 	"half of nothing",
-	"as above\nso below"
+	"as above\nso below",
+	"massive\nupdate",
+	"check out\nwhitey!",
+	"save javascript",
+	"save web",
 ]
 
 export function initWelcome() {
@@ -115,7 +117,7 @@ export function initWelcome() {
 
 	// Add crazy text after page load
 	addEventListener("load", () => {
-		const title = new elements.CrazyText(utils.randomItem(SPLASHES), 3);
-		title.appendTo(section);
+		const title = new elements.CrazyText(utils.randomItem(SPLASHES), 3_000);
+		section.appendChild(title.element);
 	})
 }

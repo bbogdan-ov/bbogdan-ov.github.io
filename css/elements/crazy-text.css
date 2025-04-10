@@ -1,0 +1,20 @@
+.crazy-text {
+	width: 60%;
+	max-width: 500px;
+	display: flex;
+	flex-direction: column;
+}
+.crazy-line {
+	width: 100%;
+	display: flex;
+}
+.crazy-char {
+	width: 100%;
+	aspect-ratio: 1 / 1;
+
+	margin: 0 -4%;
+
+	background: url("../../assets/images/ui/crazy-font-sheet.png");
+	background-size: 400% 700%;
+	background-position: -128px 0;
+}

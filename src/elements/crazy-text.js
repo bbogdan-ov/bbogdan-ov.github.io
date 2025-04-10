@@ -1,95 +1,102 @@
-// import * as PIXI from "../libs/pixi.js";
 import * as utils from "../utils.js";
 
-const CHAR_SLICE_SIZE = 128;
-const CHAR_WIDTH = 40;
-const CHAR_HEIGHT = 64;
-const FONT_MAP = " abcdefghijklmnopqrstuvwxyz!?";
+function randomTranslate(min = -1, max = 1) {
+	return `${ utils.random(min, max) }px ${ utils.random(min, max) }px`;
+}
+
+function animateAppearance(element, delay) {
+	const startX = utils.random(-64, 64);
+	const startY = utils.random(-64, 64);
+
+	element.style.translate = `${ startX }px ${ startY }px`;
+	element.style.opacity = 0;
+
+	return element.animate([
+		{ opacity: 1 },
+		{ translate: "0 0", opacity: 1 },
+	], {
+		delay,
+		duration: 100,
+		easing: "cubic-bezier(0.34, 1.56, 0.64, 1)",
+		fill: "forwards",
+	});
+}
+function animateJiggle(element) {
+	return element.animate([
+		{ translate: randomTranslate() },
+		{ translate: randomTranslate() },
+		{ translate: randomTranslate() },
+		{ translate: randomTranslate() },
+		{ translate: randomTranslate() },
+		{ translate: randomTranslate() },
+		{ translate: randomTranslate() },
+		{ translate: randomTranslate() },
+		{ translate: randomTranslate() },
+		{ translate: randomTranslate() },
+		{ translate: randomTranslate() },
+		{ translate: randomTranslate() },
+	], {
+		duration: 300,
+		easing: "linear",
+		iterations: Infinity,
+	});
+}
+
+function createLine() {
+	const element = document.createElement("div");
+	element.className = "crazy-line";
+	return element;
+}
+function createChar(char) {
+	const index = CrazyText.FONT_MAP.indexOf(char);
+
+	const element = document.createElement("div");
+	element.className = "crazy-char";
+
+	if (index >= 0) {
+		const bgX = 100 / 3 * (index % 4);
+		const bgY = 100 / 6 * Math.floor(index / 4);
+
+		element.style.backgroundPosition = `${ bgX }% ${ bgY }%`;
+	} else {
+		element.style.background = "transparent";
+	}
+
+	return element;
+}
 
 export class CrazyText {
-	constructor(text, delay = 2.5) {
-		this.lines = text.toLowerCase().split("\n");
-		this.lineLength = Math.max(...this.lines.map(l => l.length));
+	static FONT_MAP = "abcdefghijklmnopqrstuvwxyz!?";
+	static CHAR_FRAME_SIZE = 128;
 
-		this.canvas = new PIXI.Application({
-			width: (this.lineLength * CHAR_WIDTH) + 32 * 2 + CHAR_WIDTH,
-			height: (this.lines.length * CHAR_HEIGHT) + 32 * 2 + CHAR_HEIGHT,
-			backgroundAlpha: 0,
-			antialias: false,
-		});
-		this.canvas.view.classList.add("crazy-text", "pixelate")
+	/** @param {string} text */
+	constructor(text, delay = 500) {
+		text = text.toLowerCase();
 
-		this.delay = delay;
+		this.element = document.createElement("div");
+		this.element.className = "crazy-text";
 
-		this.createChars();
-		this.startTicker();
-	}
+		let lineElement = createLine();
 
-	createChars() {
-		// Place text at center
-		const textX = this.canvas.view.width / 2 - this.lineLength * CHAR_WIDTH / 2 - CHAR_WIDTH / 2;
-		const textY = this.canvas.view.height / 2 - this.lines.length * CHAR_HEIGHT / 2;
+		// Create chars
+		for (let i = 0; i < text.length; i ++) {
+			const char = text[i];
 
-		for (let lineIndex = 0; lineIndex < this.lines.length; lineIndex++) {
-			const line = this.lines[lineIndex];
+			// Append every char (except 'new line') to line element
+			if (char != "\n") {
+				const charElement = createChar(char);
 
-			for (let charIndex = 0; charIndex < line.length; charIndex++) {
-				const char = line[charIndex];
-				const mapCharIndex = FONT_MAP.indexOf(char);
-				const charSprite = new PIXI.TilingSprite(
-					PIXI.Texture.from("assets/images/crazy-font-sheet.png"),
-					CHAR_SLICE_SIZE,
-					CHAR_SLICE_SIZE
-				);
-				charSprite.scale.set(.5);
-				charSprite.tilePosition.x = -(mapCharIndex % 8) * 128; // 
-				charSprite.tilePosition.y = -Math.floor(mapCharIndex / 8) * 128; // 
+				animateAppearance(charElement, delay + i * 40)
+					.onfinish = () => animateJiggle(charElement);
 
-				// Define pos of chars
-				const charX = textX + charIndex * CHAR_WIDTH + utils.random(-8, 8);
-				const charY = textY + lineIndex * CHAR_HEIGHT + utils.random(-8, 8);
+				lineElement.appendChild(charElement);
+			}
 
-				// Add random offset to pos
-				charSprite.x = charX + utils.random(-64, 64)
-				charSprite.y = charY + utils.random(-64, 64)
-				charSprite.alpha = 0;
-
-				// Animate chars to move to defined pos
-				// gsap.to(charSprite, {
-				// 	keyframes: [
-				// 		{ alpha: 1, duration: 0, delay: charIndex * .05 },
-				// 		{ x: charX, y: charY, duration: .1, ease: "back.out" },
-				// 	],
-				// 	delay: this.delay
-				// });
-
-				this.canvas.stage.addChild(charSprite);
+			// Append line to the text if line end is reached
+			if (i == text.length - 1 || char == "\n") {
+				this.element.appendChild(lineElement);
+				lineElement = createLine();
 			}
 		}
-	}
-	startTicker() {
-		let time = 0;
-
-		this.canvas.ticker.add(dt => {
-			time += dt;
-
-			// Reset the timer
-			if (time > 200)
-				time = 0;
-
-			for (let i = 0; i < this.canvas.stage.children.length; i++) {
-				const charSprite = this.canvas.stage.children[i];
-
-				// Some random movement
-				charSprite.anchor.set(
-					utils.random(-1 / CHAR_SLICE_SIZE, 1 / CHAR_SLICE_SIZE) + Math.sin(time / 6 + i) / 128 + Math.cos(time / 10 + i * 2) / 128,
-					utils.random(-1 / CHAR_SLICE_SIZE, 1 / CHAR_SLICE_SIZE) + Math.cos(time / 10 + i) / 128 + Math.sin(time / 20 + i * 2) / 128
-				);
-			}
-		})
-	}
-
-	appendTo(element) {
-		element.append(this.canvas.view);
 	}
 }

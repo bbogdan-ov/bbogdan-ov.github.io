@@ -8,7 +8,7 @@ import { WeatherWallpaper } from "./wallpapers/weather.js";
 document.addEventListener("DOMContentLoaded", () => {
 	new WeatherWallpaper();
 
-	// sections.initWelcome();
+	sections.initWelcome();
 	sections.initInfo();
 	sections.initPromo();
 	sections.initVault();

@@ -89,11 +89,6 @@ code {
 .welcome-section {
 	height: 100vh;
 }
-.welcome-section .crazy-text {
-	width: 50%;
-	max-width: 600px;
-	pointer-events: none;
-}
 
 /* Info section */
 .info-section {
