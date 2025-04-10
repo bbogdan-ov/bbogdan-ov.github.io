@@ -51,17 +51,17 @@
 	color: var(--black);
 	background: var(--gray);
 	box-shadow:
-	inset 1px 1px var(--white),
-	inset -1px -1px var(--black),
-	inset 2px 2px var(--lightgray),
-	inset -2px -2px var(--darkgray);
+		inset 1px 1px var(--white),
+		inset -1px -1px var(--black),
+		inset 2px 2px var(--lightgray),
+		inset -2px -2px var(--darkgray);
 }
 .box95.inner {
 	box-shadow:
-	inset 1px 1px var(--black),
-	inset -1px -1px var(--white),
-	inset 2px 2px var(--darkgray),
-	inset -2px -2px var(--lightgray);
+		inset 1px 1px var(--black),
+		inset -1px -1px var(--white),
+		inset 2px 2px var(--darkgray),
+		inset -2px -2px var(--lightgray);
 }
 
 /* Window 95 */
