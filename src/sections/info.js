@@ -18,7 +18,7 @@ So so so so so cool
 `,
 
 	() => `This site is using vanilla js, pixi.js, html and css
-Thank you pixi.js!!
+Thank you pixi.js!
 
 FUCK FRAMEWORKS!
 
@@ -91,16 +91,13 @@ $$$
 `,
 
 	() => `<b>Q: How old are you?</b>
-A: i'm 18!
+A: i'm 19!
 
 <b>Q: What is your name?</b>
 A: bogdan!
 
 <b>Q: Where are you from?</b>
 A: i'm from russia!
-
-<b>Q: Stop using exclamation mark!</b>
-A: shut up!
 
  ___
 |   |
@@ -123,7 +120,7 @@ Sounds were taken from <b>myinstants.com</b>!
 \\____/_/_/
 `,
 
-	() => `Check out WHITEY's new album!
+	() => `Check out WHITEY!
 
 njwhitey.bandcamp.com
 
