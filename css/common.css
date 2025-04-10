@@ -132,14 +132,6 @@ code {
 .rainbow-text {
 	animation: rainbow-text infinite step-end .3s;
 }
-.lovelove {
-	position: absolute;
-	left: 10%;
-	top: -40%;
-	rotate: 20deg;
-	z-index: 1;
-	width: 256px;
-}
 
 /* Media */
 @media screen and (max-width: 1000px) {
