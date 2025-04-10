@@ -40,14 +40,14 @@
 }
 
 /* Box 95 */
-.box95 {
+.box95, .window95 {
 	padding: 3px;
 
 	display: flex;
 	flex-direction: column;
 	gap: 2px;
 }
-.box95, .button95 {
+.box95, .window95, .button95 {
 	color: var(--black);
 	background: var(--gray);
 	box-shadow:
