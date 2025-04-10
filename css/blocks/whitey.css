@@ -13,7 +13,7 @@
 	background-size: auto 100%;
 	background-position: center top;
 
-	animation: slogan-background 10s infinite linear;
+	animation: slogan-movement 10s infinite linear;
 }
 .whitey-banner {
 	width: auto;
@@ -89,6 +89,15 @@
 }
 .whitey-banner .cover-box:hover .vinil {
 	left: 60%;
+}
+
+@keyframes slogan-movement {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
 }
 
 @media screen and (max-width: 700px) {

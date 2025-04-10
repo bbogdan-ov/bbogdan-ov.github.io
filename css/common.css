@@ -124,15 +124,6 @@ code {
 	top: 0;
 }
 
-/* Fancy things */
-.substance {
-	background: url("../assets/images/ui/substance.png");
-	animation: substance 10s linear infinite;
-}
-.rainbow-text {
-	animation: rainbow-text infinite step-end .3s;
-}
-
 /* Media */
 @media screen and (max-width: 1000px) {
 	:root {
@@ -163,27 +154,7 @@ code {
 }
 
 /* Animations */
-@keyframes substance {
-	from { background-position: 0 0; }
-	to { background-position: 128px -128px; }
-}
-@keyframes rainbow-text {
-	0% { color: #00f; }
-	20% { color: #0f0; }
-	40% { color: #0ff; }
-	60% { color: #f00; }
-	80% { color: #f0f; }
-	100% { color: #fff; }
-}
 @keyframes rotate {
 	from { rotate: 0deg; }
 	to { rotate: 360deg; }
-}
-@keyframes slogan-background {
-	from {
-		background-position: 0 0;
-	}
-	to {
-		background-position: 100% 0;
-	}
 }

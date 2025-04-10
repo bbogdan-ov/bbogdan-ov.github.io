@@ -307,3 +307,25 @@ a:hover .pointer {
 form[inert] {
 	opacity: .5;
 }
+
+/* Fancy things */
+.substance {
+	background: url("../assets/images/ui/substance.png");
+	animation: substance 10s linear infinite;
+}
+@keyframes substance {
+	from { background-position: 0 0; }
+	to { background-position: 128px -128px; }
+}
+
+.rainbow-text {
+	animation: rainbow-text infinite step-end .3s;
+}
+@keyframes rainbow-text {
+	0% { color: #00f; }
+	20% { color: #0f0; }
+	40% { color: #0ff; }
+	60% { color: #f00; }
+	80% { color: #f0f; }
+	100% { color: #fff; }
+}
