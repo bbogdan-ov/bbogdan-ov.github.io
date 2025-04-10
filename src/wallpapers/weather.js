@@ -280,6 +280,8 @@ class ThingsWeather extends Weather {
 export class WeatherWallpaper {
 	static SPAWN_CLOUDS_DELAY = 6_000;
 	static TRANSITION_DURATION = 5_000;
+	static WEATHER_DURATION_MIN = 15_000;
+	static WEATHER_DURATION_MAX = 35_000;
 
 	constructor() {
 		const canvas = document.querySelector(".background-canvas");
@@ -300,6 +302,7 @@ export class WeatherWallpaper {
 		this.cloudsTint = Color.fromHex(0xffffff);
 
 		this.cloudsTimer = new Timer();
+		this.weatherTimer = new Timer(WeatherWallpaper.WEATHER_DURATION_MIN);
 
 		// Weather
 		/** @type {Weather[]} */
@@ -316,15 +319,6 @@ export class WeatherWallpaper {
 		);
 
 		this.spawnInitialClouds();
-
-		addEventListener("keydown", e => {
-			if (e.code == "Digit1")
-				this.enterWeather(0);
-			else if (e.code == "Digit2")
-				this.enterWeather(1);
-			else if (e.code == "Digit3")
-				this.enterWeather(2);
-		});
 	}
 
 	addChild(child) {
@@ -366,7 +360,18 @@ export class WeatherWallpaper {
 		const delta = this.app.ticker.deltaMS * speedup.speedMul;
 
 		this.cloudsTimer.update(delta);
+		this.weatherTimer.update(delta);
 		this.weatherTransition.update(delta);
+
+		if (this.weatherTimer.finished) {
+			const duration = utils.random(
+				WeatherWallpaper.WEATHER_DURATION_MIN,
+				WeatherWallpaper.WEATHER_DURATION_MAX,
+			);
+
+			this.enterWeather(utils.randomInt(0, this.weathers.length - 1));
+			this.weatherTimer.start(duration);
+		}
 
 		this.updateWeather(delta);
 		this.updateClouds();
