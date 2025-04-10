@@ -1,6 +1,6 @@
-// import * as PIXI from "../libs/pixi.js";
+import * as PIXI from "../libs/pixi.js";
 import * as utils from "../utils.js";
-import * as objects from "../objects/index.js";
+import { Thing } from "../objects/thing.js";
 
 const DECAY_SHADER_FRAG = `
 	varying vec2 vTextureCoord;
@@ -120,7 +120,7 @@ export function initTrashExterminator() {
 	function ticker(deltaFrames) {
 		if (isPaused) return;
 
-		const delta = utils.secs(deltaFrames);
+		const delta = deltaFrames / 60;
 		trashSpawnTimer -= delta;
 		difficulty += .001;
 
@@ -155,7 +155,7 @@ export function initTrashExterminator() {
 }
 
 function spawnTrash(canvas, container) {
-	const trash = new TrashThing(utils.randomItem(objects.TRASH_THINGS));
+	const trash = new TrashThing(utils.randomItem(Thing.TRASH_NAMES));
 	trash.x = utils.random(trash.width / 2, canvas.view.width - trash.width / 2);
 	trash.y = -trash.height / 2;
 
@@ -191,7 +191,7 @@ function resume() {
 	scoreText.visible = true;
 }
 
-class TrashThing extends objects.Thing {
+class TrashThing extends Thing {
 	constructor(name, x = 0, y = 0) {
 		super(name, x, y);
 
@@ -277,7 +277,7 @@ class TrashThing extends objects.Thing {
 			this.y = CANVAS_HEIGHT - h / 2;
 		}
 
-		this.animate();
+		this.updateAnimation();
 	}
 
 	rotate() {
