@@ -35,9 +35,9 @@ export function initCookies() {
 	function handleAllowClick() {
 		card.style.textAlign = "center";
 		card.innerHTML = `
-			<div class="cookies-marquee reverse-anim"></div>
+			<div class="cookies-marquee anim-reverse"></div>
 			<h3>* THANKS *</h3>
-			<p>Now i will show you ads based on your activity in the internet!</p>
+			<p>Now i will show you ads based<br>on your activity in the internet!</p>
 			<div class="cookies-marquee"></div>
 		`;
 	}
