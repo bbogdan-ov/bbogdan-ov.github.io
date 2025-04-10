@@ -1,0 +1,18 @@
+.chat-box {
+	padding: 8px;
+	min-height: 230px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+
+	background: var(--white);
+}
+.chat-box .messages {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+.chat-box .message {
+	width: fit-content;
+}

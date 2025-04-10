@@ -1,0 +1,14 @@
+#trash-exterminator canvas {
+	width: 100%;
+}
+#trash-exterminator .loading-text {
+	position: absolute;
+	translate: -50% -50%;
+	left: 50%;
+	top: 50%;
+	white-space: nowrap;
+
+	font-family: var(--fancy-font);
+	font-size: 32px;
+	color: #fff;
+}

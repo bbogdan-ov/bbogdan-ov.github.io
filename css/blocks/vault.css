@@ -1,0 +1,57 @@
+.vault-numpad {
+	width: fit-content;
+	padding: 10px 30px;
+
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+.vault-numpad .numpad-display {
+	width: 100%;
+	height: 48px;
+
+	text-align: center;
+	line-height: 50px;
+
+	font-size: 32px;
+}
+.vault.wrong .numpad-display {
+	color: var(--red);
+	text-shadow: 0 0 20px rgba(255, 0, 0, .4);
+}
+.vault-door {
+	width: 256px;
+	height: 516px;
+
+	perspective: 1200px;
+	z-index: 2;
+}
+.vault-door .door-layer {
+	position: absolute;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+}
+.vault-door .door {
+	left: 22px;
+	top: 20px;
+	transform-origin: 100% 0;
+
+	transition: 2s;
+}
+.vault-door .door-tape {
+	transition: .2s;
+}
+.vault-door .door-secret {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.vault.opened .vault-door .door {
+	transform: rotateY(110deg);
+}
+.vault.opened .vault-door .door-tape {
+	opacity: 0;
+}

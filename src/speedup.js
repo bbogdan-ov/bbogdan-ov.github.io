@@ -4,7 +4,7 @@ export let isSpeedUp = false;
 export let speedMul = 1;
 
 export function init() {
-	const speedButton = document.querySelector(".timemachine .speed-button");
+	const speedButton = document.querySelector(".time-machine .speed-button");
 
 	speedButton.onclick = () => {
 		isSpeedUp = !isSpeedUp;

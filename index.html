@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-	<link rel="icon" type="image/x-icon" href="assets/images/favicon.png">
+	<link rel="icon" type="image/x-icon" href="./assets/images/favicon.png">
 	<meta name="description" content="this is my place, i live here">
 
 	<link rel="preload" as="image" href="assets/images/ui/panel.png">
@@ -18,12 +18,7 @@
 	<link rel="preload" as="style" href="css/layout.css">
 	<link rel="preload" as="style" href="css/loader.css">
 
-	<link rel="stylesheet" href="css/ui.css">
 	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/elements/crazy-text.css">
-	<link rel="stylesheet" href="css/loader.css">
-	<link rel="stylesheet" href="css/layout.css">
-	<link rel="stylesheet" href="css/utils.css">
 
 	<title>bogdanov's little homepage [file] [edit] [raaaarhh] v1.3.1</title>
 </head>
@@ -72,7 +67,7 @@
 				</div>
 			</article>
 			<!-- Time machine -->
-			<div class="timemachine">
+			<div class="time-machine">
 				<img class="cog large-cog" src="assets/images/cog.png" alt="cog">
 				<img class="cog small-cog" src="assets/images/cog.png" alt="cog">
 				<article class="panel">
@@ -162,16 +157,16 @@
 					</a>
 					<button
 						class="button95 text-red"
-						onclick="global_animateFlyout('.flying-links-paper')"
+						onclick="global_animateFlyout('#flying-links-paper')"
 					>more...</button>
 				</div>
 			</article>
 			<!-- Flying paper -->
-			<div class="flying-paper-wrapper col width-fill items-center">
-				<article class="flying-links-paper paper">
+			<div class="col width-fill items-center">
+				<div id="flying-links-paper" class="paper" style="opacity: 0; pointer-events: none;">
 					<a href="mailto:bbogdan_ov@mail.ru">bbogdan_ov@mail.ru</a>
 					<span>discord@bogdan_ov</span>
-				</article>
+				</div>
 			</div>
 		</div>
 

@@ -1,0 +1,103 @@
+.promo-section {
+	margin-top: 100px;
+}
+.promo-section .container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.promo-section .thumb-up {
+	width: 256px;
+
+	position: absolute;
+	transform: translate(0, -50%);
+	pointer-events: none;
+}
+.promo-section .thumb-up.left {
+	transform: scaleX(-1) translate(0, -50%);
+}
+.tv {
+	width: 480px;
+	aspect-ratio: 480 / 600;
+}
+.tv .buttons {
+	position: absolute;
+	right: 0;
+	bottom: 11%;
+	scale: .6;
+}
+.tv .tv-progress-text {
+	position: absolute;
+	left: 50%;
+	bottom: 14.5%;
+	translate: -50% 0;
+
+	color: var(--green);
+	font-family: var(--vhs-font);
+	font-size: 16px;
+}
+.tv .tv-image {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+}
+.tv .vcr-image {
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	pointer-events: none;
+}
+.tv .lags-image,
+.tv > video {
+	width: 72%;
+	height: 44%;
+
+	position: absolute;
+	left: 14%;
+	top: 11%;
+	object-fit: fill;
+	pointer-events: none;
+}
+.tv-play-button .play-icon {	
+	width: 32px;
+	height: 32px;
+
+	background-image: url("../../assets/images/ui/play.png");
+	background-size: 64px 32px;
+	background-position: 0 0;
+	pointer-events: none;
+}
+.tv-play-button.playing .play-icon {
+	background-position: 32px 0;
+}
+
+@media screen and (max-width: 1000px) {
+	.promo-section .thumb-up {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 500px) {
+	.tv {
+		margin-bottom: 80px;
+	}
+	.tv .tv-progress-text {
+		font-size: 14px;
+	}
+	.tv .buttons {
+		right: 50%;
+		bottom: -64px;
+		scale: 1;
+		translate: 50% 0;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.tv .tv-progress-text {
+		font-size: 12px;
+		bottom: 14%;
+	}
+}

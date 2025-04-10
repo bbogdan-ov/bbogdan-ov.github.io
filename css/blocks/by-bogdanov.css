@@ -1,0 +1,66 @@
+.by-bogdanov {
+	width: 100%;
+	padding: 0 40px;
+}
+.by-bogdanov .content {
+	width: 100%;
+	padding: 20px;
+
+	text-align: center;
+
+	background: var(--black);
+	color: var(--white);
+	font-family: var(--fancy-font);
+	font-size: 22px;
+}
+.by-bogdanov .arm-wrapper {
+	width: 100%;
+	height: 400px;
+	pointer-events: none;
+}
+.by-bogdanov .arm-wrapper .arm {
+	width: 128px;
+	height: 256px;
+
+	position: absolute;
+	left: calc(50% - 64px);
+	top: 100%;
+
+	animation: by-bogdanov-arm infinite ease-in-out 1.2s;
+}
+.by-bogdanov .arm-wrapper .arm .arm-image {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.by-bogdanov .arm-wrapper .hand {
+	position: absolute;
+	left: -42%;
+	top: 2%;
+
+	animation: by-bogdanov-hand infinite ease-in-out 1.2s;
+	animation-delay: .3s;
+}
+
+@keyframes by-bogdanov-arm {
+	from, to {
+		transform: scale(1.3) rotate(-8deg) translate(-0%, -80%);
+	}
+	50% {
+		transform: scale(1.3) rotate(8deg) translate(-0%, -80%);
+	}
+}
+@keyframes by-bogdanov-hand {
+	from, to {
+		transform: rotate(-8deg) translate(37px, -100px);
+	}
+	50% {
+		transform: rotate(8deg) translate(37px, -100px);
+	}
+}
+
+@media screen and (max-width: 1000px) {
+	.by-bogdanov {
+		margin-top: 60px;
+	}
+}

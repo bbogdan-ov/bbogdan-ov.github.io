@@ -1,0 +1,197 @@
+* {
+	user-select: none;
+	image-rendering: pixelated;
+}
+
+@font-face {
+	font-family: comic-sans;
+	src: url("../assets/fonts/comic-sans.ttf");
+}
+@font-face {
+	font-family: vhs;
+	src: url("../assets/fonts/vhs.ttf");
+}
+
+:root {
+	--black: #000;
+	--white: #fff;
+	--red: #f00;
+	--green: #0f0;
+	--blue: #00f;
+	--lightgray: #ddd;
+	--gray: #bbb;
+	--darkgray: #777;
+
+	--container-width: 1100px;
+	--container-padding: 10px;
+
+	--font-size: 16px;
+	--normal-font: Arial, Helvetica, sans-serif;
+	--mono-font: monospace;
+	--fancy-font: comic-sans, sans-serif;
+	--vhs-font: vhs, monospace;
+	--background: #4474ce;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	overflow-x: hidden;
+
+	font-family: var(--normal-font);
+	font-size: var(--font-size);
+	background: var(--background);
+
+	cursor: url("../assets/images/ui/cursor.png") 0 0, auto !important;
+}
+body.lock-scroll {
+	overflow-y: hidden;
+}
+::-webkit-scrollbar {
+	display: none;
+}
+*[contenteditable]:hover, input:hover {
+	cursor: url("../assets/images/ui/cursor-text.png") 9 15, auto;
+}
+
+ul {
+	margin-left: 1em;
+}
+code {
+	width: 100%;
+	padding: 4px 6px;
+
+	display: block;
+	white-space: pre-wrap;
+
+	font-family: var(--mono-font);
+	background: var(--white);
+}
+
+/* Container */
+.container {
+	width: 100%;
+	max-width: var(--container-width);
+	padding: 0 var(--container-padding);
+
+	margin: 0 auto;
+}
+
+/* Sections */
+.section {
+	width: 100%;
+
+	display: flex;
+	gap: 20px;
+}
+
+/* Welcome section */
+.welcome-section {
+	height: 100vh;
+}
+
+/* Info section */
+.info-section > .col {
+	width: 100%;
+	gap: 20px;
+	align-items: center;
+}
+
+/* Overlays */
+.overlay {
+	inset: 0;
+	position: absolute;
+	pointer-events: none;
+}
+.desaturation-overlay {
+	background: rgba(0, 0, 0, .3);
+	mix-blend-mode: saturation;
+}
+
+/* Footer */
+.footer {
+	image-rendering: initial;
+	pointer-events: none;
+}
+
+/* Canvases */
+.background-canvas {
+	width: 100vw;
+	height: 100vh;
+
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+
+/* Fancy things */
+.substance {
+	background: url("../assets/images/ui/substance.png");
+	animation: substance 10s linear infinite;
+}
+.rainbow-text {
+	animation: rainbow-text infinite step-end .3s;
+}
+.lovelove {
+	position: absolute;
+	left: 10%;
+	top: -40%;
+	rotate: 20deg;
+	z-index: 1;
+	width: 256px;
+}
+
+/* Media */
+@media screen and (max-width: 1000px) {
+	:root {
+		--container-width: 600px;
+	}
+	.info-section {
+		flex-direction: column-reverse;
+	}
+	.welcome-section .crazy-text {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 500px) {
+	:root {
+		--font-size: 14px;
+	}
+	.paper {
+		width: 90%;
+	}
+}
+@media screen and (max-width: 400px) {
+	.cheque {
+		font-size: 14px;
+	}
+	.paper {
+		font-size: 14px;
+	}
+}
+
+/* Animations */
+@keyframes substance {
+	from { background-position: 0 0; }
+	to { background-position: 128px -128px; }
+}
+@keyframes rainbow-text {
+	0% { color: #00f; }
+	20% { color: #0f0; }
+	40% { color: #0ff; }
+	60% { color: #f00; }
+	80% { color: #f0f; }
+	100% { color: #fff; }
+}
+@keyframes rotate {
+	from { rotate: 0deg; }
+	to { rotate: 360deg; }
+}
+@keyframes slogan-background {
+	from {
+		background-position: 0 0;
+	}
+	to {
+		background-position: 100% 0;
+	}
+}
