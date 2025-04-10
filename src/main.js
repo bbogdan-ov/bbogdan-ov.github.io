@@ -2,7 +2,9 @@ import * as utils from "./utils.js";
 import { Website } from "./website.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-	new Website();
+	const website = new Website();
+
+	window.website = website;
 
 	addEventListener("pointerdown", e => {
 		if (
