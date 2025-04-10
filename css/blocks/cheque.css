@@ -28,13 +28,11 @@
 	bottom: unset;
 	top: calc(100% - 1px);
 }
-.cheque .line {
+.cheque hr {
 	width: 100%;
-	overflow: hidden;
-	opacity: .5;
-}
-.cheque .line span {
-	white-space: nowrap;
-	display: block;
-	width: 1px;
+	height: 0;
+
+	margin: 1em 0;
+
+	border: 1px dashed currentColor;
 }
