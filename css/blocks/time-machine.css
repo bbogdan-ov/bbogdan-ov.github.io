@@ -30,15 +30,15 @@
 	animation-duration: 12s;
 	animation-direction: reverse;
 }
-#time-machine .speed-button .icon {
+#time-machine .fast-forward-button .icon {
 	width: 40px;
 	height: 30px;
 
-	background-image: url("../../assets/images/ui/speed.png");
+	background-image: url("../../assets/images/ui/fast-forward-icon.png");
 	background-size: 80px 30px;
 	background-position: 0 0;
 }
-body.fast-forward #time-machine .speed-button .icon {
+body.fast-forward #time-machine .fast-forward-button .icon {
 	background-position: 40px;
 }
 body.fast-forward #time-machine .large-cog {

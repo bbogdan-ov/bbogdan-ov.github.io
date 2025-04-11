@@ -6,6 +6,7 @@ import { initPromo } from "./blocks/promo.js";
 import { Vault } from "./blocks/vault.js";
 import { initTrashExterminator } from "./games/trash-exterminator.js";
 import { WeatherWallpaper } from "./wallpapers/weather.js";
+import { initTimemachine } from "./blocks/time-machine.js";
 
 export class Website {
 	static FAST_FORWARD_SPEED = 10;
@@ -26,6 +27,7 @@ export class Website {
 		initCookies();
 		initInfo();
 		initPromo();
+		initTimemachine(this);
 	}
 
 	setFastForward(enabled) {
@@ -33,6 +35,8 @@ export class Website {
 			this.speed = Website.FAST_FORWARD_SPEED;
 		else
 			this.speed = 1;
+
+		document.body.classList.toggle("fast-forward", enabled);
 	}
 
 	get isFastForward() {
