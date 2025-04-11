@@ -4,9 +4,6 @@ document.addEventListener("DOMContentLoaded", () => {
 	const loaderPanel = loader.querySelector(".loader-panel");
 	const loaderDisplay = loaderPanel.querySelector(".loader-display");
 
-	loader.remove();
-	return;
-
 	// Lock scroll
 	document.body.classList.add("lock-scroll");
 	scrollTo(0, 0);
