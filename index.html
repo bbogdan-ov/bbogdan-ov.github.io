@@ -29,29 +29,6 @@
 	<!-- Sections -->
 	<section class="welcome-section section center-all"></section>
 
-	<!-- WHITEY section! -->
-	<section class="whitey-section section container">
-		<div class="slogan"></div>
-		<article class="whitey-banner">
-			<div class="bg">
-				<img class="grab-hand left" src="assets/images/grab-hand-left.webp" alt="GRABBED">
-				<img class="grab-hand right" src="assets/images/grab-hand-right.webp" alt="GRABBED">
-			</div>
-
-			<img class="eye" src="assets/gifs/eye-1.gif" alt="eye" loading="lazy">
-
-			<a
-				class="cover-box"
-				href="https://njwhitey.bandcamp.com/album/remastered-edition-nothing-in-my-pocket-but-a-hole-lp"
-				target="_blank"
-			>
-				<img class="vinil" src="assets/images/nimpbah-vinil.webp" alt="nothing in my pocket but a hole vinil">
-				<img class="cover" src="assets/images/nimpbah-cover.webp" alt="nothing in my pocket but a hole cover">
-			</a>
-		</article>
-		<div class="slogan anim-reverse"></div>
-	</section>
-
 	<!-- Main section -->
 	<section class="section info-section container">
 
@@ -83,11 +60,18 @@
 					</div>
 				</article>
 			</div>
+			<div id="whitey">
+				<div class="spiral-wrapper">
+					<img class="spiral" src="assets/images/whitey/spiral.png" alt="WHITEY spiral">
+				</div>
+				<img class="photo" src="assets/images/whitey/photo.png" alt="WHITEY photo">
+				<a class="title" href="https://njwhitey.bandcamp.com/music" target="_blank"></a>
+			</div>
 			<!-- Gallery -->
 			<article class="window95">
 				<header>
 					<span>gallery! some gifs ive made :)</span>
-					<button onclick="global_playGoofySounds()" class="button95 icon">
+					<button onclick="playGoofySound()" class="button95 icon">
 						<img src="assets/images/ui/smiley-button.png" alt="smiley">
 					</button>
 				</header>
@@ -97,7 +81,12 @@
 					<img loading="lazy" src="assets/gifs/obey.gif" alt="obey" title="OBEY YOURSELF">
 					<img loading="lazy" src="assets/gifs/me.gif" alt="wakey wakey">
 					<img loading="lazy" src="assets/gifs/new-year.gif" alt="HAPPY NEW YEAR!">
-					<img loading="lazy" src="assets/gifs/bridge.gif" alt="check out WHITEY" title="Check out WHITEY, he's really cool">
+					<img
+						loading="lazy"
+						src="assets/gifs/bridge.gif"
+						alt="check out WHITEY"
+						title="Check out WHITEY, he's really cool"
+					>
 					<img loading="lazy" src="assets/gifs/flower.gif" alt="alive and dead">
 					<img loading="lazy" src="assets/gifs/summer.gif" alt="lost summer">
 				</div>
@@ -105,7 +94,7 @@
 			<!-- Vault -->
 			<div class="vault width-fill row justify-center flex-wrap items-center gap-4">
 				<article class="vault-numpad panel">
-					<div class="numpad-display panel-display">000*</div>
+					<div class="numpad-display panel-display">****</div>
 					<div class="buttons col items-center">
 						<div class="row">
 							<button data-num="1" class="physical-button small"><span>1</span></button>
@@ -127,10 +116,7 @@
 				</article>
 
 				<!-- Clicking on door plays knock sound if door is closed -->
-				<div
-					class="vault-door"
-					onclick="if (!this.classList.contains('opened')) global_playSound('knock')"
-				>
+				<div class="vault-door" onclick="if (!this.classList.contains('opened')) playSound('knock')">
 					<!-- YOU CANNOT SEE ANITHING BEHIND THE DOOR! -->
 					<!-- open it first!!! -->
 
@@ -155,10 +141,7 @@
 						<span>vkontakte</span>
 						<img src="assets/images/ui/pointer.png" alt="pointer" class="pointer">
 					</a>
-					<button
-						class="button95 text-red"
-						onclick="global_animateFlyout('#flying-links-paper')"
-					>more...</button>
+					<button class="button95 text-red" onclick="animateFlyout('#flying-links-paper')">more...</button>
 				</div>
 			</article>
 			<!-- Flying paper -->
@@ -297,8 +280,7 @@
 						target="_blank"
 					>open source!</a>
 				</div>
-				<img src="assets/gifs/dancing-cat.gif" alt="dancing cat"
-				onpointerdown="global_playSound('meow', .4)">
+				<img src="assets/gifs/dancing-cat.gif" alt="dancing cat" onpointerdown="playSound('meow', .4)">
 			</article>
 			<!-- Game window -->
 			<article class="window95" id="trash-exterminator">
@@ -337,48 +319,12 @@
 
 	<!-- Promo section -->
 	<section class="section promo-section">
-		<img
-			src="assets/gifs/thumb-up.gif"
-			loading="lazy"
-			alt="thumb up"
-			class="thumb-up"
-			style="right: 0; top: 0"
-		>
-		<img
-			src="assets/gifs/thumb-up.gif"
-			loading="lazy"
-			alt="thumb up"
-			class="thumb-up"
-			style="right: 0; top: 50%"
-		>
-		<img
-			src="assets/gifs/thumb-up.gif"
-			loading="lazy"
-			alt="thumb up"
-			class="thumb-up"
-			style="right: 0; top: 100%"
-		>
-		<img
-			src="assets/gifs/thumb-up.gif"
-			loading="lazy"
-			alt="thumb up"
-			class="thumb-up left"
-			style="left: 0; top: 0"
-		>
-		<img
-			src="assets/gifs/thumb-up.gif"
-			loading="lazy"
-			alt="thumb up"
-			class="thumb-up left"
-			style="left: 0; top: 50%"
-		>
-		<img
-			src="assets/gifs/thumb-up.gif"
-			loading="lazy"
-			alt="thumb up"
-			class="thumb-up left"
-			style="left: 0; top: 100%"
-		>
+		<img src="assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up" style="right: 0; top: 0">
+		<img src="assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up" style="right: 0; top: 50%">
+		<img src="assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up" style="right: 0; top: 100%">
+		<img src="assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up left" style="left: 0; top: 0">
+		<img src="assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up left" style="left: 0; top: 50%">
+		<img src="assets/gifs/thumb-up.gif" loading="lazy" alt="thumb up" class="thumb-up left" style="left: 0; top: 100%">
 
 		<div class="container">
 			<!-- Promo tv -->
