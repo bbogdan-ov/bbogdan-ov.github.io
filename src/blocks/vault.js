@@ -11,7 +11,7 @@ export class Vault {
 		// Load door secret
 		const doorSecret = new Image();
 		doorSecret.classList.add("door-secret");
-		doorSecret.src = "/gifs/jesus.gif";
+		doorSecret.src = "/assets/gifs/jesus.gif";
 		doorSecret.loading = "lazy";
 		doorSecret.alt = "JESUS IS REAL";
 
